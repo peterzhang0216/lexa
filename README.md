@@ -65,6 +65,16 @@ xcodebuild -project Lexa.xcodeproj -scheme Lexa \
 
 自动化验证参数：`--screen study|browse|settings` 直达对应界面，`--revealed` 翻开首张卡片，`--demo-answer` 自动答 3 题（用于验证调度与持久化链路）。
 
+## 隐私政策 Privacy Policy
+
+拾词 Lexa 不收集任何用户数据。
+
+- 不收集、不存储、不上传任何个人信息、使用数据或设备信息；
+- 所有学习进度与偏好设置仅保存在设备本地；
+- 无广告、无统计分析 SDK、无需注册登录。
+
+Lexa does not collect any data. All learning progress and preferences are stored locally on your device only. The app contains no ads, no analytics SDKs, and requires no account.
+
 ## Roadmap
 
 - [ ] 例句（来自 VOA Learning English 新闻语料）
