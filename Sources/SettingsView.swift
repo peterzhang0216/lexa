@@ -7,6 +7,13 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
+                if let storageError = store.storageError {
+                    Section {
+                        Label(storageError, systemImage: "exclamationmark.triangle.fill")
+                            .foregroundStyle(.red)
+                            .font(.footnote)
+                    }
+                }
                 Section("学习偏好") {
                     Stepper("每日新词：\(store.dailyNewGoal) 个",
                             value: $store.dailyNewGoal, in: 5...100, step: 5)

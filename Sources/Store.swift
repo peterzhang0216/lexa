@@ -9,6 +9,7 @@ final class Store: ObservableObject {
     @Published var autoSpeak = true { didSet { saveState() } }
     @Published private(set) var streakDays = 0
     @Published private(set) var lastStudyDay: String?
+    @Published private(set) var storageError: String?
 
     // Leitner 盒子间隔：第 0 盒 10 分钟后重现，之后按天翻倍
     static let boxIntervals: [TimeInterval] = [10 * 60, 86_400, 2 * 86_400, 4 * 86_400, 8 * 86_400, 16 * 86_400, 32 * 86_400]
@@ -19,7 +20,11 @@ final class Store: ObservableObject {
     private let stateURL: URL = {
         let dir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("Lexa", isDirectory: true)
-        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        do {
+            try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        } catch {
+            print("Lexa: 创建数据目录失败：\(error.localizedDescription)")
+        }
         return dir.appendingPathComponent("state.json")
     }()
 
@@ -116,8 +121,12 @@ final class Store: ObservableObject {
     private func saveState() {
         let state = StateFile(progress: progress, dailyNewGoal: dailyNewGoal, autoSpeak: autoSpeak,
                               streakDays: streakDays, lastStudyDay: lastStudyDay)
-        if let data = try? JSONEncoder().encode(state) {
-            try? data.write(to: stateURL, options: .atomic)
+        do {
+            let data = try JSONEncoder().encode(state)
+            try data.write(to: stateURL, options: .atomic)
+            storageError = nil
+        } catch {
+            storageError = "学习进度保存失败：\(error.localizedDescription)"
         }
     }
 
