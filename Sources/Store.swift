@@ -40,8 +40,8 @@ final class Store: ObservableObject {
     }
 
     func dueWords(bookID: String?, now: Date = Date()) -> [Word] {
-        let t = now.timeIntervalSince1970
-        return words(bookID: bookID).filter { progress[$0.id].map { $0.due <= t } ?? false }
+        let nowStamp = now.timeIntervalSince1970
+        return words(bookID: bookID).filter { progress[$0.id].map { $0.due <= nowStamp } ?? false }
     }
 
     func dueCount(bookID: String?) -> Int { dueWords(bookID: bookID).count }
@@ -66,17 +66,17 @@ final class Store: ObservableObject {
 
     func record(_ item: SessionItem, knew: Bool) {
         let now = Date()
-        var p = progress[item.word.id] ?? WordProgress(box: 0, due: 0, seen: 0, correct: 0, introducedDay: nil)
-        p.seen += 1
+        var prog = progress[item.word.id] ?? WordProgress(box: 0, due: 0, seen: 0, correct: 0, introducedDay: nil)
+        prog.seen += 1
         if knew {
-            p.correct += 1
-            p.box = min(p.box + 1, Self.maxBox)
+            prog.correct += 1
+            prog.box = min(prog.box + 1, Self.maxBox)
         } else {
-            p.box = 0
+            prog.box = 0
         }
-        p.due = now.timeIntervalSince1970 + Self.boxIntervals[p.box]
-        if p.introducedDay == nil { p.introducedDay = Self.dayString(now) }
-        progress[item.word.id] = p
+        prog.due = now.timeIntervalSince1970 + Self.boxIntervals[prog.box]
+        if prog.introducedDay == nil { prog.introducedDay = Self.dayString(now) }
+        progress[item.word.id] = prog
         touchStreak(now: now)
         saveState()
     }

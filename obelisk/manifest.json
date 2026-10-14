@@ -1,0 +1,83 @@
+{
+  "id": "lexa",
+  "name": "Lexa",
+  "themeColor": "#595FEB",
+  "downloads": [],
+  "appStore": {
+    "appId": "6822670690",
+    "bundleId": "com.peter.Lexa",
+    "platform": "ios",
+    "developerTeam": "F883XBKWR3",
+    "primaryCategory": "EDUCATION",
+    "releaseType": "manual",
+    "usesNonExemptEncryption": false,
+    "contentRights": "CONTAINS_THIRD_PARTY_CONTENT",
+    "copyright": "Copyright © 2026 Peter Zhang. All rights reserved.",
+    "appPrivacyAcknowledged": true,
+    "reviewContact": {
+      "firstName": "Peter",
+      "lastName": "Zhang",
+      "phone": "+8618612365605",
+      "email": "obeliskclubclub@gmail.com"
+    },
+    "reviewNotes": "拾词 Lexa is a fully-offline English vocabulary trainer for non-native speakers, built on authoritative US learning materials. No account or sign-in is required — every feature works on first launch with no network connection. Purpose: study English words with flashcards and spaced repetition. How to test: on the home screen tap 开始学习 (Start Studying), a flashcard appears with the word and phonetic; tap the card to flip it and see the English definition, Chinese gloss, and part of speech; answer with 认识 (Know) or 不认识 (Don't Know) — correct answers schedule longer review intervals (Leitner boxes, 10 minutes up to 32 days). The 词库 (Word Bank) tab lists all 3,303 words with search; the 设置 (Settings) tab adjusts daily new-word quota (5–100) and auto-pronunciation. Words are pronounced with the system TTS voice. External services: none — no network calls, no analytics, no third-party SDKs; word data ships inside the app bundle. Regional differences: none — identical behavior in all regions. Word data sources: VOA Learning English Word Book (US government work, public domain), Academic Word List (© Averil Coxhead, free for teaching), ECDICT (MIT license); attribution is also shown in-app under 设置.",
+    "demoAccount": null,
+    "testFlight": {
+      "internalGroups": [
+        "Internal Testers"
+      ]
+    },
+    "inAppPurchases": [],
+    "screenshots": {
+      "scheme": "Lexa",
+      "devices": {
+        "ios": {}
+      }
+    }
+  },
+  "scheme": "Lexa",
+  "appPrivacy": {
+    "configured": true,
+    "lastCheckedDate": "2026-10-14"
+  },
+  "locales": {
+    "zh-Hans": {
+      "name": "拾词 Lexa - 背单词",
+      "subtitle": "VOA·AWL 权威词库",
+      "keywords": "背单词,英语,词汇,VOA,托福,雅思,单词卡,记忆,英语学习,学习英语,词汇量,四六级,英语单词,闪卡",
+      "whatsNew": "首个版本：三本权威词书共 3303 词、卡片式学习、间隔重复调度、标准美音发音与本地学习统计。",
+      "fullDescription": "拾词 Lexa 是一款为非母语学习者设计的英语背单词应用。词库取自美国官方与权威学术材料，配合科学的记忆算法，帮助你高效、持久地扩大词汇量。\n\n【权威词库 · 3300 词】\n• VOA 核心词汇（1533 词）：源自\"美国之音\"VOA Learning English 官方 Word Book，覆盖最常用的英语核心表达，适合初学者打基础；\n• AWL 学术词汇（570 词）：Academic Word List，北美大学英语教学广泛使用的学术词族，是阅读学术文章、备考托福的必备词汇；\n• 托福雅思进阶词汇（1200 词）：按语料库词频精选的考试进阶词，适合四六级以上水平提升。\n\n【科学记忆】\n采用 Leitner 间隔重复算法：答对自动进入下一复习阶段，答错立即回炉，复习间隔从 10 分钟到 32 天逐级拉长。你只需要每天打开 App，剩下的交给算法。\n\n【核心功能】\n• 卡片式学习：正面记单词，翻面查看释义，\"认识 / 不认识\"一键反馈；\n• 标准美音发音：每个单词自动朗读（可关闭），边听边记；\n• 词库浏览与搜索：按词书切换，随时查看音标、英文释义和中文释义；\n• 每日目标：自定义每日新词数量，连续打卡记录，见证积累；\n• 学习统计：已学、已掌握、待复习一目了然；\n• 完全离线：词库内置于应用，进度保存在本地，无需注册登录，无广告、无内购。\n\n【适合人群】\n英语初学者、四六级考生、托福雅思备考者、想系统提升词汇量的英语学习者。\n\n【词库数据来源与授权】\nVOA Word Book（美国政府作品，公有领域）；Academic Word List（© Averil Coxhead，教学科研使用）；ECDICT 词典（MIT 开源协议）。\n\n隐私政策：https://github.com/peterzhang0216/lexa#privacy-policy",
+      "features": [
+        "VOA 官方词表 + AWL 学术词表 + 考试进阶词库，共 3300 词",
+        "卡片式学习：翻面查看音标、英文释义与中文释义",
+        "Leitner 间隔重复算法，复习间隔 10 分钟到 32 天逐级拉长",
+        "系统 TTS 标准美音，出卡自动朗读（可关闭）",
+        "词库浏览与英文搜索，学习状态一目了然",
+        "每日新词目标与连续打卡，完全离线、不收集任何数据"
+      ],
+      "docs": {
+        "privacy": "拾词 Lexa 隐私政策\n最后更新：2026-10-14\n\n本应用不收集任何个人数据。所有学习进度与偏好设置仅存储在你的设备本地，不上传、不共享、不追踪。",
+        "terms": "拾词 Lexa 服务条款\n最后更新：2026-10-14\n\n下载或使用本应用即表示你同意本服务条款。本应用使用 Apple 标准 EULA：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "support": "拾词 Lexa 支持\n\n如果你在使用中遇到问题或有功能建议，欢迎在 GitHub 仓库提交 Issue，我们通常会在一到两个工作日内回复。\n\n项目主页：https://github.com/peterzhang0216/lexa",
+        "deletion": "拾词 Lexa 数据删除\n\n本应用不在任何外部服务器存储用户数据。删除应用即可移除设备上的全部本地学习数据；也可以在应用内「设置 → 重置全部学习进度」一键清除。"
+      }
+    }
+  },
+  "web": {
+    "title": "VOA·AWL 权威词库背单词",
+    "description": "拾词 Lexa 是一款面向非母语者的离线背单词应用：VOA 官方词表、AWL 学术词表与考试进阶词库共 3300 词，卡片式学习配合间隔重复算法与标准美音发音。",
+    "keywords": [
+      "背单词",
+      "英语词汇",
+      "VOA",
+      "间隔重复",
+      "托福",
+      "雅思"
+    ]
+  },
+  "aso": {
+    "subtitle": "VOA·AWL 权威词库",
+    "keywords": "背单词,英语,词汇,VOA,托福,雅思,单词卡,记忆,英语学习,学习英语,词汇量,四六级,英语单词,闪卡",
+    "description": "拾词 Lexa 是一款为非母语学习者设计的英语背单词应用。词库取自美国官方与权威学术材料，配合科学的记忆算法，帮助你高效、持久地扩大词汇量。\n\n【权威词库 · 3300 词】VOA 核心词汇 1533 词（VOA Learning English 官方 Word Book）；AWL 学术词汇 570 词（Academic Word List）；托福雅思进阶词汇 1200 词（按语料库词频精选）。\n\n【科学记忆】Leitner 间隔重复算法：答对进阶、答错回炉，复习间隔从 10 分钟到 32 天逐级拉长。\n\n【核心功能】卡片式学习；系统 TTS 美音自动朗读；词库浏览与搜索；每日新词目标与连续打卡；学习统计；完全离线、无广告、无内购、无需注册。\n\n【词库数据来源与授权】VOA Word Book（美国政府作品，公有领域）；Academic Word List（© Averil Coxhead，教学科研使用）；ECDICT 词典（MIT 开源协议）。"
+  }
+}

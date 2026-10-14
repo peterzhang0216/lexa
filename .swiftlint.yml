@@ -1,0 +1,38 @@
+# Lexitally SwiftLint config.
+# Allow idiomatic short identifiers (loop / closure locals, math) — these are
+# clear in context and common in Swift. All other identifier_name checks stay on.
+
+# The repo's Swift formatter emits trailing commas in multi-line collection
+# literals; defer comma style to it so the two tools don't fight.
+disabled_rules:
+  - trailing_comma
+
+identifier_name:
+  excluded:
+    - r
+    - g
+    - b
+    - c
+    - f
+    - x
+    - y
+    - i
+    - j
+    - k
+    - n
+    - id
+
+# Factory custom rules (fleet propagation 2026-09-26, WARNING severity —
+# the template carries these at ERROR for new apps). Mirrors
+# APP_Factory/templates/apple-app/swiftlint.yml.
+custom_rules:
+  glass_shape_required:
+    name: "Liquid Glass shape required"
+    regex: '\.glassEffect\(\s*\)'
+    message: "Parameterless .glassEffect() renders a Capsule — pass the card's own shape: .glassEffect(in: <shape>)"
+    severity: warning
+  no_text_concat:
+    name: "Text + Text deprecated"
+    regex: 'Text\([^()]*\)\s*\+\s*Text\('
+    message: "Text + Text concatenation is deprecated in iOS 26 — compose at the string level and wrap verbatim parts in Text(verbatim:)"
+    severity: warning

@@ -1,0 +1,155 @@
+# Factory-standard quality CI (v5, 2026-10-03).
+# MANUAL-TRIGGER ONLY. Portfolio policy (hooks/pre-push header): private-repo
+# Actions minutes are exhausted — macOS minutes bill 10x — so standing CI
+# runs on the dev Mac via hooks/pre-push, and cloud CI is reserved for
+# publishes. Run this by hand (gh workflow run ci) before a release if you
+# want a cloud-verified gate, or enable the push triggers knowing the cost.
+#
+# v4 drops the obelisk npm dependency (older factory retired 2026-10-02): the
+# metadata checks run from APP_Factory itself, and IAP drift is left to its
+# real owner, the ship chain's required gate (see the step comment below).
+#
+# Platform-aware: reads project.yml — macOS apps build natively (no
+# simulator), tvOS apps pick an Apple TV simulator, iOS defaults to the
+# newest available iPhone.
+name: CI
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Install tooling
+        run: brew install swiftlint
+
+      - name: Locate project, scheme and destination
+        id: proj
+        run: |
+          PROJ=$(ls -d *.xcodeproj | head -1)
+          SCHEME="${PROJ%.xcodeproj}"
+          echo "proj=$PROJ" >> "$GITHUB_OUTPUT"
+          echo "scheme=$SCHEME" >> "$GITHUB_OUTPUT"
+          if grep -q 'platform: macOS' project.yml; then
+            echo "dest=platform=macOS" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Fresh runners: -showdestinations is unreliable before first launch;
+          # pick a concrete device from simctl --json and address it by UDID,
+          # never name. A name with no OS pin leaves xcodebuild's OS at latest,
+          # and when the host's newest runtime stops shipping that device name
+          # (2026-10-01: iOS 27.0 dropped "iPhone 17 Pro", which only 26.5 had)
+          # name+OS:latest never pair again — destination resolution fails
+          # (exit 70) before anything compiles. A UDID pins device AND runtime.
+          # --json + exact names because device names can contain parentheses
+          # ("Apple TV 4K (3rd generation)") — a plain awk field-split truncates
+          # them and -destination never matches.
+          pattern='iPhone 17'
+          PLAT='iOS'
+          if grep -q 'platform: tvOS' project.yml; then pattern='Apple TV'; PLAT='tvOS'; fi
+          SIM=$(xcrun simctl list devices available --json | python3 -c '
+import json, re, sys
+pat = sys.argv[1]
+try:
+    data = json.load(sys.stdin).get("devices", {})
+except Exception:
+    sys.exit(0)
+cands = []
+for runtime, lst in data.items():
+    ver = tuple(int(p) for p in re.findall(r"\d+", str(runtime))) or (0,)
+    for d in lst:
+        cands.append((ver, str(d.get("name", "")), str(d.get("udid", ""))))
+for p in ([pat] + (["iPhone"] if pat == "iPhone 17" else [])):
+    hits = [c for c in cands if p in c[1]]
+    if hits:
+        _, name, udid = max(hits)
+        print(f"{udid}\t{name}")
+        sys.exit(0)
+' "$pattern")
+          [ -n "$SIM" ] || { echo "No available simulator found for pattern: $pattern"; exit 1; }
+          SIM_UDID=$(printf '%s' "$SIM" | cut -f1)
+          echo "dest=platform=${PLAT} Simulator,id=$SIM_UDID" >> "$GITHUB_OUTPUT"
+
+      - name: SwiftLint (errors block; >40 warnings block — factory v2 policy)
+        run: |
+          swiftlint lint --quiet > /tmp/lint.txt || true
+          errors=$(grep -cE ' error: ' /tmp/lint.txt || true)
+          warnings=$(grep -cE ' warning: ' /tmp/lint.txt || true)
+          echo "swiftlint: $errors errors, $warnings warnings"
+          if [ "$errors" -gt 0 ]; then
+            grep -E ' error: ' /tmp/lint.txt | head -20
+            exit 1
+          fi
+          if [ "$warnings" -gt 40 ]; then
+            echo "Warnings exceed the factory threshold (40) — fix findings, don't raise the limit."
+            exit 1
+          fi
+
+      # v5 (2026-10-03): the executed-count guard. `** TEST SUCCEEDED **` over
+      # `Executed 0 tests` is a verdict about NOTHING — Stridekeep's unit tier
+      # ran zero tests for weeks while every board was green (the host app
+      # hung before the XCTest bootstrap checked in). The factory-side runner
+      # already refuses this (factory/unit_tests.py, "Read the Executed count,
+      # not the verdict", ENGINEERING_LESSONS); this is CI's copy of the rule.
+      - name: Unit tests (UI target is demo/screenshot flows only)
+        run: |
+          # Raw log kept before xcbeautify because the guard below reads it.
+          # stderr is merged in so a summary line never lands outside the file.
+          xcodebuild test \
+            -project "${{ steps.proj.outputs.proj }}" \
+            -scheme "${{ steps.proj.outputs.scheme }}" \
+            -destination "${{ steps.proj.outputs.dest }}" \
+            -only-testing:"${{ steps.proj.outputs.scheme }}Tests" \
+            2>&1 | tee "$RUNNER_TEMP/unit-tests.log" | xcbeautify --renderer github-actions
+          status="${PIPESTATUS[0]}"
+          if [ "$status" -ne 0 ]; then exit "$status"; fi
+          # XCTest prints "Executed N tests, ..." once per suite and once for
+          # the run; Swift Testing prints "Test run with N tests ...". The MAX
+          # across them is the honest count (per-suite lines double-count; the
+          # run summary is the largest). No summary at all over exit 0 means
+          # nothing was verified either - same failure.
+          executed=$(grep -oE 'Executed [0-9]+ tests?,|Test run with [0-9]+ tests' \
+            "$RUNNER_TEMP/unit-tests.log" | grep -oE '[0-9]+' | sort -n | tail -1)
+          if [ -z "$executed" ] || [ "$executed" -eq 0 ]; then
+            echo "::error::Unit tests exited 0 but executed ${executed:-no} tests — a green run over zero tests verifies nothing (Stridekeep 2026-10-02). Check the Tests target is in the scheme's test action and the test host actually launches."
+            exit 1
+          fi
+          echo "unit tests: $executed executed"
+
+      # The metadata half of the retired obelisk CLI (npm dependency dropped):
+      # the rule families `obelisk validate` carried live in APP_Factory's
+      # factory/metadata_limits.py, and this runs them against the repo's own
+      # manifest, offline. IAP drift is deliberately NOT re-run here: its
+      # replacement, factory.gate-storekit-drift, is a required prior gate of
+      # factory.archive-app in the ship chain and compares the .storekit
+      # against AppMetadataStore truth — a stronger check than a fresh
+      # checkout could make, and one the ship ladder cannot skip.
+      - name: Manifest metadata limits (factory, offline)
+        if: hashFiles('obelisk/manifest.json') != ''
+        run: |
+          git clone --depth 1 "https://github.com/${{ github.repository_owner }}/APP_Factory.git" "$RUNNER_TEMP/app-factory"
+          python3 -m pip install --quiet "$RUNNER_TEMP/app-factory"
+          python3 - <<'PY'
+          import sys
+          from pathlib import Path
+          from factory.locales import read_manifest
+          from factory.metadata_limits import manifest_problems
+          manifest = read_manifest(Path("."))
+          problems = manifest_problems(manifest) if manifest else []
+          for problem in problems:
+              print(f"FAIL {problem}")
+          sys.exit(1 if problems else 0)
+          PY

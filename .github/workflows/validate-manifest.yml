@@ -1,0 +1,18 @@
+# Copy this file to your product repo at .github/workflows/validate-manifest.yml
+name: Validate Manifest
+
+on:
+  pull_request:
+    paths:
+      - 'obelisk/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npx obelisk-cli validate --manifest obelisk/manifest.json

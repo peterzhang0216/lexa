@@ -1,0 +1,315 @@
+#!/bin/bash
+#
+# ── Managed by `obelisk hooks:sync` ─────────────────────────────────────────
+# This file is the FLEET GATE TEMPLATE. Do not hand-edit individual repo
+# copies — fix it here and run `obelisk hooks:sync` per repo (or with --root
+# to sweep). Deliberately-divergent repos: delete this marker block and the
+# file reads as `foreign` to hooks:check / hooks:sync (never auto-overwritten).
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Local CI — runs on `git push` (as a pre-push hook) BEFORE anything leaves the
+# machine. Private-repo GitHub Actions minutes are exhausted across the portfolio,
+# so cloud CI just queues forever; this gate runs on the dev Mac instead, free.
+#
+# Activate in a repo (the scaffolder does this automatically):
+#     git config core.hooksPath hooks
+# Run it by hand any time:
+#     bash hooks/pre-push
+#
+# Checks (fast, no network):
+#   0. Working tree has no uncommitted changes to TRACKED files — hard, runs
+#      before everything else. Every check below reads straight off disk
+#      (project.pbxproj, manifest.json, screenshots, source files) — that's
+#      what makes them fast and buildless, but it also means the hook is only
+#      validating what's about to be pushed if disk state matches HEAD. If a
+#      tracked file has an uncommitted fix sitting in the working tree, the
+#      hook validates THAT, git aborts nothing, and the push carries the OLD
+#      committed content — the exact opposite of what a pre-push gate is for.
+#      Real incident (2026-08-05): a TARGETED_DEVICE_FAMILY fix was made
+#      directly to a repo's project.pbxproj but never `git add`ed (a separate
+#      script had already run its own narrow `git add`/commit for an
+#      unrelated change). The hook's check #5 read the fixed file off disk,
+#      passed, and let the push through — the commit that actually landed on
+#      GitHub still had the original broken value. Untracked files (`??`) are
+#      NOT blocked — those don't change what any tracked file's committed
+#      content is, and the factory routinely leaves harmless scratch files
+#      (ENHANCE_BRIEF.md, etc.) sitting in working trees.
+#   1. obelisk/manifest.json parses as JSON and has an id  (hard — blocks push)
+#   2a. LOCAL-phase `obelisk validate --phase local` — hard, runs UNCONDITIONALLY
+#      regardless of appId (id/structure, per-field length limits, required
+#      icon files that ARE referenced actually existing on disk, etc. — see
+#      validateManifest()'s own doc comment for the exact "local" subset).
+#      2b. once an ASC appId is filled in, ALSO run the full submit-grade
+#      `obelisk validate` (unchanged from before — appId-gated because some of
+#      its checks, like appPrivacyAcknowledged/primaryCategory, only make
+#      sense once there's a real ASC app record).
+#      Real incident (2026-07-04): before 2a existed, this hook's ONLY
+#      validate call was appId-gated — meaning for a brand-new factory app's
+#      ENTIRE scaffold→build→local-CI-pass→ship-queue lifetime, `obelisk
+#      validate` never ran even once. 3 of 9 apps queued for shipping that
+#      week failed at the ACTUAL App Store Connect submission step for things
+#      2a catches for free (a missing obelisk/icons/*.png the manifest
+#      referenced, an over-length subtitle) — caught for the first time at
+#      the most expensive, latest possible point instead of at push time.
+#   2c. `obelisk sync:audit` (obelisk.club website readiness) — gated on the
+#      app having started real marketing copy (locales.{en,zh}.fullDescription
+#      non-empty), NOT on appId like 2b. A fresh scaffold's icon/docs/features/
+#      fullDescription are all empty by design, so running this unconditionally
+#      would fail literally every new app's first push with no legitimate way
+#      to satisfy it yet — the same chicken-and-egg problem 2b's appId gate
+#      exists to avoid, just keyed off a different readiness signal (website
+#      copy instead of an ASC record). Once fullDescription exists for either
+#      locale, the app is claiming website-readiness, so every sync:audit rule
+#      is enforced for real: icon resolvable, en+zh legal docs present,
+#      features count is 3 or 6 (obelisk.club's 3-column grid), downloads
+#      non-empty, and fullDescription carries the three canonical sections
+#      (WHAT MAKES X DIFFERENT / PRICING / FEEDBACK).
+#      Real incident (2026-09, obelisk.club-side): ~80 factory apps synced to
+#      the website with 4/5/7/8 features and no PRICING/FEEDBACK section
+#      because nothing on this side ever checked for it — obelisk.club's own
+#      sync-time gate (added after the fact) now hard-rejects those, but by
+#      then the damage was already a manual cleanup across ~110 apps. Catch it
+#      here instead, before the push that would eventually fail sync.
+#   3. i18n hardcoded-string scan (catalog-bypassing literals) — hard, runs
+#      regardless of appId. This used to ONLY run inside `obelisk submit`,
+#      hours or days after the code that introduced the literal was merged
+#      (real incident: ImageConverter #2 shipped 3 hardcoded strings that sat
+#      unnoticed until the next release's submit attempt). Catch it at push
+#      time instead.
+#   4. manifest metadata pricing-language scan (Apple 2.3.7 "Free"/"免费"/etc)
+#      — hard, same rationale as #3 (real incident: VideoConverter's
+#      fullDescription shipped "Free to start" — SnapPro's exact historical
+#      rejection class — and wasn't caught until submit).
+#   5. Universal (iPhone+iPad) project without iPad 13" screenshots — hard,
+#      source-level (reads TARGETED_DEVICE_FAMILY straight from
+#      project.pbxproj, no build needed). Skips silently if there's no
+#      .xcodeproj yet (pre-autopilot scaffold state) or no screenshots
+#      pipeline declared. Real incident: Shiftreel scaffolded Universal with
+#      no iPad-adapted UI; Apple's version-create validation rejected with
+#      "a screenshot with type ipadPro129 is required" after a full
+#      archive/upload round-trip (caught by `obelisk preflight`, but only
+#      AFTER that expensive step). A 2026-07-04 portfolio audit found this
+#      isn't rare — 32 of 39 Universal apps (82%) were missing iPad
+#      screenshots. Catch it here instead, for free, at push time.
+#   6. AppIcon.appiconset alpha-channel check (iOS/watchOS only) — hard,
+#      source-level (reads the PNGs straight off disk, no build needed).
+#      Silent no-op before any AppIcon.appiconset exists, and macOS projects
+#      are never checked (transparency is normal there). Real incident
+#      (2026-07-03): rasterizeIcon (obelisk assets:icon's own generator)
+#      never stripped alpha, so any icon.svg with transparency built and
+#      archived clean and only failed at the very last step — `xcrun altool`
+#      during upload — with "Invalid large app icon... can't be transparent
+#      or contain an alpha channel" (KidsShapeSorting, BoardGameScore).
+#      Fixed at the generator; this catches anything that reaches disk some
+#      other way, for free, at push time instead of after a full archive.
+#   8. no NEWLY-INTRODUCED swallowed failures — hard, but only for what this
+#      push actually adds. A `try?` whose result is discarded means the failure
+#      cannot even be observed, and the user is told the operation succeeded;
+#      ENGINEERING.md forbids it. It is scoped to the incoming diff on purpose:
+#      the existing catalogue carries ~900 of these across 231 repos, so a
+#      whole-tree check would block every push everywhere and just get muted.
+#      Run `obelisk dev:silent-failure` for the full picture on a repo.
+#      Whitespace-only reflow does NOT count as new (2026-10-04, ViewOne):
+#      a repo-wide swiftformat normalization re-indented 11 legacy bare-try?
+#      lines and the push was blocked on pure re-indentation. The scan uses
+#      `git diff -w` (indentation-only changes produce no +/- lines at all),
+#      plus a stripped-content fallback for rewraps that split one line.
+#   7. scaffold docs (OPPORTUNITY/DEV_KICKOFF) present — soft warning only, so
+#      this hook works identically on factory-born and hand-built repos
+#
+# Note: locale PARITY (subtitle/promotionalText/whatsNew present-everywhere-
+# or-nowhere) is a submit-phase-only check (2b), not covered by 2a — it needs
+# every locale's fields known at once to judge parity, which local-phase's
+# "friction-free, tolerate partial rollouts" design deliberately skips (see
+# validateManifest()'s doc comment). Not new: this was already appId-gated
+# before this fix and still is.
+#
+# Exit non-zero → git aborts the push. Override a known-bad push with
+# `git push --no-verify` (use sparingly).
+set -uo pipefail
+
+repo_root="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+cd "$repo_root" || exit 1
+manifest="obelisk/manifest.json"
+fail() { echo "  ✗ $1" >&2; exit 1; }
+
+# 0. Every check below reads tracked files straight off disk — see file
+# header. Refuse to validate a working tree that disagrees with HEAD on any
+# TRACKED file, or the checks below would be validating content that never
+# actually gets pushed. Untracked files (`??`) are fine — they can't change
+# what a tracked file's committed content is.
+dirty_tracked="$(git status --porcelain | grep -v '^??' || true)"
+if [ -n "$dirty_tracked" ]; then
+  fail "working tree has uncommitted changes to tracked files — this hook validates disk state, so disk state must match what's about to be pushed (git status | grep -v '^??'):
+$dirty_tracked
+Commit (or stash) these first, then push again."
+fi
+
+run_obelisk() {
+  if command -v obelisk >/dev/null 2>&1; then
+    obelisk "$@"
+  else
+    npx --yes obelisk-cli "$@"
+  fi
+}
+
+[ -f "$manifest" ] || fail "missing $manifest"
+
+# 1. manifest parses + has an id
+node -e "const m=require('./$manifest'); if(!m.id) throw new Error('missing id'); console.log('  ✓ manifest ok:', m.id)" 2>/dev/null \
+  || fail "obelisk/manifest.json does not parse or has no id"
+
+# 2a. local-phase validate — unconditional (see file header)
+run_obelisk validate --manifest "$manifest" --phase local || fail "obelisk validate (local phase) failed"
+
+# 2b. submit-grade validate ALSO once a REAL appId exists.
+#
+# "Real" is the point (2026-08-04). This used to be a bare `[ -n "$appId" ]`
+# truthiness test — the exact check src/asc/app-id.mjs exists to replace, and
+# whose own header documents two incidents caused by it. A scaffold-phase app
+# carries a PLACEHOLDER appId ("PENDING", "PENDING_APP_STORE_CONNECT",
+# "0000000000") that autopilot writes as a TODO marker, and those are non-empty
+# strings. So this branch ran submit-grade validation against apps that have no
+# ASC record at all — and submit-grade checks (appPrivacyAcknowledged,
+# primaryCategory, locale parity) are precisely the ones that cannot pass
+# before that record exists. The push was then blocked with a message telling
+# the author to go verify App Privacy in ASC for an app that isn't there.
+#
+# Mirrors isPlaceholderAppId() exactly: a real ASC id is all digits, and
+# "0000000000" is the one numeric-shaped value that still isn't real. Kept as
+# an inline case rather than a node call because this hook must stay fast and
+# work before dependencies are installed.
+appId="$(node -e "process.stdout.write(String(require('./$manifest').appStore?.appId||''))")"
+appIdIsReal=""
+case "$appId" in
+  "" | 0000000000) ;;      # unset, or the known numeric placeholder
+  *[!0-9]*) ;;             # any non-digit → placeholder (PENDING, …)
+  *) appIdIsReal=1 ;;
+esac
+if [ -n "$appIdIsReal" ]; then
+  echo "  • appId=$appId set → also running submit-grade obelisk validate"
+  run_obelisk validate --manifest "$manifest" || fail "obelisk validate (submit phase) failed"
+elif [ -n "$appId" ]; then
+  echo "  • appId=$appId is a placeholder (no real ASC record yet) → submit-grade validate skipped (local phase already ran above)"
+else
+  echo "  • appId not set yet (scaffold / dev phase) → submit-grade validate skipped (local phase already ran above)"
+fi
+
+# 2c. obelisk.club website sync:audit — gated on real marketing copy existing
+# (locales.{en,zh}.fullDescription non-empty), not on appId. See file header
+# for why this needs its own gate distinct from 2b's appId gate.
+hasFullDescription="$(node -e "
+  const m = require('./$manifest');
+  const has = (loc) => typeof m.locales?.[loc]?.fullDescription === 'string' && m.locales[loc].fullDescription.trim().length > 0;
+  process.stdout.write(has('en') || has('zh') ? '1' : '');
+")"
+if [ -n "$hasFullDescription" ]; then
+  echo "  • locales.{en,zh}.fullDescription present → running obelisk sync:audit"
+  # Advisory, not blocking. Measured across the portfolio on 2026-09-21: of 301
+  # manifests carrying a fullDescription, exactly ONE satisfied every rule here.
+  # A gate that refuses 300 of 301 is not catching outliers, it is describing a
+  # migration nobody has run yet - and because it sits on `git push`, it took
+  # every repository whose hook had been updated (105 of them, since 2026-09-18)
+  # out of service completely: enhance, repair and hig-fix could all produce a
+  # fix and none of it could leave the machine.
+  #
+  # Downgraded rather than removed because the incident in this file's header is
+  # real and the check is the right one. What makes advisory safe here is that it
+  # was never the only line of defence: obelisk.club's own sync-time gate hard-
+  # rejects a non-conforming manifest, which is what the header describes. So the
+  # cost of not blocking is that a manifest fails later at `obelisk sync` instead
+  # of now at push time - the ordinary cost of a warning - and NOT that unchecked
+  # copy reaches the website.
+  #
+  # Restore the hard failure once the portfolio has been migrated: when the
+  # count of manifests failing this audit is small enough that it names outliers
+  # again, `|| fail "..."` is the correct line and this comment should go with it.
+  run_obelisk sync:audit --manifest "$manifest" || echo "  ⚠ obelisk sync:audit found issues — obelisk.club sync would reject this manifest (see message above). NOT blocking this push; fix before the next website sync." >&2
+else
+  echo "  • locales.{en,zh}.fullDescription both empty (scaffold / pre-copy phase) → sync:audit skipped"
+fi
+
+# 3. i18n hardcoded-string scan — unconditional (no Swift source yet = clean pass)
+run_obelisk i18n:validate --checks hardcoded --source-path "$repo_root" \
+  || fail "i18n hardcoded-string check failed — run \`obelisk i18n:validate --checks hardcoded --source-path .\` to iterate"
+
+# 4. Apple 2.3.7 pricing-language scan — unconditional (empty fields = clean pass)
+run_obelisk meta:scan --manifest "$manifest" --strict \
+  || fail "meta:scan found Apple 2.3.7 pricing language — run \`obelisk meta:scan --manifest $manifest\` to iterate"
+
+# 5. Universal project must have iPad 13" screenshots — see file header. A
+# no-op (silent pass) before autopilot has created an Xcode project at all.
+run_obelisk xcode:device-family-check --manifest "$manifest" \
+  || fail "device family check failed — Universal project with no iPad 13\" screenshots (see message above for how to fix)"
+
+# 6. AppIcon.appiconset alpha channel (iOS/watchOS only) — see file header.
+# A no-op before any AppIcon.appiconset exists yet, or on macOS.
+run_obelisk xcode:icon-alpha-check --manifest "$manifest" \
+  || fail "app icon has an alpha channel — Apple's upload validation rejects this (see message above for how to fix)"
+
+# 6b. ASC 身份别在一次推送里悄悄变掉 —— appId 消失,或换成另一个号。
+# 2026-08-13:8 个在架 App 的 appId 被一次误判从主干删掉,而这个 hook 的
+# submit-grade 校验恰恰是 appId 门控的,所以删掉 appId 反而让那次推送受到的检查
+# 更少,没有任何机制报过。确实要改身份就带 OBELISK_ALLOW_APPID_CHANGE=1。
+# 没有 origin/main 可比时静默跳过。
+run_obelisk manifest:appid-guard --manifest "$manifest" \
+  || fail "this push changes the app's App Store Connect identity (see message above)"
+
+# 7. scaffold docs — soft warning, never blocks (hand-built repos won't have them)
+for f in OPPORTUNITY.md DEV_KICKOFF.md README.md; do
+  [ -f "$f" ] || echo "  ! note: $f not present (ok for non-factory repos)" >&2
+done
+
+# 8. 新引入的「结果被丢弃的 try?」— 只看这次要推的改动,存量一概不拦。
+#    没有 origin/main(全新仓库的首次推送)时跳过:那时 diff 的对照物不存在,
+#    而首个 commit 里的存量本来也不该由这道闸来管。
+if git rev-parse --verify --quiet origin/main >/dev/null 2>&1; then
+  changed_swift="$(git diff --name-only origin/main...HEAD -- '*.swift' 2>/dev/null \
+    | grep -vE '(Tests?/|Tests?\.swift$)' \
+    | grep -vE '(Demo|Seeder|Preview|Mock|Fixture|Sample|ScreenshotRenderer)' || true)"
+  if [ -n "$changed_swift" ]; then
+    newly=""
+    while IFS= read -r f; do
+      [ -n "$f" ] || continue
+      # -w: 纯空白差异（缩进重排）不产生 +/- 行 —— 存量 try? 被格式化重排
+      # 不算新增（见上方 2026-10-04 ViewOne 的事故记录）。
+      hits="$(git diff -w origin/main...HEAD --unified=0 -- "$f" 2>/dev/null \
+        | grep -E '^\+' | grep -vE '^\+\+\+' | sed 's/^+//' \
+        | grep -E '^[[:space:]]*try\?[[:space:]]' \
+        | grep -vE '^[[:space:]]*try\?[[:space:]]+await[[:space:]]+Task\.sleep\b' || true)"
+      # 兜底: 换行重写（一行拆多行/多行并一行）时 -w 仍会显示增删 ——
+      # 新增行若与同文件某条删除行"去空白后完全相同"，判定为重排而非新增。
+      if [ -n "$hits" ]; then
+        removed_stripped="$(git diff origin/main...HEAD --unified=0 -- "$f" 2>/dev/null \
+          | grep -E '^-' | grep -vE '^---' | sed 's/^-//' | tr -d '[:space:]' | sort -u || true)"
+        if [ -n "$removed_stripped" ]; then
+          hits="$(printf '%s\n' "$hits" | while IFS= read -r line; do
+            stripped="$(printf '%s' "$line" | tr -d '[:space:]')"
+            if printf '%s\n' "$removed_stripped" | grep -qxF "$stripped"; then
+              continue
+            fi
+            printf '%s\n' "$line"
+          done)"
+        fi
+      fi
+      if [ -n "$hits" ]; then
+        newly="$newly
+  $f:
+$(printf '%s' "$hits" | sed 's/^/      /')"
+      fi
+    done <<EOF
+$changed_swift
+EOF
+    if [ -n "$newly" ]; then
+      echo "  ✗ 这次改动新引入了结果被丢弃的 try?：$newly" >&2
+      echo "" >&2
+      echo "    失败会被整个吞掉——用户看到的是「成功」，而代码根本察觉不到出错。" >&2
+      echo "    用户发起的操作(保存/删除/导出/购买/恢复)必须让失败可见：改成 do/catch。" >&2
+      echo "    绑定结果(let x = try? f())不在此列，那是有意的可选处理。" >&2
+      echo "    存量不拦，只拦这次新加的；全仓库现状用 obelisk dev:silent-failure 看。" >&2
+      fail "新增了静默失败"
+    fi
+  fi
+fi
+
+echo "  ✓ local CI passed"

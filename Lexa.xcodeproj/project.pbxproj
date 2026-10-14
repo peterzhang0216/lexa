@@ -1,91 +1,482 @@
 // !$*UTF8*$!
 {
-  archiveVersion = 1;
-  classes = {};
-  objectVersion = 56;
-  objects = {
-    A10000000000000000000001 = {isa = PBXBuildFile; fileRef = A10000000000000000000002; };
-    A10000000000000000000003 = {isa = PBXBuildFile; fileRef = A10000000000000000000004; };
-    A10000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexaApp.swift; sourceTree = "<group>"; };
-    A10000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-    F00000000000000000000011 = {isa = PBXBuildFile; fileRef = F00000000000000000000001; };
-    F00000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-    F00000000000000000000012 = {isa = PBXBuildFile; fileRef = F00000000000000000000002; };
-    F00000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-    F00000000000000000000013 = {isa = PBXBuildFile; fileRef = F00000000000000000000003; };
-    F00000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-    F00000000000000000000014 = {isa = PBXBuildFile; fileRef = F00000000000000000000004; };
-    F00000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
-    F00000000000000000000015 = {isa = PBXBuildFile; fileRef = F00000000000000000000005; };
-    F00000000000000000000005 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
-    F00000000000000000000016 = {isa = PBXBuildFile; fileRef = F00000000000000000000006; };
-    F00000000000000000000006 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-    F00000000000000000000031 = {isa = PBXBuildFile; fileRef = F00000000000000000000021; };
-    F00000000000000000000021 = {isa = PBXFileReference; lastKnownFileType = text.json; path = voa_core.json; sourceTree = "<group>"; };
-    F00000000000000000000032 = {isa = PBXBuildFile; fileRef = F00000000000000000000022; };
-    F00000000000000000000022 = {isa = PBXFileReference; lastKnownFileType = text.json; path = awl_academic.json; sourceTree = "<group>"; };
-    F00000000000000000000033 = {isa = PBXBuildFile; fileRef = F00000000000000000000023; };
-    F00000000000000000000023 = {isa = PBXFileReference; lastKnownFileType = text.json; path = exam_plus.json; sourceTree = "<group>"; };
-F00000000000000000000051 = {isa = PBXBuildFile; fileRef = F00000000000000000000050; };
-F00000000000000000000050 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-F00000000000000000000060 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-    F00000000000000000000040 = {isa = PBXGroup; children = (F00000000000000000000021, F00000000000000000000022, F00000000000000000000023, F00000000000000000000050); path = "Lexa/Resources"; sourceTree = "<group>"; };
-    F00000000000000000000041 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (F00000000000000000000031, F00000000000000000000032, F00000000000000000000033, F00000000000000000000051); runOnlyForDeploymentPostprocessing = 0; };
-    A10000000000000000000005 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lexa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-    A10000000000000000000006 = {
-      isa = PBXGroup;
-      children = (A10000000000000000000007, A10000000000000000000008, F00000000000000000000040);
-      sourceTree = "<group>";
-    };
-    A10000000000000000000007 = {
-      isa = PBXGroup;
-      children = (A10000000000000000000002, A10000000000000000000004, F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000006, F00000000000000000000060);
-      path = Lexa;
-      sourceTree = "<group>";
-    };
-    A10000000000000000000008 = {
-      isa = PBXGroup;
-      children = (A10000000000000000000005);
-      name = Products;
-      sourceTree = "<group>";
-    };
-    A10000000000000000000009 = {
-      isa = PBXNativeTarget;
-      buildConfigurationList = A1000000000000000000000A;
-      buildPhases = (A1000000000000000000000B, F00000000000000000000041);
-      buildRules = ();
-      dependencies = ();
-      name = Lexa;
-      productName = Lexa;
-      productReference = A10000000000000000000005;
-      productType = "com.apple.product-type.application";
-    };
-    A1000000000000000000000B = {
-      isa = PBXSourcesBuildPhase;
-      buildActionMask = 2147483647;
-      files = (A10000000000000000000001, A10000000000000000000003, F00000000000000000000011, F00000000000000000000012, F00000000000000000000013, F00000000000000000000014, F00000000000000000000015, F00000000000000000000016);
-      runOnlyForDeploymentPostprocessing = 0;
-    };
-    A1000000000000000000000C = {
-      isa = PBXProject;
-      attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 1500; LastUpgradeCheck = 1500; TargetAttributes = {A10000000000000000000009 = {CreatedOnToolsVersion = 15.0;};};};
-      buildConfigurationList = A1000000000000000000000D;
-      compatibilityVersion = "Xcode 14.0";
-      developmentRegion = en;
-      hasScannedForEncodings = 0;
-      knownRegions = (en, Base);
-      mainGroup = A10000000000000000000006;
-      productRefGroup = A10000000000000000000008;
-      projectDirPath = "";
-      projectRoot = "";
-      targets = (A10000000000000000000009);
-    };
-    A1000000000000000000000E = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES; CLANG_WARN_BOOL_CONVERSION = YES; CLANG_WARN_COMMA = YES; CLANG_WARN_CONSTANT_CONVERSION = YES; CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES; CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR; CLANG_WARN_DOCUMENTATION_COMMENTS = YES; CLANG_WARN_EMPTY_BODY = YES; CLANG_WARN_ENUM_CONVERSION = YES; CLANG_WARN_INFINITE_RECURSION = YES; CLANG_WARN_INT_CONVERSION = YES; CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES; CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES; CLANG_WARN_OBJC_LITERAL_CONVERSION = YES; CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR; CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES; CLANG_WARN_RANGE_LOOP_ANALYSIS = YES; CLANG_WARN_STRICT_PROTOTYPES = YES; CLANG_WARN_SUSPICIOUS_MOVE = YES; CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE; CLANG_WARN_UNREACHABLE_CODE = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_STRICT_OBJC_MSGSEND = YES; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; GCC_DYNAMIC_NO_PIC = NO; GCC_NO_COMMON_BLOCKS = YES; GCC_OPTIMIZATION_LEVEL = 0; GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)"); GCC_WARN_64_TO_32_BIT_CONVERSION = YES; GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR; GCC_WARN_UNDECLARED_SELECTOR = YES; GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE; GCC_WARN_UNUSED_FUNCTION = YES; GCC_WARN_UNUSED_VARIABLE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE; MTL_FAST_MATH = YES; ONLY_ACTIVE_ARCH = YES; SDKROOT = iphoneos; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; SWIFT_OPTIMIZATION_LEVEL = "-Onone";}; name = Debug; };
-    A1000000000000000000000F = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; ENABLE_NS_ASSERTIONS = NO; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MTL_ENABLE_DEBUG_INFO = NO; MTL_FAST_MATH = YES; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; VALIDATE_PRODUCT = YES;}; name = Release; };
-    A10000000000000000000010 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 2; DEVELOPMENT_ASSET_PATHS = ""; DEVELOPMENT_TEAM = ""; ENABLE_PREVIEWS = YES; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_FILE = "Lexa/Info.plist"; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.peter.Lexa; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2";}; name = Debug; };
-    A10000000000000000000011 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 2; DEVELOPMENT_ASSET_PATHS = ""; DEVELOPMENT_TEAM = ""; ENABLE_PREVIEWS = YES; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_FILE = "Lexa/Info.plist"; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.peter.Lexa; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2";}; name = Release; };
-    A1000000000000000000000D = {isa = XCConfigurationList; buildConfigurations = (A1000000000000000000000E, A1000000000000000000000F); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-    A1000000000000000000000A = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000010, A10000000000000000000011); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-  };
-  rootObject = A1000000000000000000000C;
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2237DC95D990F8EC557819E6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00295A9585C92EEE954B2A8D /* HomeView.swift */; };
+		25034A7DE447A5A783D8ECA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872FA54A473372A152C0B709 /* Assets.xcassets */; };
+		3388123CF848BBBC2DE6D940 /* LexaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C881FBD6183190A96D4CB75 /* LexaApp.swift */; };
+		45BEF9F7675DB05E095D41AA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660FF034832FEF5F7BD0B847 /* Store.swift */; };
+		6823DA4FA8A8D02763BF013E /* awl_academic.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BDC83E19F9279E974AF1E6A /* awl_academic.json */; };
+		7CC83E8A6C5A91FFFC74EE3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDD0E3F05411EC60233BEA /* ContentView.swift */; };
+		88F29EA72B9B3461FB0E7B3A /* voa_core.json in Resources */ = {isa = PBXBuildFile; fileRef = 53C0744BFE717C566662A5B5 /* voa_core.json */; };
+		8EB8C5F2478488E6ECC80244 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5619B18695BBABF6E794E1E /* BrowseView.swift */; };
+		C2922EE2A2FE20A9CDB82104 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6B613C2D731F479B1EFAE6 /* Models.swift */; };
+		CBF2C87967B8165D3304BC94 /* LexaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7E5F87602FB1C98388ECD2 /* LexaTests.swift */; };
+		CF43B77CC5FF5F0F7F3D86D5 /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE227056F010C0819821F9 /* StudyView.swift */; };
+		F212D3F9364015B75F22CB62 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738EF5DCE59CB15A7D99B40 /* SettingsView.swift */; };
+		F9593A19436D4CECBA3D2921 /* exam_plus.json in Resources */ = {isa = PBXBuildFile; fileRef = D433180BA06B9F030BE9DFD8 /* exam_plus.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09032478D3E1C82CEE4149B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32C72B3805FE85DD9A688A78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56295D77BC87351311147D98;
+			remoteInfo = Lexa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00295A9585C92EEE954B2A8D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		29CDD0E3F05411EC60233BEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2BDC83E19F9279E974AF1E6A /* awl_academic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = awl_academic.json; sourceTree = "<group>"; };
+		4507BE8F299EA289B997D0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		53C0744BFE717C566662A5B5 /* voa_core.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = voa_core.json; sourceTree = "<group>"; };
+		5FEE227056F010C0819821F9 /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
+		660FF034832FEF5F7BD0B847 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		7738EF5DCE59CB15A7D99B40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7A9A6AC479B8FDC9A49DC303 /* LexaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LexaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		872FA54A473372A152C0B709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C0FB104E5B9602A62217344 /* Lexa.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Lexa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C881FBD6183190A96D4CB75 /* LexaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexaApp.swift; sourceTree = "<group>"; };
+		BB6B613C2D731F479B1EFAE6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		D433180BA06B9F030BE9DFD8 /* exam_plus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exam_plus.json; sourceTree = "<group>"; };
+		E5619B18695BBABF6E794E1E /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		FB7E5F87602FB1C98388ECD2 /* LexaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexaTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		022E5C601ADC261F2B1AA4CB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E5619B18695BBABF6E794E1E /* BrowseView.swift */,
+				29CDD0E3F05411EC60233BEA /* ContentView.swift */,
+				00295A9585C92EEE954B2A8D /* HomeView.swift */,
+				4507BE8F299EA289B997D0BB /* Info.plist */,
+				9C881FBD6183190A96D4CB75 /* LexaApp.swift */,
+				BB6B613C2D731F479B1EFAE6 /* Models.swift */,
+				7738EF5DCE59CB15A7D99B40 /* SettingsView.swift */,
+				660FF034832FEF5F7BD0B847 /* Store.swift */,
+				5FEE227056F010C0819821F9 /* StudyView.swift */,
+				690604D57C54CE1D0D104F41 /* Resources */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4C87146AF496F74A0B6D78C2 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FB7E5F87602FB1C98388ECD2 /* LexaTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		55AF528F50ED75C36779513D = {
+			isa = PBXGroup;
+			children = (
+				022E5C601ADC261F2B1AA4CB /* Sources */,
+				4C87146AF496F74A0B6D78C2 /* Tests */,
+				7C40A23FD1EC189384830354 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		690604D57C54CE1D0D104F41 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				872FA54A473372A152C0B709 /* Assets.xcassets */,
+				2BDC83E19F9279E974AF1E6A /* awl_academic.json */,
+				D433180BA06B9F030BE9DFD8 /* exam_plus.json */,
+				53C0744BFE717C566662A5B5 /* voa_core.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7C40A23FD1EC189384830354 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C0FB104E5B9602A62217344 /* Lexa.app */,
+				7A9A6AC479B8FDC9A49DC303 /* LexaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56295D77BC87351311147D98 /* Lexa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95A0F0FB887A5AEF206218BB /* Build configuration list for PBXNativeTarget "Lexa" */;
+			buildPhases = (
+				2A22675734998C4F4CADFB76 /* Sources */,
+				9D5CDD477D1BC36F48C9CAD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lexa;
+			packageProductDependencies = (
+			);
+			productName = Lexa;
+			productReference = 9C0FB104E5B9602A62217344 /* Lexa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADDD2C6EA56D5FA4C4370E27 /* LexaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87F2559E732A435E0A04F820 /* Build configuration list for PBXNativeTarget "LexaTests" */;
+			buildPhases = (
+				A670FC0143D4842EE07175CF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA0B7DB2FDD585CC98262418 /* PBXTargetDependency */,
+			);
+			name = LexaTests;
+			packageProductDependencies = (
+			);
+			productName = LexaTests;
+			productReference = 7A9A6AC479B8FDC9A49DC303 /* LexaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32C72B3805FE85DD9A688A78 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					56295D77BC87351311147D98 = {
+						DevelopmentTeam = F883XBKWR3;
+						ProvisioningStyle = Automatic;
+					};
+					ADDD2C6EA56D5FA4C4370E27 = {
+						DevelopmentTeam = F883XBKWR3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6D9C765EA737C5F4B25E977D /* Build configuration list for PBXProject "Lexa" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 55AF528F50ED75C36779513D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7C40A23FD1EC189384830354 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56295D77BC87351311147D98 /* Lexa */,
+				ADDD2C6EA56D5FA4C4370E27 /* LexaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D5CDD477D1BC36F48C9CAD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25034A7DE447A5A783D8ECA9 /* Assets.xcassets in Resources */,
+				6823DA4FA8A8D02763BF013E /* awl_academic.json in Resources */,
+				F9593A19436D4CECBA3D2921 /* exam_plus.json in Resources */,
+				88F29EA72B9B3461FB0E7B3A /* voa_core.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A22675734998C4F4CADFB76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EB8C5F2478488E6ECC80244 /* BrowseView.swift in Sources */,
+				7CC83E8A6C5A91FFFC74EE3D /* ContentView.swift in Sources */,
+				2237DC95D990F8EC557819E6 /* HomeView.swift in Sources */,
+				3388123CF848BBBC2DE6D940 /* LexaApp.swift in Sources */,
+				C2922EE2A2FE20A9CDB82104 /* Models.swift in Sources */,
+				F212D3F9364015B75F22CB62 /* SettingsView.swift in Sources */,
+				45BEF9F7675DB05E095D41AA /* Store.swift in Sources */,
+				CF43B77CC5FF5F0F7F3D86D5 /* StudyView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A670FC0143D4842EE07175CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBF2C87967B8165D3304BC94 /* LexaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA0B7DB2FDD585CC98262418 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56295D77BC87351311147D98 /* Lexa */;
+			targetProxy = 09032478D3E1C82CEE4149B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		14368AEFCC5336601A192DFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F883XBKWR3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "拾词 Lexa - 背单词";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peter.Lexa;
+				PRODUCT_NAME = Lexa;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		64E39A25751AD1238FF82557 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = F883XBKWR3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		69454CC1BCF3A0C5520634A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peter.Lexa.unittests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lexa.app/Lexa";
+			};
+			name = Debug;
+		};
+		A466452305675CA1DDE669C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F883XBKWR3;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "拾词 Lexa - 背单词";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peter.Lexa;
+				PRODUCT_NAME = Lexa;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DA4FD3F2BC8354BC7CFF345F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = F883XBKWR3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FA9EE973A6A8215430164460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peter.Lexa.unittests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lexa.app/Lexa";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D9C765EA737C5F4B25E977D /* Build configuration list for PBXProject "Lexa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA4FD3F2BC8354BC7CFF345F /* Debug */,
+				64E39A25751AD1238FF82557 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		87F2559E732A435E0A04F820 /* Build configuration list for PBXNativeTarget "LexaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69454CC1BCF3A0C5520634A2 /* Debug */,
+				FA9EE973A6A8215430164460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		95A0F0FB887A5AEF206218BB /* Build configuration list for PBXNativeTarget "Lexa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14368AEFCC5336601A192DFA /* Debug */,
+				A466452305675CA1DDE669C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32C72B3805FE85DD9A688A78 /* Project object */;
 }

@@ -1,0 +1,58 @@
+# Copy this file to your product repo at .github/workflows/testflight-publish.yml
+name: TestFlight Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'TestFlight mode'
+        required: true
+        type: choice
+        options:
+          - internal
+          - external
+      groups:
+        description: 'Beta group names (comma-separated, optional — overrides manifest)'
+        required: false
+        type: string
+      build_number:
+        description: 'Specific build number (optional, default: latest VALID)'
+        required: false
+        type: string
+      skip_submit:
+        description: 'Skip Beta Review submission (external only)'
+        type: boolean
+        default: false
+
+jobs:
+  publish:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Obelisk CLI
+        run: npm install -g obelisk-cli
+
+      - name: Decode API Key
+        run: echo "${{ secrets.APPSTORE_API_KEY_BASE64 }}" | base64 --decode > AuthKey.p8
+
+      - name: Push to TestFlight
+        env:
+          OBELISK_ASC_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
+          OBELISK_ASC_ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID }}
+        run: |
+          obelisk tf:${{ inputs.mode }} \
+            --manifest obelisk/manifest.json \
+            --key AuthKey.p8 \
+            ${{ inputs.groups != '' && format('--groups "{0}"', inputs.groups) || '' }} \
+            ${{ inputs.build_number != '' && format('--build-number {0}', inputs.build_number) || '' }} \
+            ${{ inputs.skip_submit && '--skip-submit' || '' }}
+
+      - name: Cleanup
+        if: always()
+        run: rm -f AuthKey.p8

@@ -86,7 +86,7 @@ struct WordRow: View {
         switch progress {
         case nil:
             chip("新", color: .gray)
-        case .some(let p) where p.box >= 4:
+        case .some(let prog) where prog.box >= 4:
             chip("已掌握", color: .green)
         case .some:
             chip("学习中", color: Theme.accent)
@@ -180,13 +180,13 @@ struct WordDetailView: View {
 
     @ViewBuilder
     private var progressSection: some View {
-        if let p = store.progress[word.id] {
+        if let prog = store.progress[word.id] {
             section("学习记录") {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("已学 \(p.seen) 次 · 认对 \(p.correct) 次 · 当前第 \(p.box + 1) 阶")
+                    Text("已学 \(prog.seen) 次 · 认对 \(prog.correct) 次 · 当前第 \(prog.box + 1) 阶")
                         .font(.subheadline)
-                    if p.due > Date().timeIntervalSince1970 {
-                        Text("下次复习：\(Date(timeIntervalSince1970: p.due).formatted(date: .abbreviated, time: .shortened))")
+                    if prog.due > Date().timeIntervalSince1970 {
+                        Text("下次复习：\(Date(timeIntervalSince1970: prog.due).formatted(date: .abbreviated, time: .shortened))")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
