@@ -38,6 +38,15 @@ build_vocab.py — 为 iOS 背单词 App (lexa) 生成 3 个词书 JSON。
      集合中的词，按 frq 降序（0/缺失靠后，稳定排序）取前 1200 个。产出 exam_plus.json。
   清洗规则（全词书通用）：word 小写、按首次出现去重；丢弃含空格或以非字母开头的
   word；丢弃 zh 为空的词条；phonetic/pos 空串转 null；examples 一律 []。
+  中文释义降噪（2026-10-15 加，详见 clean_zh/POS_OVERRIDES）：ECDICT translation 混有
+  专业词典的领域义项（"[计] 累加器, 加法器…"），整行丢弃；行内短标签（[口] [棒球]）
+  剥掉标签保留释义；若某词条全部释义都是领域行则退化为仅剥标签（不丢词、不动 id，
+  以免打乱既有学习进度的 word id 映射）。
+
+用法：
+  python3 build_vocab.py                  # 完整重建（需要 stardict.db 等原始材料）
+  python3 build_vocab.py --clean-committed  # 只对已生成的三个 JSON 就地做降噪清洗
+                                           # （不依赖原始材料，规则与完整重建一致）
 
 输出：voa_core.json / awl_academic.json / exam_plus.json（UTF-8，结构一致）。
 """
@@ -193,6 +202,33 @@ def split_translation(text):
     return [p.strip() for p in parts if p.strip()]
 
 
+# 专业词典领域义项：行首（可带词性前缀）的短方括号标签，如 "art. [计] 累加器…"、
+# "[医] 胸廓"。这类行是 ECDICT 合并的专业词典内容，对学习者全是噪声。
+ZH_HEAD_TAG_RE = re.compile(r"^\s*(?:[a-z]{1,6}\.\s*)?\[[^\]]{1,6}\]")
+# 行内短标签（[口] [棒球] [航空]…）：前一个字符不是中文（避免误伤"面积[2]"之类），
+# 方括号内不超过 4 字符（避免误伤真正的括号补充说明）。
+ZH_INLINE_TAG_RE = re.compile(r"(?<![\u4e00-\u9fff])\[[^\]]{1,4}\]")
+# ECDICT 个别功能词的 pos 明显错位（全库仅这几个），显示在卡片上会误导 learners。
+POS_OVERRIDES = {"a": "art.", "the": "art.", "our": "pron."}
+
+
+def strip_inline_tags(line):
+    return re.sub(r"\s+", " ", ZH_INLINE_TAG_RE.sub("", line)).strip(" ;；")
+
+
+def clean_zh(lines):
+    """中文释义降噪：丢领域行、剥行内标签；全丢光时退化为剥标签保留。"""
+    kept = [l for l in lines if not ZH_HEAD_TAG_RE.match(l)]
+    kept = [c for l in kept if (c := strip_inline_tags(l))]
+    if not kept:
+        kept = [c for l in lines if (c := strip_inline_tags(l))]
+    return kept
+
+
+def clean_pos(word, pos):
+    return POS_OVERRIDES.get(word, pos)
+
+
 def clean_word(word):
     """统一小写；括号变体归一；含空格或非字母开头判为异常返回 None。"""
     w = WORD_CLEAN_RE.sub("", word.strip()).strip().lower()
@@ -281,22 +317,20 @@ def main():
 
     # 6) 组装词书
     def make_word(prefix, idx, word, rec, defs_en):
-        zh = split_translation(rec["translation"])
         return {
             "id": f"{prefix}-{idx}",
             "word": word,
             "phonetic": rec["phonetic"] if rec["phonetic"] else None,
-            "pos": rec["pos"] if rec["pos"] else None,
+            "pos": clean_pos(word, rec["pos"]) or None,
             "defsEn": defs_en,
-            "zh": zh,
+            "zh": clean_zh(split_translation(rec["translation"])),
             "examples": [],
         }
 
     def build_book(book_id, title, subtitle, prefix, items):
         words, dropped = [], 0
         for i, (word, rec, defs_en) in enumerate(items, 1):
-            zh = split_translation(rec["translation"])
-            if not zh:
+            if not split_translation(rec["translation"]):
                 dropped += 1
                 continue
             entry = make_word(prefix, len(words) + 1, word, rec, defs_en)
@@ -349,5 +383,32 @@ def main():
         log(f"[out] {path}  words={len(book['words'])}")
 
 
+# ------------------------------------------------------- 就地清洗已提交 JSON ----
+RESOURCES_DIR = os.path.join(HERE, "..", "Sources", "Resources")
+
+
+def clean_committed():
+    """对已生成的三个词书 JSON 就地应用 clean_zh/clean_pos（不依赖原始材料）。
+    只清洗字段内容，不增删词条、不改 id —— 用户学习进度按 word id 存，不能动。"""
+    for name in ("voa_core.json", "awl_academic.json", "exam_plus.json"):
+        path = os.path.join(RESOURCES_DIR, name)
+        with open(path, encoding="utf-8") as f:
+            book = json.load(f)
+        changed = 0
+        for w in book["words"]:
+            new_zh = clean_zh(w["zh"])
+            new_pos = clean_pos(w["word"], w["pos"] or "") or None
+            if new_zh != w["zh"] or new_pos != w["pos"]:
+                changed += 1
+            w["zh"], w["pos"] = new_zh, new_pos
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(book, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        log(f"[clean] {path}: {len(book['words'])} 词，清洗 {changed} 条")
+
+
 if __name__ == "__main__":
-    main()
+    if "--clean-committed" in sys.argv:
+        clean_committed()
+    else:
+        main()
