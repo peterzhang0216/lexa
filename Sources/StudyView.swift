@@ -7,8 +7,11 @@ struct StudyView: View {
     @State private var items: [SessionItem]
     @State private var index = 0
     @State private var revealed = ProcessInfo.processInfo.arguments.contains("--revealed")
-    @State private var newDone = 0
-    @State private var reviewDone = 0
+    @State private var newIDs = Set<String>()       // 完成页统计按词去重
+    @State private var reviewIDs = Set<String>()
+    @State private var requeuedIDs = Set<String>()  // 错词插回最多一次
+    @State private var rightCount = 0               // sensoryFeedback 触发器
+    @State private var wrongCount = 0
 
     // 答题会改变 Store，导致上层用新配额重建 session；这里只在进入时取一次，冻结牌组
     init(session: [SessionItem]) {
@@ -26,13 +29,27 @@ struct StudyView: View {
                 StudyCard(item: items[index], revealed: revealed) {
                     withAnimation(.snappy) { revealed = true }
                 }
+                .gesture(swipeGesture)
                 answerBar
             }
         }
         .background(Color(.secondarySystemBackground))
+        .sensoryFeedback(.success, trigger: rightCount)
+        .sensoryFeedback(.error, trigger: wrongCount)
         .task {
             await runDemoIfRequested()
         }
+    }
+
+    // 右滑=认识，左滑=不认识；仅在翻面后生效，与按钮行为一致
+    private var swipeGesture: some Gesture {
+        DragGesture(minimumDistance: 24)
+            .onEnded { value in
+                guard revealed else { return }
+                let t = value.translation
+                guard abs(t.width) > 60, abs(t.width) > abs(t.height) * 1.5 else { return }
+                answer(t.width > 0)
+            }
     }
 
     // 自动化验证用：--demo-answer 自动答 3 题（对、对、错），走完 record→持久化全链路
@@ -106,7 +123,17 @@ struct StudyView: View {
     private func answer(_ knew: Bool) {
         let item = items[index]
         store.record(item, knew: knew)
-        if item.isNew { newDone += 1 } else { reviewDone += 1 }
+        if item.isNew { newIDs.insert(item.word.id) } else { reviewIDs.insert(item.word.id) }
+        if knew {
+            rightCount += 1
+        } else {
+            wrongCount += 1
+            // 答错的词隔 3 张插回牌组再过一遍（每词限一次），当场巩固
+            if !requeuedIDs.contains(item.word.id) {
+                requeuedIDs.insert(item.word.id)
+                items.insert(item, at: min(index + 4, items.count))
+            }
+        }
         withAnimation(.snappy) {
             index += 1
             revealed = false
@@ -121,7 +148,7 @@ struct StudyView: View {
             Text(doneSomething ? "今日学习完成" : "暂时没有要学的词")
                 .font(.title2.bold())
             if doneSomething {
-                Text("新词 \(newDone) 个 · 复习 \(reviewDone) 个")
+                Text("新词 \(newIDs.count) 个 · 复习 \(reviewIDs.count) 个")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             } else {

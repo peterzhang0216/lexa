@@ -52,6 +52,15 @@ struct BrowseView: View {
                 }
                 .buttonStyle(.plain)
             }
+            if query.isEmpty, filteredWords.count >= 200 {
+                Section {
+                    Text("已显示前 200 词（本书共 \(store.words(bookID: selectedBookID).count) 词）\n用搜索框查找全部单词")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity)
+                        .multilineTextAlignment(.center)
+                }
+            }
         }
         .listStyle(.plain)
     }

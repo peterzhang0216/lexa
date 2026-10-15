@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var store: Store
     @State private var launch: StudyLaunch?
+    @State private var nothingToDo = false
 
     struct StudyLaunch: Identifiable {
         let id = UUID()
@@ -17,7 +18,7 @@ struct HomeView: View {
                     startCard
                     ForEach(store.books) { book in
                         BookCard(book: book, learned: learnedCount(in: book)) {
-                            launch = StudyLaunch(bookID: book.id)
+                            tryLaunch(bookID: book.id)
                         }
                     }
                     statsRow
@@ -32,6 +33,26 @@ struct HomeView: View {
         .fullScreenCover(item: $launch) { item in
             StudyView(session: store.buildSession(bookID: item.bookID))
                 .environmentObject(store)
+        }
+        .task {
+            // 自动化验证用：--auto-study 启动即进入学习页（配合 --demo-answer/--revealed）
+            if ProcessInfo.processInfo.arguments.contains("--auto-study") {
+                tryLaunch(bookID: nil)
+            }
+        }
+        .alert("现在没有要学的词", isPresented: $nothingToDo) {
+            Button("好", role: .cancel) {}
+        } message: {
+            Text("这里的内容都学过了，新词额度今天也已用完。复习词到点后会自动出现在这里。")
+        }
+    }
+
+    // 配额到点与否随时在变，入口处即时判断，避免点进全屏才看到空态
+    private func tryLaunch(bookID: String?) {
+        if store.dueCount(bookID: bookID) == 0 && store.newCount(bookID: bookID) == 0 {
+            nothingToDo = true
+        } else {
+            launch = StudyLaunch(bookID: bookID)
         }
     }
 
@@ -55,7 +76,7 @@ struct HomeView: View {
 
     private var startCard: some View {
         Button {
-            launch = StudyLaunch(bookID: nil)
+            tryLaunch(bookID: nil)
         } label: {
             VStack(spacing: 8) {
                 Text("开始学习")
