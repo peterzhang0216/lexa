@@ -20,4 +20,18 @@ final class LexaTests: XCTestCase {
         XCTAssertEqual(word.word, "test")
         XCTAssertEqual(word.zh, ["试验"])
     }
+
+    func testExampleHighlightMatchesInflectionsOnly() {
+        // 词形变化命中：大小写、复数、时态、双写辅音
+        XCTAssertTrue(WordHighlight.isMatch("accept,", for: "accept"))
+        XCTAssertTrue(WordHighlight.isMatch("Accepts", for: "accept"))
+        XCTAssertTrue(WordHighlight.isMatch("studies", for: "study"))
+        XCTAssertTrue(WordHighlight.isMatch("stopped", for: "stop"))
+        XCTAssertTrue(WordHighlight.isMatch("running", for: "run"))
+        // 前缀相同不算命中，避免 catalog 被当作 cat 高亮
+        XCTAssertFalse(WordHighlight.isMatch("catalog", for: "cat"))
+        XCTAssertFalse(WordHighlight.isMatch("accepted", for: "accepts"))
+        // 纯标点不命中
+        XCTAssertFalse(WordHighlight.isMatch("—", for: "run"))
+    }
 }

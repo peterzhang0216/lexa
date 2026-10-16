@@ -288,6 +288,23 @@ private struct StudyCard: View {
                         }
                     }
                 }
+                if let forms = item.word.forms, !forms.isEmpty {
+                    HStack(spacing: 6) {
+                        ForEach(forms, id: \.self) { f in
+                            chip(f, color: .teal)
+                        }
+                    }
+                }
+                if !item.word.examples.isEmpty {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("例句")
+                            .font(.caption.bold())
+                            .foregroundStyle(.secondary)
+                        ForEach(item.word.examples, id: \.self) { sentence in
+                            ExampleRow(sentence: sentence, word: item.word.word)
+                        }
+                    }
+                }
             }
             .padding(22)
             .frame(maxWidth: .infinity, alignment: .leading)

@@ -9,14 +9,9 @@ struct BrowseView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                Picker("词书", selection: $selectedBookID) {
-                    ForEach(store.books) { book in
-                        Text(book.title).tag(book.id)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding(.horizontal, 16)
-                .padding(.bottom, 8)
+                bookPicker
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 8)
                 wordList
             }
             .navigationTitle("词库")
@@ -30,6 +25,21 @@ struct BrowseView: View {
                 WordDetailView(word: word)
                     .environmentObject(store)
             }
+        }
+    }
+
+    // 6 本书塞不进 segmented，>4 本时降级为下拉菜单
+    @ViewBuilder
+    private var bookPicker: some View {
+        let picker = Picker("词书", selection: $selectedBookID) {
+            ForEach(store.books) { book in
+                Text(book.title).tag(book.id)
+            }
+        }
+        if store.books.count > 4 {
+            picker.pickerStyle(.menu)
+        } else {
+            picker.pickerStyle(.segmented)
         }
     }
 
@@ -146,6 +156,19 @@ struct WordDetailView: View {
                         ForEach(word.zh, id: \.self) { line in
                             Text(line)
                                 .font(.body)
+                        }
+                    }
+                }
+                if let forms = word.forms, !forms.isEmpty {
+                    section("词形变化") {
+                        Text(forms.joined(separator: " · "))
+                            .font(.subheadline)
+                    }
+                }
+                if !word.examples.isEmpty {
+                    section("例句") {
+                        ForEach(word.examples, id: \.self) { sentence in
+                            ExampleRow(sentence: sentence, word: word.word)
                         }
                     }
                 }

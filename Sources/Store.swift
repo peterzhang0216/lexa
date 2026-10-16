@@ -86,10 +86,11 @@ final class Store: ObservableObject {
         saveState()
     }
 
-    func speak(_ text: String) {
+    func speak(_ text: String, rate: Float = 0.45) {
+        speech.stopSpeaking(at: .immediate)   // 重复点击重新起读，不排队堆积
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        utterance.rate = 0.45
+        utterance.rate = rate
         speech.speak(utterance)
     }
 
@@ -141,7 +142,9 @@ final class Store: ObservableObject {
     }
 
     private func loadBooks() {
-        for name in ["voa_core", "awl_academic", "exam_plus"] {
+        // 顺序即展示顺序：基础 → 四六级/考研 → 学术 → 进阶
+        for name in ["voa_core", "cet4_core", "cet6_core", "ky_core",
+                     "awl_academic", "exam_plus"] {
             guard let url = Bundle.main.url(forResource: name, withExtension: "json"),
                   let data = try? Data(contentsOf: url),
                   let book = try? JSONDecoder().decode(WordBook.self, from: data) else { continue }
