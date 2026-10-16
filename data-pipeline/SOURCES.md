@@ -67,6 +67,10 @@
 - **例句选取**（`--examples-with-zh`，或 `--add-examples` 仅补缺）：流式扫描 sentences.csv 的英语句（eng），选 6-14 词、纯常规标点的短句；按"句中词汇被三本词书+常用功能词覆盖的比例"打分（越接近学习者词汇量越好），同分偏好 9 词左右；目标词匹配含基础屈折形式（+s/+es/+ed/+ing/y→ies 等，与 app 端 `WordHighlight.inflectedForms` 一致）；**同一句子全库只配给一个词**；每个词最多 2 条；a/the/of 等纯功能词不配例句。
 - **中文翻译**（`--add-example-zh`）：links.csv 连边取英文句对应的 cmn（普通话）译文，一句多译取最短（直译通常最短）；译文统一 **繁→简**（macOS ICU `Traditional-Simplified`，经 swift 批转，非 macOS 保留原文）。`--examples-with-zh` 会以"带中文翻译的句子优先"的打分重建全部例句（约 37% 例句带译文，其余为纯英文回退），单独跑 `--add-example-zh` 只补平行 `exampleZh` 数组、不改例句本身。
 - **兜底**：语料包缺失或处理失败时对应字段留空，词书生成/清洗不受影响。
+- **真人音频评估（2026-10-16，未实施）**：`sentences_with_audio.csv`（本目录，
+  已 gitignore）显示我们的 13,601 条例句中 4,092 条（30%）有真人录音，但按
+  ~25KB/句估算打包要增重 ~100MB（当前 app 仅数 MB）——不可打包；若要做需
+  On-Demand Resources 按需下载（独立特性，未排期）。单词/例句朗读现用系统 TTS。
 
 ## 5. build_vocab.py 处理逻辑摘要
 

@@ -110,6 +110,45 @@ struct ExampleRow: View {
     }
 }
 
+/// 学习热力图的网格数学：最近 weeksCount 个自然周（每周从周一开始），
+/// 列为周、旧→新，行为周一…周日。纯计算，可单测。
+struct StudyHeatmap {
+    let weeks: [[Date]]
+    let today: Date
+
+    init(weeksCount: Int = 12, now: Date = Date(), calendar cal: Calendar = .current) {
+        today = cal.startOfDay(for: now)
+        let weekday = cal.component(.weekday, from: today)   // 1=周日 … 7=周六
+        let mondayOffset = (weekday + 5) % 7                 // 周一 → 0
+        let thisMonday = cal.date(byAdding: .day, value: -mondayOffset, to: today)!
+        let firstMonday = cal.date(byAdding: .day, value: -(weeksCount - 1) * 7, to: thisMonday)!
+        var out: [[Date]] = []
+        var cursor = firstMonday
+        while cursor <= thisMonday {
+            out.append((0..<7).compactMap { cal.date(byAdding: .day, value: $0, to: cursor) })
+            cursor = cal.date(byAdding: .day, value: 7, to: cursor)!
+        }
+        weeks = out
+    }
+
+    var allDays: [Date] { weeks.flatMap { $0 } }
+
+    func count(for date: Date, in dailyCounts: [String: Int]) -> Int {
+        dailyCounts[Store.dayString(date)] ?? 0
+    }
+
+    /// 颜色强度分档：0 / 1-4 / 5-14 / 15-29 / 30+
+    static func intensity(for count: Int) -> Double {
+        switch count {
+        case ..<1: return 0
+        case 1...4: return 0.25
+        case 5...14: return 0.5
+        case 15...29: return 0.75
+        default: return 1
+        }
+    }
+}
+
 /// 生词本星标按钮：学习卡与词条详情页共用
 struct FavoriteButton: View {
     @EnvironmentObject var store: Store

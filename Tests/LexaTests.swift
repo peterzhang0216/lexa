@@ -74,4 +74,32 @@ final class LexaTests: XCTestCase {
         // 全局口径只算真实词书，聚合不双计
         XCTAssertEqual(store.words(bookID: nil).count, store.totalWords)
     }
+
+    func testStudyHeatmapGridMath() {
+        let cal = Calendar.current
+        let now = Date()
+        let model = StudyHeatmap(weeksCount: 12, now: now, calendar: cal)
+        XCTAssertEqual(model.weeks.count, 12)
+        XCTAssertTrue(model.weeks.allSatisfy { $0.count == 7 })
+        // 每周从周一开始
+        XCTAssertTrue(model.weeks.allSatisfy { cal.component(.weekday, from: $0[0]) == 2 })
+        // 84 天互不重复、含今天、首日不晚于 11 周前
+        let all = model.allDays
+        XCTAssertEqual(Set(all.map { cal.startOfDay(for: $0) }).count, 84)
+        XCTAssertTrue(all.contains { cal.isDate($0, inSameDayAs: now) })
+        XCTAssertLessThanOrEqual(model.weeks[0][0], now)
+    }
+
+    @MainActor
+    func testRecordAccumulatesDailyCount() {
+        let store = Store()
+        let todayKey = Store.dayString(Date())
+        let todayBefore = store.dailyCounts[todayKey] ?? 0
+        let totalBefore = store.totalAnswered
+        let word = Word(id: "test-rec-1", word: "record", phonetic: nil, pos: nil,
+                        defsEn: [], zh: [], forms: nil, examples: [], exampleZh: nil)
+        store.record(SessionItem(word: word, isNew: true), knew: true)
+        XCTAssertEqual(store.dailyCounts[todayKey], todayBefore + 1)
+        XCTAssertEqual(store.totalAnswered, totalBefore + 1)
+    }
 }

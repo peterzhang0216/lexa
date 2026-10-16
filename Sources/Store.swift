@@ -1,15 +1,56 @@
 import SwiftUI
 import AVFoundation
+import UserNotifications
+
+/// 每日学习提醒的本地通知调度（ identifier 固定，重复调度即覆盖）
+enum ReminderScheduler {
+    static let identifier = "daily-reminder"
+
+    static func requestAuthorization() async -> Bool {
+        do {
+            return try await UNUserNotificationCenter.current()
+                .requestAuthorization(options: [.alert, .sound, .badge])
+        } catch {
+            return false
+        }
+    }
+
+    static func schedule(hour: Int, minute: Int, todoCount: Int) throws {
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: [identifier])
+        let content = UNMutableNotificationContent()
+        content.title = "今天的单词在等你"
+        content.body = todoCount > 0
+            ? "还有 \(todoCount) 个词要学，几分钟就能完成。"
+            : "花几分钟巩固一下吧。"
+        content.sound = .default
+        var comps = DateComponents()
+        comps.hour = hour
+        comps.minute = minute
+        let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: true)
+        try center.add(UNNotificationRequest(identifier: identifier, content: content, trigger: trigger))
+    }
+
+    static func cancel() {
+        UNUserNotificationCenter.current()
+            .removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
+}
 
 @MainActor
 final class Store: ObservableObject {
     @Published private(set) var books: [WordBook] = []
     @Published private(set) var progress: [String: WordProgress] = [:]
     @Published private(set) var favorites: [String] = []   // 生词本，按收藏顺序
-    @Published var dailyNewGoal = 10 { didSet { saveState() } }
-    @Published var autoSpeak = true { didSet { saveState() } }
+    @Published var dailyNewGoal = 10 { didSet { if oldValue != dailyNewGoal { saveState() } } }
+    @Published var autoSpeak = true { didSet { if oldValue != autoSpeak { saveState() } } }
+    @Published var reminderEnabled = false { didSet { if oldValue != reminderEnabled { saveState(); syncReminder() } } }
+    @Published var reminderHour = 20 { didSet { if oldValue != reminderHour { saveState(); syncReminder() } } }
+    @Published var reminderMinute = 0 { didSet { if oldValue != reminderMinute { saveState(); syncReminder() } } }
+    @Published private(set) var reminderError: String?
     @Published private(set) var streakDays = 0
     @Published private(set) var lastStudyDay: String?
+    @Published private(set) var dailyCounts: [String: Int] = [:]   // "yyyy-MM-dd" -> 当日答题数
     @Published private(set) var storageError: String?
 
     // Leitner 盒子间隔：第 0 盒 10 分钟后重现，之后按天翻倍
@@ -132,6 +173,21 @@ final class Store: ObservableObject {
         saveState()
     }
 
+    /// 按当前设置重建每日提醒（文案里的待学词数取当下值，前台激活时也刷新）
+    func syncReminder() {
+        guard reminderEnabled else {
+            ReminderScheduler.cancel()
+            return
+        }
+        do {
+            try ReminderScheduler.schedule(hour: reminderHour, minute: reminderMinute,
+                                           todoCount: dueCount(bookID: nil) + newCount(bookID: nil))
+            reminderError = nil
+        } catch {
+            reminderError = "提醒设置失败：\(error.localizedDescription)"
+        }
+    }
+
     func record(_ item: SessionItem, knew: Bool) {
         let now = Date()
         var prog = progress[item.word.id] ?? WordProgress(box: 0, due: 0, seen: 0, correct: 0, introducedDay: nil)
@@ -145,6 +201,7 @@ final class Store: ObservableObject {
         prog.due = now.timeIntervalSince1970 + Self.boxIntervals[prog.box]
         if prog.introducedDay == nil { prog.introducedDay = Self.dayString(now) }
         progress[item.word.id] = prog
+        dailyCounts[Self.dayString(now), default: 0] += 1
         touchStreak(now: now)
         saveState()
     }
@@ -161,7 +218,12 @@ final class Store: ObservableObject {
         progress = [:]
         streakDays = 0
         lastStudyDay = nil
+        dailyCounts = [:]
         saveState()
+    }
+
+    var totalAnswered: Int {
+        dailyCounts.values.reduce(0, +)
     }
 
     private func touchStreak(now: Date) {
@@ -180,13 +242,21 @@ final class Store: ObservableObject {
         var autoSpeak: Bool
         var streakDays: Int
         var lastStudyDay: String?
-        var favorites: [String]?   // 可选：旧版 state.json 无此键
+        var favorites: [String]?          // 以下均可选：旧版 state.json 无对应键
+        var reminderEnabled: Bool?
+        var reminderHour: Int?
+        var reminderMinute: Int?
+        var dailyCounts: [String: Int]?
     }
 
     private func saveState() {
         let state = StateFile(progress: progress, dailyNewGoal: dailyNewGoal, autoSpeak: autoSpeak,
                               streakDays: streakDays, lastStudyDay: lastStudyDay,
-                              favorites: favorites)
+                              favorites: favorites,
+                              reminderEnabled: reminderEnabled,
+                              reminderHour: reminderHour,
+                              reminderMinute: reminderMinute,
+                              dailyCounts: dailyCounts)
         do {
             let data = try JSONEncoder().encode(state)
             try data.write(to: stateURL, options: .atomic)
@@ -205,6 +275,10 @@ final class Store: ObservableObject {
         streakDays = state.streakDays
         lastStudyDay = state.lastStudyDay
         favorites = state.favorites ?? []
+        reminderEnabled = state.reminderEnabled ?? false
+        reminderHour = state.reminderHour ?? 20
+        reminderMinute = state.reminderMinute ?? 0
+        dailyCounts = state.dailyCounts ?? [:]
     }
 
     private func loadBooks() {
@@ -218,7 +292,7 @@ final class Store: ObservableObject {
         }
     }
 
-    static func dayString(_ date: Date) -> String {
+    nonisolated static func dayString(_ date: Date) -> String {
         let c = Calendar.current.dateComponents([.year, .month, .day], from: date)
         return String(format: "%04d-%02d-%02d", c.year ?? 0, c.month ?? 0, c.day ?? 0)
     }
