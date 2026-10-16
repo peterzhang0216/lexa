@@ -215,6 +215,7 @@ private struct StudyCard: View {
                 }
                 .buttonStyle(.plain)
                 .foregroundStyle(Theme.accent)
+                FavoriteButton(wordID: item.word.id)
             }
             Spacer()
             Text(item.word.word)
@@ -257,6 +258,7 @@ private struct StudyCard: View {
                     }
                     .buttonStyle(.plain)
                     .foregroundStyle(Theme.accent)
+                    FavoriteButton(wordID: item.word.id)
                 }
                 if let pos = item.word.pos, !pos.isEmpty {
                     chip(pos, color: .gray)
@@ -300,8 +302,10 @@ private struct StudyCard: View {
                         Text("例句")
                             .font(.caption.bold())
                             .foregroundStyle(.secondary)
-                        ForEach(item.word.examples, id: \.self) { sentence in
-                            ExampleRow(sentence: sentence, word: item.word.word)
+                        ForEach(item.word.examples.indices, id: \.self) { i in
+                            ExampleRow(sentence: item.word.examples[i],
+                                       word: item.word.word,
+                                       translation: item.word.exampleTranslation(i))
                         }
                     }
                 }

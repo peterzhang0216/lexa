@@ -5,17 +5,31 @@ struct BrowseView: View {
     @State private var selectedBookID = ""
     @State private var query = ""
     @State private var detail: Word?
+    @State private var favoritesOnly = false
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                bookPicker
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 8)
+                if !favoritesOnly {
+                    bookPicker
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 8)
+                }
                 wordList
             }
             .navigationTitle("词库")
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "搜索英文单词")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        favoritesOnly.toggle()
+                    } label: {
+                        Image(systemName: favoritesOnly ? "star.fill" : "star")
+                            .foregroundStyle(favoritesOnly ? .yellow : Theme.accent)
+                    }
+                    .disabled(store.favorites.isEmpty && !favoritesOnly)
+                }
+            }
             .onAppear {
                 if selectedBookID.isEmpty {
                     selectedBookID = store.books.first?.id ?? ""
@@ -45,7 +59,9 @@ struct BrowseView: View {
 
     // 只渲染前 200 条，避免空搜索时超长列表掉帧
     private var filteredWords: [Word] {
-        let words = store.words(bookID: selectedBookID)
+        let words = favoritesOnly
+            ? store.favoriteWords
+            : store.words(bookID: selectedBookID)
         if query.isEmpty {
             return Array(words.prefix(200))
         }
@@ -167,8 +183,10 @@ struct WordDetailView: View {
                 }
                 if !word.examples.isEmpty {
                     section("例句") {
-                        ForEach(word.examples, id: \.self) { sentence in
-                            ExampleRow(sentence: sentence, word: word.word)
+                        ForEach(word.examples.indices, id: \.self) { i in
+                            ExampleRow(sentence: word.examples[i],
+                                       word: word.word,
+                                       translation: word.exampleTranslation(i))
                         }
                     }
                 }
@@ -203,6 +221,7 @@ struct WordDetailView: View {
             }
             .buttonStyle(.borderedProminent)
             .tint(Theme.accent)
+            FavoriteButton(wordID: word.id)
         }
     }
 

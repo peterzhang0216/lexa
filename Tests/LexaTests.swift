@@ -34,4 +34,28 @@ final class LexaTests: XCTestCase {
         // 纯标点不命中
         XCTAssertFalse(WordHighlight.isMatch("—", for: "run"))
     }
+
+    @MainActor
+    func testFavoritesRoundTripAndOldStateMigration() throws {
+        // 往返：toggle 落盘后新 Store 实例能读回，再 toggle 移除
+        let store = Store()
+        let id = "test-fav-\(UUID().uuidString)"
+        store.toggleFavorite(id)
+        XCTAssertTrue(store.isFavorite(id))
+        let reloaded = Store()
+        XCTAssertTrue(reloaded.isFavorite(id), "收藏必须持久化到 state.json")
+        reloaded.toggleFavorite(id)
+        XCTAssertFalse(reloaded.isFavorite(id))
+
+        // 旧版 state.json（无 favorites 键）解码后收藏为空数组而非失败
+        struct LegacyState: Codable {
+            var progress: [String: WordProgress] = [:]
+            var dailyNewGoal = 10
+            var autoSpeak = true
+            var streakDays = 0
+            var lastStudyDay: String?
+        }
+        let data = try JSONEncoder().encode(LegacyState())
+        XCTAssertNoThrow(try JSONDecoder().decode(Store.StateFile.self, from: data))
+    }
 }

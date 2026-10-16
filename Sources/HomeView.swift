@@ -8,6 +8,7 @@ struct HomeView: View {
     struct StudyLaunch: Identifiable {
         let id = UUID()
         let bookID: String?
+        var favoritesOnly = false
     }
 
     var body: some View {
@@ -16,6 +17,9 @@ struct HomeView: View {
                 VStack(spacing: 16) {
                     greeting
                     startCard
+                    if !store.favorites.isEmpty {
+                        favoritesCard
+                    }
                     ForEach(store.books) { book in
                         BookCard(book: book, learned: learnedCount(in: book)) {
                             tryLaunch(bookID: book.id)
@@ -31,7 +35,9 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.large)
         }
         .fullScreenCover(item: $launch) { item in
-            StudyView(session: store.buildSession(bookID: item.bookID))
+            StudyView(session: item.favoritesOnly
+                      ? store.buildFavoritesSession()
+                      : store.buildSession(bookID: item.bookID))
                 .environmentObject(store)
         }
         .task {
@@ -104,6 +110,35 @@ struct HomeView: View {
             statTile("已掌握", store.masteredCount, "checkmark.seal")
             statTile("待复习", store.dueCount(bookID: nil), "clock.arrow.circlepath")
         }
+    }
+
+    private var favoritesCard: some View {
+        Button {
+            launch = StudyLaunch(bookID: nil, favoritesOnly: true)
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "star.fill")
+                    .font(.title3)
+                    .foregroundStyle(.yellow)
+                    .frame(width: 48, height: 48)
+                    .background(Circle().fill(Color(.systemBackground)))
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("生词本")
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+                    Text("\(store.favorites.count) 词 · 待复习 \(store.favoriteDueCount)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.footnote)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(14)
+            .background(RoundedRectangle(cornerRadius: 20).fill(Color(.systemBackground)))
+        }
+        .buttonStyle(.plain)
     }
 
     private func statTile(_ title: String, _ value: Int, _ icon: String) -> some View {

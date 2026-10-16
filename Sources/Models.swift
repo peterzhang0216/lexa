@@ -7,8 +7,14 @@ struct Word: Codable, Identifiable, Hashable {
     let pos: String?
     let defsEn: [String]
     let zh: [String]
-    let forms: [String]?      // 词形变化，如 "复数 studies"；旧数据无此字段为 nil
+    let forms: [String]?        // 词形变化，如 "复数 studies"；旧数据无此字段为 nil
     let examples: [String]
+    let exampleZh: [String]?    // 与 examples 平行的中文翻译；旧数据无此字段为 nil
+
+    func exampleTranslation(_ index: Int) -> String? {
+        guard let zs = exampleZh, index < zs.count, !zs[index].isEmpty else { return nil }
+        return zs[index]
+    }
 }
 
 struct WordBook: Codable, Identifiable, Hashable {
@@ -73,24 +79,49 @@ enum WordHighlight {
     }
 }
 
-/// 例句行：点按朗读整句（略慢于单词朗读，适合跟读），小喇叭提示可点
+/// 例句行：点按朗读整句（略慢于单词朗读，适合跟读），小喇叭提示可点；有译文时附灰字
 struct ExampleRow: View {
     @EnvironmentObject var store: Store
     let sentence: String
     let word: String
+    var translation: String?
 
     var body: some View {
         Button {
             store.speak(sentence, rate: 0.4)
         } label: {
-            HStack(alignment: .firstTextBaseline, spacing: 6) {
-                WordHighlight.text(sentence, highlighting: word)
-                    .font(.subheadline)
-                    .multilineTextAlignment(.leading)
-                Image(systemName: "speaker.wave.1.fill")
-                    .font(.caption2)
-                    .foregroundStyle(.tertiary)
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    WordHighlight.text(sentence, highlighting: word)
+                        .font(.subheadline)
+                        .multilineTextAlignment(.leading)
+                    Image(systemName: "speaker.wave.1.fill")
+                        .font(.caption2)
+                        .foregroundStyle(.tertiary)
+                }
+                if let translation {
+                    Text(translation)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+/// 生词本星标按钮：学习卡与词条详情页共用
+struct FavoriteButton: View {
+    @EnvironmentObject var store: Store
+    let wordID: String
+
+    var body: some View {
+        Button {
+            store.toggleFavorite(wordID)
+        } label: {
+            Image(systemName: store.isFavorite(wordID) ? "star.fill" : "star")
+                .font(.title3)
+                .foregroundStyle(store.isFavorite(wordID) ? .yellow : Theme.accent)
         }
         .buttonStyle(.plain)
     }

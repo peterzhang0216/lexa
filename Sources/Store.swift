@@ -5,6 +5,7 @@ import AVFoundation
 final class Store: ObservableObject {
     @Published private(set) var books: [WordBook] = []
     @Published private(set) var progress: [String: WordProgress] = [:]
+    @Published private(set) var favorites: [String] = []   // 生词本，按收藏顺序
     @Published var dailyNewGoal = 10 { didSet { saveState() } }
     @Published var autoSpeak = true { didSet { saveState() } }
     @Published private(set) var streakDays = 0
@@ -69,6 +70,44 @@ final class Store: ObservableObject {
         return reviews + fresh
     }
 
+    // MARK: - 生词本
+
+    var favoriteWords: [Word] {
+        let byID = Dictionary(uniqueKeysWithValues: books.flatMap(\.words).map { ($0.id, $0) })
+        return favorites.compactMap { byID[$0] }
+    }
+
+    var favoriteDueCount: Int {
+        let nowStamp = Date().timeIntervalSince1970
+        return favorites.filter { id in
+            guard let p = progress[id] else { return false }
+            return p.due <= nowStamp
+        }.count
+    }
+
+    /// 生词练习：到期的优先，其余按收藏顺序补足 20 个，全部按复习计（不占新词额度）
+    func buildFavoritesSession() -> [SessionItem] {
+        let words = favoriteWords
+        let nowStamp = Date().timeIntervalSince1970
+        let dueIDs = Set(words.filter { progress[$0.id]?.due ?? .infinity <= nowStamp }.map(\.id))
+        let due = words.filter { dueIDs.contains($0.id) }
+        let rest = words.filter { !dueIDs.contains($0.id) }
+        return (due + Array(rest.prefix(20))).map { SessionItem(word: $0, isNew: false) }
+    }
+
+    func isFavorite(_ wordID: String) -> Bool {
+        favorites.contains(wordID)
+    }
+
+    func toggleFavorite(_ wordID: String) {
+        if let i = favorites.firstIndex(of: wordID) {
+            favorites.remove(at: i)
+        } else {
+            favorites.append(wordID)
+        }
+        saveState()
+    }
+
     func record(_ item: SessionItem, knew: Bool) {
         let now = Date()
         var prog = progress[item.word.id] ?? WordProgress(box: 0, due: 0, seen: 0, correct: 0, introducedDay: nil)
@@ -111,17 +150,19 @@ final class Store: ObservableObject {
 
     // MARK: - Persistence
 
-    private struct StateFile: Codable {
+    struct StateFile: Codable {   // internal：单测验证旧版 state.json 迁移
         var progress: [String: WordProgress]
         var dailyNewGoal: Int
         var autoSpeak: Bool
         var streakDays: Int
         var lastStudyDay: String?
+        var favorites: [String]?   // 可选：旧版 state.json 无此键
     }
 
     private func saveState() {
         let state = StateFile(progress: progress, dailyNewGoal: dailyNewGoal, autoSpeak: autoSpeak,
-                              streakDays: streakDays, lastStudyDay: lastStudyDay)
+                              streakDays: streakDays, lastStudyDay: lastStudyDay,
+                              favorites: favorites)
         do {
             let data = try JSONEncoder().encode(state)
             try data.write(to: stateURL, options: .atomic)
@@ -139,6 +180,7 @@ final class Store: ObservableObject {
         autoSpeak = state.autoSpeak
         streakDays = state.streakDays
         lastStudyDay = state.lastStudyDay
+        favorites = state.favorites ?? []
     }
 
     private func loadBooks() {
