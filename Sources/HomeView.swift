@@ -20,7 +20,7 @@ struct HomeView: View {
                     if !store.favorites.isEmpty {
                         favoritesCard
                     }
-                    ForEach(store.books) { book in
+                    ForEach(store.displayBooks) { book in
                         BookCard(book: book, learned: learnedCount(in: book)) {
                             tryLaunch(bookID: book.id)
                         }

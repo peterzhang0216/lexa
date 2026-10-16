@@ -46,11 +46,11 @@ struct BrowseView: View {
     @ViewBuilder
     private var bookPicker: some View {
         let picker = Picker("词书", selection: $selectedBookID) {
-            ForEach(store.books) { book in
+            ForEach(store.displayBooks) { book in
                 Text(book.title).tag(book.id)
             }
         }
-        if store.books.count > 4 {
+        if store.displayBooks.count > 4 {
             picker.pickerStyle(.menu)
         } else {
             picker.pickerStyle(.segmented)

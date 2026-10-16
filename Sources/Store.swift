@@ -38,7 +38,31 @@ final class Store: ObservableObject {
     var learnedCount: Int { progress.values.filter { $0.seen > 0 }.count }
     var masteredCount: Int { progress.values.filter { $0.box >= Self.masteredBox }.count }
 
+    // 考试合集：四六级 + 考研的聚合视图。词条直接引用原词书的 entry（id 不变），
+    // 进度天然互通；只存在于展示层，不计入全局统计（words(bookID: nil) 不含它）。
+    static let examCollectionID = "exam_all"
+    private static let examCollectionSourceIDs: Set<String> = ["cet4", "cet6", "ky"]
+
+    private var examCollectionWords: [Word] {
+        books.filter { Self.examCollectionSourceIDs.contains($0.id) }.flatMap(\.words)
+    }
+
+    var displayBooks: [WordBook] {
+        guard !examCollectionWords.isEmpty,
+              let kyIdx = books.firstIndex(where: { $0.id == "ky" }) else { return books }
+        let collection = WordBook(
+            id: Self.examCollectionID, title: "考试合集",
+            subtitle: "四六级 + 考研词表合并视图，进度与单本词书互通",
+            words: examCollectionWords)
+        var out = books
+        out.insert(collection, at: kyIdx + 1)
+        return out
+    }
+
     func words(bookID: String?) -> [Word] {
+        if bookID == Self.examCollectionID {
+            return examCollectionWords
+        }
         guard let id = bookID, let book = books.first(where: { $0.id == id }) else {
             return books.flatMap(\.words)
         }

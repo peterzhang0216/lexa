@@ -58,4 +58,20 @@ final class LexaTests: XCTestCase {
         let data = try JSONEncoder().encode(LegacyState())
         XCTAssertNoThrow(try JSONDecoder().decode(Store.StateFile.self, from: data))
     }
+
+    @MainActor
+    func testExamCollectionSharesEntriesWithoutDoubleCount() throws {
+        let store = Store()
+        // 展示层多一本聚合书，词条引用原词书 entry
+        let display = store.displayBooks
+        XCTAssertEqual(display.count, store.books.count + 1)
+        let collection = try XCTUnwrap(display.first { $0.id == Store.examCollectionID })
+        let sourceIDs = Set(["cet4", "cet6", "ky"])
+        let sources = store.books.filter { sourceIDs.contains($0.id) }.flatMap(\.words)
+        XCTAssertEqual(collection.words.count, sources.count)
+        XCTAssertEqual(Set(collection.words.map(\.id)), Set(sources.map(\.id)))
+        XCTAssertEqual(store.words(bookID: Store.examCollectionID).count, sources.count)
+        // 全局口径只算真实词书，聚合不双计
+        XCTAssertEqual(store.words(bookID: nil).count, store.totalWords)
+    }
 }
