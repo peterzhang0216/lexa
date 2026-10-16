@@ -286,24 +286,26 @@ def main():
     exam_pool = OrderedDict()     # word -> row（保持扫描顺序，排序时稳定）
     con = open_ecdict()
     cur = con.execute(
-        "SELECT word, phonetic, definition, translation, pos, tag, frq "
+        "SELECT word, phonetic, definition, translation, pos, tag, frq, exchange "
         "FROM stardict")
     n = 0
-    for word, phonetic, definition, translation, pos, tag, frq in cur:
+    for word, phonetic, definition, translation, pos, tag, frq, exchange in cur:
         n += 1
         w = clean_word(word or "")
         if not w:
             continue
         if w not in ec and (w in voa_set or w in awl_set):
             ec[w] = {"phonetic": phonetic or "", "definition": definition or "",
-                     "translation": translation or "", "pos": pos or ""}
+                     "translation": translation or "", "pos": pos or "",
+                     "exchange": exchange or ""}
         if w not in exam_pool and w not in voa_set and w not in awl_set:
             tags = (tag or "").split()
             if any(t in ("toefl", "ielts", "gre") for t in tags):
                 exam_pool[w] = {"phonetic": phonetic or "",
                                 "definition": definition or "",
                                 "translation": translation or "",
-                                "pos": pos or "", "frq": frq or 0}
+                                "pos": pos or "", "frq": frq or 0,
+                                "exchange": exchange or ""}
     con.close()
     log(f"[ecdict] 扫描 {n} 行，匹配 voa/awl 词条 {len(ec)} 个，exam 候选 {len(exam_pool)} 个")
 
@@ -324,6 +326,7 @@ def main():
             "pos": clean_pos(word, rec["pos"]) or None,
             "defsEn": defs_en,
             "zh": clean_zh(split_translation(rec["translation"])),
+            "forms": forms_from_exchange(rec.get("exchange", ""), word),
             "examples": [],
         }
 
@@ -373,6 +376,21 @@ def main():
         "按 ECDICT 考试标签(toefl/ielts/gre)与词频精选，适合四六级以上进阶",
         "exam", exam_items)
 
+    # 7) 例句（Tatoeba；原始包缺失时跳过，词书照常生成）
+    try:
+        ex_map = build_examples({b["id"]: [w["word"] for w in b["words"]]
+                                 for b in (book_voa, book_awl, book_exam)})
+        for book in (book_voa, book_awl, book_exam):
+            for w in book["words"]:
+                w["examples"] = ex_map.get(w["word"], [])
+    except SystemExit:
+        raise
+    except Exception as e:                      # 例句是增强项，不阻断生成
+        log(f"[warn] 例句生成失败（{e}），examples 置空")
+        for book in (book_voa, book_awl, book_exam):
+            for w in book["words"]:
+                w["examples"] = []
+
     for name, book in (("voa_core.json", book_voa),
                        ("awl_academic.json", book_awl),
                        ("exam_plus.json", book_exam)):
@@ -385,13 +403,298 @@ def main():
 
 # ------------------------------------------------------- 就地清洗已提交 JSON ----
 RESOURCES_DIR = os.path.join(HERE, "..", "Sources", "Resources")
+TATOEBA_TARBALL = os.path.join(HERE, "tatoeba_sentences.tar.bz2")   # sentences.csv 容器
+
+# 词书文件清单（顺序 = app 内展示顺序）
+BOOK_FILES = ("voa_core.json", "cet4_core.json", "cet6_core.json",
+              "ky_core.json", "awl_academic.json", "exam_plus.json")
+
+# 考试词书规格（ECDICT tag 整词匹配；顺序即去重优先级，每词只进最先命中的书）
+EXAM_BOOK_SPECS = [
+    ("cet4", "四级核心词汇",
+     "ECDICT cet4 标签词表，去除已收录词后按词频排序，覆盖四级高频",
+     ("cet4",)),
+    ("cet6", "六级核心词汇",
+     "ECDICT cet6 标签词表，去除四级及已收录词后按词频排序",
+     ("cet6",)),
+    ("ky", "考研核心词汇",
+     "ECDICT 考研(ky)标签词表，去重后精选（多数考研词已在四六级/VOA 中）",
+     ("ky",)),
+]
+
+# ---------------------------------------------------------------- 例句（Tatoeba）----
+# 纯功能词配例句没有学习价值（"a / the / of" 的句子不说明任何用法），直接跳过。
+SKIP_EXAMPLES = {
+    "a", "an", "the", "of", "to", "and", "or", "is", "are", "was", "were", "be",
+    "been", "being", "am", "it", "its", "this", "that", "as", "at", "by", "in",
+    "into", "on", "with", "but", "not", "no", "so", "if", "than", "then", "there",
+    "he", "she", "they", "we", "you", "i", "his", "her", "their", "our", "my",
+    "me", "him", "them", "us", "up", "down", "out", "off", "over", "under",
+    "again", "once", "who", "which", "what", "when", "where", "why", "how",
+}
+# 常用功能/高频词（词书集合之外补齐），用于"句子用词是否简单"打分
+COMMON_EXTRA = {
+    "the", "be", "to", "of", "and", "a", "in", "that", "have", "i", "it", "for",
+    "not", "on", "with", "he", "as", "you", "do", "at", "this", "but", "his",
+    "by", "from", "they", "we", "say", "her", "she", "or", "an", "will", "my",
+    "one", "all", "would", "there", "their", "what", "so", "up", "out", "if",
+    "about", "who", "get", "which", "go", "me", "when", "make", "can", "like",
+    "time", "no", "just", "him", "know", "take", "people", "into", "year",
+    "your", "good", "some", "could", "them", "see", "other", "than", "then",
+    "now", "look", "only", "come", "its", "over", "think", "also", "back",
+    "after", "use", "two", "how", "our", "work", "first", "well", "way", "even",
+    "new", "want", "because", "any", "these", "give", "day", "most", "us",
+    "man", "woman", "mr", "mrs", "said", "says", "told", "asked",
+}
+
+TOKEN_RE = re.compile(r"[a-z]+")
+SENT_OK_RE = re.compile(r"^[A-Za-z][A-Za-z ,.!?'\";:-]*$")
+
+
+def inflected_forms(word):
+    """与 app 端 WordHighlight.inflectedForms 保持一致的基础屈折表。"""
+    forms = {word, word + "s", word + "es", word + "d", word + "ed", word + "ing"}
+    stem = word[:-1] if word.endswith("y") else word
+    forms |= {stem + "ies", stem + "ied"}
+    if word and word[-1] not in "aeiou":
+        forms |= {word + word[-1] + "ing", word + word[-1] + "ed"}
+    return forms
+
+
+def build_examples(words_by_book, preserve=None):
+    """流式扫描 Tatoeba sentences.csv，给每个词挑最多 2 条例句。
+
+    挑选规则：6-14 词的纯文本短句；按"句中词汇被词书+常用词覆盖的比例"打分
+    （越高越接近学习者水平），同分偏好 9 词左右；同一句子全库只配给一个词。
+    preserve: word -> [sentence, ...] 已有例句的词跳过重配，其句子也不再
+    分给别的词（增量填充，保证幂等）。返回 word -> [sentence, ...]。
+    """
+    import tarfile
+    if not os.path.exists(TATOEBA_TARBALL):
+        log("[error] 找不到 tatoeba_sentences.tar.bz2（抓取命令见 SOURCES.md）")
+        sys.exit(1)
+
+    preserve = preserve or {}
+    all_words = sorted(({w for ws in words_by_book.values() for w in ws}
+                        - SKIP_EXAMPLES) - set(preserve))
+    form_index = {}                       # 屈折形式 -> 目标词
+    for w in all_words:
+        for f in inflected_forms(w):
+            form_index.setdefault(f, w)
+    common = (set(all_words)
+              | {w for ws in words_by_book.values() for w in ws}
+              | set(preserve)
+              | COMMON_EXTRA)
+
+    candidates = {w: [] for w in all_words}
+    used_texts = {s for ss in preserve.values() for s in ss}
+    scanned = 0
+    with tarfile.open(TATOEBA_TARBALL, "r:bz2") as tar:
+        member = next(m for m in tar.getmembers() if m.name.endswith(".csv"))
+        import io
+        with io.TextIOWrapper(tar.extractfile(member), encoding="utf-8") as f:
+            for line in f:
+                scanned += 1
+                parts = line.rstrip("\n").split("\t")
+                if len(parts) != 3 or parts[1] != "eng":
+                    continue
+                sid, text = parts[0], parts[2]
+                toks = text.split(" ")
+                if not 6 <= len(toks) <= 14:
+                    continue
+                if not SENT_OK_RE.match(text) or any(c.isdigit() for c in text):
+                    continue
+                if text in used_texts:
+                    continue
+                lower = TOKEN_RE.findall(text.lower())
+                if not lower:
+                    continue
+                hit = None
+                for t in lower:
+                    hit = form_index.get(t)
+                    if hit:
+                        break
+                if not hit:
+                    continue
+                coverage = sum(1 for t in lower if t in common) / len(lower)
+                # 累计超过上限后只在分数更好时替换，内存有界
+                cands = candidates[hit]
+                key = (-coverage, abs(len(lower) - 9), sid)
+                if len(cands) < 50:
+                    cands.append((key, sid, text))
+                else:
+                    worst = max(range(len(cands)), key=lambda i: cands[i][0])
+                    if key < cands[worst][0]:
+                        cands[worst] = (key, sid, text)
+                if scanned % 2_000_000 == 0:
+                    log(f"[tatoeba] 已扫描 {scanned} 行…")
+
+    examples, used = dict(preserve), set()
+    for w in sorted(all_words, key=lambda x: len(candidates[x])):
+        picked = []
+        for key, sid, text in sorted(candidates[w]):
+            if sid in used:
+                continue
+            used.add(sid)
+            picked.append(text)
+            if len(picked) == 2:
+                break
+        if picked:
+            examples[w] = picked
+    fresh = len(examples) - len(preserve)
+    log(f"[tatoeba] 扫描 {scanned} 行，目标 {len(all_words)} 词"
+        + (f"（保留已有 {len(preserve)}）" if preserve else "")
+        + f"，新配 {fresh} 个（配到率 {fresh*100//max(1,len(all_words))}%）")
+    return examples
+
+
+def apply_examples(examples):
+    """把例句写进三个已提交词书 JSON（--add-examples 模式，不动其他字段）。"""
+    for name in BOOK_FILES:
+        path = os.path.join(RESOURCES_DIR, name)
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as f:
+            book = json.load(f)
+        filled = sum(1 for w in book["words"] if (ex := examples.get(w["word"])))
+        for w in book["words"]:
+            w["examples"] = examples.get(w["word"], [])
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(book, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        log(f"[examples] {name}: {filled}/{len(book['words'])} 词配到例句")
+
+
+# ---------------------------------------------------------------- 词形变化（ECDICT）----
+# ECDICT exchange 字段：逗号分隔的 "code:form"，code 见 ECDICT README。
+# 只保留对学习者有意义的屈折，按固定顺序输出，最多 6 项；与原形相同的丢弃。
+EXCHANGE_LABELS = [                      # (code, 中文标签)，展示顺序
+    ("s", "复数"),
+    ("3", "三单"),
+    ("p", "过去式"),
+    ("d", "过去分词"),
+    ("i", "现在分词"),
+    ("r", "比较级"),
+    ("t", "最高级"),
+]
+
+
+def forms_from_exchange(exchange, word):
+    if not exchange:
+        return []
+    table = {}
+    for part in exchange.split("/"):     # ECDICT exchange 用 "/" 分隔，如 "d:done/p:did"
+        code, _, form = part.partition(":")
+        code, form = code.strip(), form.strip().lower()
+        if form and form != word:
+            table.setdefault(code, form)
+    out = []
+    for code, label in EXCHANGE_LABELS:
+        if code in table:
+            out.append(f"{label} {table[code]}")
+        if len(out) == 6:
+            break
+    return out
+
+
+def build_forms(words_by_book):
+    """单遍扫描 stardict.db 的 exchange 列，返回 word -> ["复数 studies", ...]。"""
+    all_words = {w for ws in words_by_book.values() for w in ws}
+    forms = {}
+    con = open_ecdict()
+    cur = con.execute("SELECT word, exchange FROM stardict")
+    n = 0
+    for word, exchange in cur:
+        n += 1
+        w = clean_word(word or "")
+        if not w or w in forms or w not in all_words:
+            continue
+        fs = forms_from_exchange(exchange or "", w)
+        if fs:
+            forms[w] = fs
+    con.close()
+    log(f"[forms] 扫描 {n} 行，{len(forms)}/{len(all_words)} 个词配到词形变化")
+    return forms
+
+
+def apply_forms(forms):
+    """把词形变化写进三个已提交词书 JSON（--add-forms 模式，不动其他字段）。"""
+    for name in BOOK_FILES:
+        path = os.path.join(RESOURCES_DIR, name)
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as f:
+            book = json.load(f)
+        filled = sum(1 for w in book["words"] if (fs := forms.get(w["word"])))
+        for w in book["words"]:
+            w["forms"] = forms.get(w["word"], [])
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(book, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        log(f"[forms] {name}: {filled}/{len(book['words'])} 词有词形变化")
+
+
+# ------------------------------------------------------- 四六级/考研词书构建 ----
+def build_exam_like_books(existing_words):
+    """从 stardict.db 生成 cet4/cet6/ky 三本词书（每词只进最先命中的书，
+    排除 existing_words；frq 升序=最常用在前）。返回 {文件名: book_dict}。"""
+    tag_sets = {bid: set(tags) for bid, _, _, tags in EXAM_BOOK_SPECS}
+    pools = {bid: {} for bid in tag_sets}
+    claimed = set(existing_words)
+    con = open_ecdict()
+    cur = con.execute(
+        "SELECT word, phonetic, definition, translation, pos, tag, frq, exchange "
+        "FROM stardict")
+    n = 0
+    for word, phonetic, definition, translation, pos, tag, frq, exchange in cur:
+        n += 1
+        w = clean_word(word or "")
+        if not w or w in claimed:
+            continue
+        for bid, _, _, _ in EXAM_BOOK_SPECS:
+            if any(t in tag_sets[bid] for t in (tag or "").split()):
+                pools[bid][w] = {"phonetic": phonetic or "",
+                                 "definition": definition or "",
+                                 "translation": translation or "",
+                                 "pos": pos or "", "frq": frq or 0,
+                                 "exchange": exchange or ""}
+                claimed.add(w)
+                break
+    con.close()
+
+    books = {}
+    for bid, title, subtitle, _ in EXAM_BOOK_SPECS:
+        items = sorted(pools[bid].items(),
+                       key=lambda kv: (0, kv[1]["frq"]) if kv[1]["frq"] > 0
+                       else (1, 0))
+        words = []
+        for w, rec in items:
+            if not split_translation(rec["translation"]):
+                continue
+            words.append({
+                "id": f"{bid}-{len(words) + 1}",
+                "word": w,
+                "phonetic": rec["phonetic"] if rec["phonetic"] else None,
+                "pos": clean_pos(w, rec["pos"]) or None,
+                "defsEn": split_semicolon(rec["definition"]),
+                "zh": clean_zh(split_translation(rec["translation"])),
+                "forms": forms_from_exchange(rec["exchange"], w),
+                "examples": [],
+            })
+        books[f"{bid}_core.json"] = {"id": bid, "title": title,
+                                     "subtitle": subtitle, "words": words}
+        log(f"[{bid}] 收词 {len(words)} 条")
+    log(f"[exam-like] 扫描 {n} 行")
+    return books
 
 
 def clean_committed():
     """对已生成的三个词书 JSON 就地应用 clean_zh/clean_pos（不依赖原始材料）。
     只清洗字段内容，不增删词条、不改 id —— 用户学习进度按 word id 存，不能动。"""
-    for name in ("voa_core.json", "awl_academic.json", "exam_plus.json"):
+    for name in BOOK_FILES:
         path = os.path.join(RESOURCES_DIR, name)
+        if not os.path.exists(path):
+            continue
         with open(path, encoding="utf-8") as f:
             book = json.load(f)
         changed = 0
@@ -407,8 +710,49 @@ def clean_committed():
         log(f"[clean] {path}: {len(book['words'])} 词，清洗 {changed} 条")
 
 
+def load_committed_books():
+    """读取 Resources 下已存在的词书（容忍缺文件），返回 {文件名: book}。"""
+    books = {}
+    for name in BOOK_FILES:
+        path = os.path.join(RESOURCES_DIR, name)
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                books[name] = json.load(f)
+    return books
+
+
+def words_by_book_of(books):
+    return {b["id"]: [w["word"] for w in b["words"]] for b in books.values()}
+
+
 if __name__ == "__main__":
     if "--clean-committed" in sys.argv:
         clean_committed()
+    elif "--build-exam-books" in sys.argv:
+        existing = load_committed_books()
+        existing_words = {w for b in existing.values() for w in
+                          (x["word"] for x in b["words"])}
+        new_books = build_exam_like_books(existing_words)
+        for name, book in new_books.items():
+            path = os.path.join(RESOURCES_DIR, name)
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(book, f, ensure_ascii=False, indent=2)
+                f.write("\n")
+            log(f"[out] {path} words={len(book['words'])}")
+        # 例句增量填充：已有词的例句原样保留，只为新词匹配
+        all_books = load_committed_books()
+        preserve = {w["word"]: w["examples"] for b in all_books.values()
+                    for w in b["words"] if w.get("examples")}
+        apply_examples(build_examples(words_by_book_of(all_books),
+                                      preserve=preserve))
+    elif "--add-examples" in sys.argv:
+        books = load_committed_books()
+        preserve = {w["word"]: w["examples"] for b in books.values()
+                    for w in b["words"] if w.get("examples")}
+        apply_examples(build_examples(words_by_book_of(books),
+                                      preserve=preserve))
+    elif "--add-forms" in sys.argv:
+        books = load_committed_books()
+        apply_forms(build_forms(words_by_book_of(books)))
     else:
         main()

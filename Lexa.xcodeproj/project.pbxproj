@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		2237DC95D990F8EC557819E6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00295A9585C92EEE954B2A8D /* HomeView.swift */; };
 		25034A7DE447A5A783D8ECA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872FA54A473372A152C0B709 /* Assets.xcassets */; };
+		2F417E1F202988268761DD43 /* cet6_core.json in Resources */ = {isa = PBXBuildFile; fileRef = 26EC4883F8056260571AFD24 /* cet6_core.json */; };
 		3388123CF848BBBC2DE6D940 /* LexaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C881FBD6183190A96D4CB75 /* LexaApp.swift */; };
 		45BEF9F7675DB05E095D41AA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660FF034832FEF5F7BD0B847 /* Store.swift */; };
+		5E864A9BF943756B7FBA93E7 /* ky_core.json in Resources */ = {isa = PBXBuildFile; fileRef = F8FDABF7473572A723A1DF6A /* ky_core.json */; };
 		6823DA4FA8A8D02763BF013E /* awl_academic.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BDC83E19F9279E974AF1E6A /* awl_academic.json */; };
 		7CC83E8A6C5A91FFFC74EE3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDD0E3F05411EC60233BEA /* ContentView.swift */; };
 		88F29EA72B9B3461FB0E7B3A /* voa_core.json in Resources */ = {isa = PBXBuildFile; fileRef = 53C0744BFE717C566662A5B5 /* voa_core.json */; };
 		8EB8C5F2478488E6ECC80244 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5619B18695BBABF6E794E1E /* BrowseView.swift */; };
+		A16D1C35108891CFB55E91BE /* cet4_core.json in Resources */ = {isa = PBXBuildFile; fileRef = 044EE5D99EDF673EFC64CA97 /* cet4_core.json */; };
 		C2922EE2A2FE20A9CDB82104 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6B613C2D731F479B1EFAE6 /* Models.swift */; };
 		CBF2C87967B8165D3304BC94 /* LexaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7E5F87602FB1C98388ECD2 /* LexaTests.swift */; };
 		CF43B77CC5FF5F0F7F3D86D5 /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE227056F010C0819821F9 /* StudyView.swift */; };
@@ -34,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		00295A9585C92EEE954B2A8D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		044EE5D99EDF673EFC64CA97 /* cet4_core.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cet4_core.json; sourceTree = "<group>"; };
+		26EC4883F8056260571AFD24 /* cet6_core.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cet6_core.json; sourceTree = "<group>"; };
 		29CDD0E3F05411EC60233BEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2BDC83E19F9279E974AF1E6A /* awl_academic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = awl_academic.json; sourceTree = "<group>"; };
 		4507BE8F299EA289B997D0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +53,7 @@
 		BB6B613C2D731F479B1EFAE6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D433180BA06B9F030BE9DFD8 /* exam_plus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exam_plus.json; sourceTree = "<group>"; };
 		E5619B18695BBABF6E794E1E /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		F8FDABF7473572A723A1DF6A /* ky_core.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ky_core.json; sourceTree = "<group>"; };
 		FB7E5F87602FB1C98388ECD2 /* LexaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexaTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +97,10 @@
 			children = (
 				872FA54A473372A152C0B709 /* Assets.xcassets */,
 				2BDC83E19F9279E974AF1E6A /* awl_academic.json */,
+				044EE5D99EDF673EFC64CA97 /* cet4_core.json */,
+				26EC4883F8056260571AFD24 /* cet6_core.json */,
 				D433180BA06B9F030BE9DFD8 /* exam_plus.json */,
+				F8FDABF7473572A723A1DF6A /* ky_core.json */,
 				53C0744BFE717C566662A5B5 /* voa_core.json */,
 			);
 			path = Resources;
@@ -191,7 +200,10 @@
 			files = (
 				25034A7DE447A5A783D8ECA9 /* Assets.xcassets in Resources */,
 				6823DA4FA8A8D02763BF013E /* awl_academic.json in Resources */,
+				A16D1C35108891CFB55E91BE /* cet4_core.json in Resources */,
+				2F417E1F202988268761DD43 /* cet6_core.json in Resources */,
 				F9593A19436D4CECBA3D2921 /* exam_plus.json in Resources */,
+				5E864A9BF943756B7FBA93E7 /* ky_core.json in Resources */,
 				88F29EA72B9B3461FB0E7B3A /* voa_core.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

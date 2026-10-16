@@ -1,0 +1,6604 @@
+{
+  "id": "ky",
+  "title": "考研核心词汇",
+  "subtitle": "ECDICT 考研(ky)标签词表，去重后精选（多数考研词已在四六级/VOA 中）",
+  "words": [
+    {
+      "id": "ky-1",
+      "word": "prosecutor",
+      "phonetic": "'prɒsikju:tә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a government official who conducts criminal prosecutions on behalf of the state"
+      ],
+      "zh": [
+        "n. 实行者, 告发者, 公诉人"
+      ],
+      "forms": [
+        "复数 prosecutors"
+      ],
+      "examples": [
+        "The prosecutor asked me a leading question.",
+        "A new prosecutor took over the case from the previous one."
+      ]
+    },
+    {
+      "id": "ky-2",
+      "word": "pickup",
+      "phonetic": "'pikʌp",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a light truck with an open body and low sides and a tailboard",
+        "n. a warrant to take someone into custody",
+        "n. anything with restorative powers"
+      ],
+      "zh": [
+        "n. 拾起, 加速, 刺激, 猎物的收集, 好转, 恢复健康, 搭车者, 兴奋剂, 电视摄像"
+      ],
+      "forms": [
+        "复数 pickups"
+      ],
+      "examples": [
+        "My bad but could you pickup the car key.",
+        "That would make a great pickup line."
+      ]
+    },
+    {
+      "id": "ky-3",
+      "word": "doorway",
+      "phonetic": "'dɒ:wei",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the entrance (the space in a wall) through which you enter or leave a room or building",
+        "the space that a door can close"
+      ],
+      "zh": [
+        "n. 门口, 途径"
+      ],
+      "forms": [
+        "复数 doorways"
+      ],
+      "examples": [
+        "A small amount of light came in from the doorway.",
+        "Her sudden appearance in the doorway surprised us."
+      ]
+    },
+    {
+      "id": "ky-4",
+      "word": "metaphor",
+      "phonetic": "'metәfә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a figure of speech in which an expression is used to refer to something that it does not literally denote in order to suggest a similarity"
+      ],
+      "zh": [
+        "n. 隐喻"
+      ],
+      "forms": [
+        "复数 metaphors"
+      ],
+      "examples": [
+        "Find a metaphor in this text.",
+        "Will Interlingua remain just a fantasy metaphor for you?"
+      ]
+    },
+    {
+      "id": "ky-5",
+      "word": "judicial",
+      "phonetic": "dʒu:'diʃәl",
+      "pos": "j:100",
+      "defsEn": [
+        "s. decreed by or proceeding from a court of justice",
+        "a. belonging or appropriate to the office of a judge",
+        "a. relating to the administration of justice or the function of a judge"
+      ],
+      "zh": [
+        "a. 法庭的, 公正的, 审判上的, 司法的"
+      ],
+      "forms": [],
+      "examples": [
+        "The dictator called his plan a \"judicial overhaul.\"",
+        "The judicial system is slow and complicated."
+      ]
+    },
+    {
+      "id": "ky-6",
+      "word": "deadline",
+      "phonetic": "'dedlain",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the point in time at which something must be completed"
+      ],
+      "zh": [
+        "n. 最后期限, 截止期限"
+      ],
+      "forms": [
+        "复数 deadlines"
+      ],
+      "examples": [
+        "How can I make the deadline for this document?",
+        "You must prepare that work before the deadline."
+      ]
+    },
+    {
+      "id": "ky-7",
+      "word": "bloody",
+      "phonetic": "'blʌdi",
+      "pos": "r:17/j:79/v:4",
+      "defsEn": [
+        "v. cover with blood",
+        "a. having or covered with or accompanied by blood",
+        "r. extremely"
+      ],
+      "zh": [
+        "a. 血腥的, 嗜杀的, 有血的"
+      ],
+      "forms": [
+        "三单 bloodies",
+        "过去式 bloodied",
+        "过去分词 bloodied",
+        "现在分词 bloodying",
+        "比较级 bloodier",
+        "最高级 bloodiest"
+      ],
+      "examples": [
+        "The police detective found a bloody knife.",
+        "If you drink and drive, you're a bloody idiot."
+      ]
+    },
+    {
+      "id": "ky-8",
+      "word": "jewelry",
+      "phonetic": "'dʒu:әlri",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an adornment (as a bracelet or ring or necklace) made of precious metals and set with gems (or imitation gems)"
+      ],
+      "zh": [
+        "n. 珠宝, 珠宝类"
+      ],
+      "forms": [
+        "复数 jewelries"
+      ],
+      "examples": [
+        "I want to report the loss of some jewelry.",
+        "I put my jewelry in the safe."
+      ]
+    },
+    {
+      "id": "ky-9",
+      "word": "secular",
+      "phonetic": "'sekjulә",
+      "pos": "j:100",
+      "defsEn": [
+        "a. of or relating to the doctrine that rejects religion and religious considerations",
+        "a. of or relating to clergy not bound by monastic vows"
+      ],
+      "zh": [
+        "n. 修道院外的教士",
+        "a. 世俗的, 现世的, 长期的"
+      ],
+      "forms": [
+        "复数 seculars"
+      ],
+      "examples": [
+        "I live in a secular country.",
+        "Do most Algerians want their country to be a secular state?"
+      ]
+    },
+    {
+      "id": "ky-10",
+      "word": "cab",
+      "phonetic": "kæb",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a compartment at the front of a motor vehicle or locomotive where driver sits",
+        "n. small two-wheeled horse-drawn carriage",
+        "with two seats and a folding hood",
+        "n. a car driven by a person whose job is to take passengers where they want to go in exchange for money"
+      ],
+      "zh": [
+        "n. 出租车, 出租汽车, 出租马车",
+        "vi. 乘出租马车(或汽车)"
+      ],
+      "forms": [
+        "复数 cabs",
+        "三单 cabs",
+        "过去式 cabbed",
+        "过去分词 cabbed",
+        "现在分词 cabbing"
+      ],
+      "examples": [
+        "Would you like me to get you a cab?",
+        "Would you like me to call you a cab?"
+      ]
+    },
+    {
+      "id": "ky-11",
+      "word": "conspiracy",
+      "phonetic": "kәn'spirәsi",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a secret agreement between two or more people to perform an unlawful act",
+        "n. a plot to carry out some harmful or illegal act (especially a political plot)",
+        "n. a group of conspirators banded together to achieve some harmful or illegal purpose"
+      ],
+      "zh": [
+        "n. 同谋, 阴谋, 阴谋集团"
+      ],
+      "forms": [
+        "复数 conspiracies"
+      ],
+      "examples": [
+        "I want to see what's at the bottom of this conspiracy of silence.",
+        "I wish this conspiracy you speak of was real, just to spite you."
+      ]
+    },
+    {
+      "id": "ky-12",
+      "word": "skull",
+      "phonetic": "skʌl",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the bony skeleton of the head of vertebrates"
+      ],
+      "zh": [
+        "n. 头盖骨, 头脑, 好学生"
+      ],
+      "forms": [
+        "复数 skulls"
+      ],
+      "examples": [
+        "He only took off his skull cap in the shower.",
+        "She keeps a human skull on her desk."
+      ]
+    },
+    {
+      "id": "ky-13",
+      "word": "syndrome",
+      "phonetic": "'sindrәum",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a complex of concurrent things",
+        "n. a pattern of symptoms indicative of some disease"
+      ],
+      "zh": [
+        "n. 并发症状, 综合征, 同时存在的事物"
+      ],
+      "forms": [
+        "复数 syndromes"
+      ],
+      "examples": [
+        "I have a child with Down syndrome.",
+        "All of her children were born with Down syndrome."
+      ]
+    },
+    {
+      "id": "ky-14",
+      "word": "gut",
+      "phonetic": "gʌt",
+      "pos": "v:15/n:85",
+      "defsEn": [
+        "n. a narrow channel or strait",
+        "v. empty completely",
+        "destroy the inside of",
+        "v. remove the guts of"
+      ],
+      "zh": [
+        "n. 剧情, 内容, 内脏, 肚子, 海峡, 勇气",
+        "vt. 取出内脏, 毁坏...的内部"
+      ],
+      "forms": [
+        "复数 guts",
+        "三单 guts",
+        "过去式 gutted",
+        "过去分词 gutted",
+        "现在分词 gutting"
+      ],
+      "examples": [
+        "My brain says yes, but my gut says no.",
+        "My brain says no, but my gut says yes."
+      ]
+    },
+    {
+      "id": "ky-15",
+      "word": "cocaine",
+      "phonetic": "kә'kein",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a narcotic (alkaloid) extracted from coca leaves",
+        "used as a surface anesthetic or taken for pleasure",
+        "can become powerfully addictive"
+      ],
+      "zh": [
+        "n. 可卡因, 古柯碱"
+      ],
+      "forms": [
+        "复数 cocaines"
+      ],
+      "examples": [
+        "Do you use cocaine or crack?",
+        "I thought that it might be cocaine, but it was only flour."
+      ]
+    },
+    {
+      "id": "ky-16",
+      "word": "outfit",
+      "phonetic": "'autfit",
+      "pos": "v:16/n:84",
+      "defsEn": [
+        "n. any cohesive unit such as a military company",
+        "n. a set of clothing (with accessories)"
+      ],
+      "zh": [
+        "n. 用具, 配备, 机构",
+        "vt. 配备, 供应",
+        "vi. 得到装备"
+      ],
+      "forms": [
+        "复数 outfits",
+        "三单 outfits",
+        "过去式 outfitted",
+        "过去分词 outfitted",
+        "现在分词 outfitting"
+      ],
+      "examples": [
+        "I like the way you put your outfit together today.",
+        "Do you know how to make an outfit?"
+      ]
+    },
+    {
+      "id": "ky-17",
+      "word": "trash",
+      "phonetic": "træʃ",
+      "pos": "v:23/n:77",
+      "defsEn": [
+        "n. worthless people",
+        "v. dispose of (something useless or old)"
+      ],
+      "zh": [
+        "n. 垃圾, 废物",
+        "vt. 丢弃"
+      ],
+      "forms": [
+        "复数 trashes",
+        "三单 trashes",
+        "过去式 trashed",
+        "过去分词 trashed",
+        "现在分词 trashing"
+      ],
+      "examples": [
+        "Put trash in the bin, not on your desk.",
+        "I should probably just toss this in the trash."
+      ]
+    },
+    {
+      "id": "ky-18",
+      "word": "eyebrow",
+      "phonetic": "'aibrau",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the arch of hair above each eye"
+      ],
+      "zh": [
+        "n. 眉毛"
+      ],
+      "forms": [
+        "复数 eyebrows"
+      ],
+      "examples": [
+        "He did not even raise an eyebrow at the news of his wife's death.",
+        "What will happen to eyebrows this year?"
+      ]
+    },
+    {
+      "id": "ky-19",
+      "word": "emerging",
+      "phonetic": null,
+      "pos": "j:100",
+      "defsEn": [
+        "s. coming to maturity"
+      ],
+      "zh": [
+        "出现的, 发生的, 形成的"
+      ],
+      "forms": [
+        "复数 emergings"
+      ],
+      "examples": [
+        "I see a bad moon emerging.",
+        "What do you think of emerging markets like Turkey?"
+      ]
+    },
+    {
+      "id": "ky-20",
+      "word": "aisle",
+      "phonetic": "ail",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a long narrow passage (as in a cave or woods)",
+        "n. passageway between seating areas as in an auditorium or passenger vehicle or between areas of shelves of goods as in stores",
+        "n. part of a church divided laterally from the nave proper by rows of pillars or columns"
+      ],
+      "zh": [
+        "n. 走廊, 侧廊, 过道"
+      ],
+      "forms": [
+        "复数 aisles"
+      ],
+      "examples": [
+        "Would you like a window or aisle seat?",
+        "Can I have an aisle seat?"
+      ]
+    },
+    {
+      "id": "ky-21",
+      "word": "compliance",
+      "phonetic": "kәm'plaiәns",
+      "pos": "n:100",
+      "defsEn": [
+        "n acting according to certain accepted standards",
+        "n a disposition or tendency to yield to the will of others",
+        "n the act of submitting",
+        "usually surrendering power to another"
+      ],
+      "zh": [
+        "n. 遵从, 顺从, 屈从"
+      ],
+      "forms": [
+        "复数 compliances"
+      ],
+      "examples": [
+        "We are building your house in compliance with your wishes.",
+        "The factory was not in compliance with safety regulations."
+      ]
+    },
+    {
+      "id": "ky-22",
+      "word": "cemetery",
+      "phonetic": "'semitәri",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a tract of land used for burials"
+      ],
+      "zh": [
+        "n. 墓地, 公墓"
+      ],
+      "forms": [
+        "复数 cemeteries"
+      ],
+      "examples": [
+        "I wanted you to go to the cemetery with me.",
+        "They told me that the cemetery is in terrible condition."
+      ]
+    },
+    {
+      "id": "ky-23",
+      "word": "harassment",
+      "phonetic": "'hærәsmәnt",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a feeling of intense annoyance caused by being tormented",
+        "n. the act of tormenting by continued persistent attacks and criticism"
+      ],
+      "zh": [
+        "n. 困扰, 烦扰, 烦恼"
+      ],
+      "forms": [
+        "复数 harassments"
+      ],
+      "examples": [
+        "Oleg has to deal with being the subject of harassment.",
+        "You should avoid engaging in cyberbullying or online harassment."
+      ]
+    },
+    {
+      "id": "ky-24",
+      "word": "toll",
+      "phonetic": "tәul",
+      "pos": "v:10/n:90",
+      "defsEn": [
+        "n. a fee levied for the use of roads or bridges (used for maintenance)",
+        "v. ring slowly",
+        "v. charge a fee for using"
+      ],
+      "zh": [
+        "n. 通行费, 代价, 钟声",
+        "vt. 征收, 敲钟, 鸣钟, 勾引, 引诱",
+        "vi. 征税, 鸣钟"
+      ],
+      "forms": [
+        "复数 tolls",
+        "三单 tolls",
+        "过去式 tolled",
+        "过去分词 tolled",
+        "现在分词 tolling"
+      ],
+      "examples": [
+        "We must pay a toll to drive on this road.",
+        "You pay a toll on the motorway."
+      ]
+    },
+    {
+      "id": "ky-25",
+      "word": "peanut",
+      "phonetic": "'pi:nʌt",
+      "pos": "n:100",
+      "defsEn": [
+        "n. underground pod of the peanut vine",
+        "n. widely cultivated American plant cultivated in tropical and warm regions",
+        "showy yellow flowers on stalks that bend over to the soil so that seed pods ripen underground",
+        "n. a young child who is small for his age",
+        "n. pod of the peanut vine containing usually 2 nuts or seeds",
+        "`groundnut' and `monkey nut' are British terms"
+      ],
+      "zh": [
+        "n. 花生, 小人物, 极小的数额",
+        "a. 渺小的, 微不足道的"
+      ],
+      "forms": [
+        "复数 peanuts"
+      ],
+      "examples": [
+        "Which do you want, peanut butter or strawberry jelly?",
+        "How about a peanut butter and jelly sandwich?"
+      ]
+    },
+    {
+      "id": "ky-26",
+      "word": "auction",
+      "phonetic": "'ɒ:kʃәn",
+      "pos": "v:15/n:85",
+      "defsEn": [
+        "n. a variety of bridge in which tricks made in excess of the contract are scored toward game",
+        "now generally superseded by contract bridge",
+        "n. the public sale of something to the highest bidder",
+        "v. sell at an auction"
+      ],
+      "zh": [
+        "n. 拍卖",
+        "vt. 拍卖"
+      ],
+      "forms": [
+        "复数 auctions",
+        "三单 auctions",
+        "过去式 auctioned",
+        "过去分词 auctioned",
+        "现在分词 auctioning"
+      ],
+      "examples": [
+        "This painting should bring a lot of money at auction.",
+        "Just auction off the antique stuff."
+      ]
+    },
+    {
+      "id": "ky-27",
+      "word": "mortality",
+      "phonetic": "mɒ:'tælәti",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the quality or state of being mortal"
+      ],
+      "zh": [
+        "n. 必死的命运, 死亡数目, 死亡率"
+      ],
+      "forms": [
+        "复数 mortalities"
+      ],
+      "examples": [
+        "People do not enjoy being confronted with their mortality.",
+        "The mortality curve is climbing upwards."
+      ]
+    },
+    {
+      "id": "ky-28",
+      "word": "opt",
+      "phonetic": "ɒpt",
+      "pos": "v:100",
+      "defsEn": [
+        "v select as an alternative over another"
+      ],
+      "zh": [
+        "vi. 选择"
+      ],
+      "forms": [
+        "三单 opts",
+        "过去式 opted",
+        "过去分词 opted",
+        "现在分词 opting"
+      ],
+      "examples": [
+        "You can opt out if you like.",
+        "We decided to opt for a more cost-effective alternative for the project."
+      ]
+    },
+    {
+      "id": "ky-29",
+      "word": "autonomy",
+      "phonetic": "ɒ:'tɒnәmi",
+      "pos": "n:100",
+      "defsEn": [
+        "n. immunity from arbitrary exercise of authority: political independence",
+        "n. personal independence"
+      ],
+      "zh": [
+        "n. 自治, 自治权"
+      ],
+      "forms": [
+        "复数 autonomies"
+      ],
+      "examples": [
+        "If I borrow the money, I feel like I'll lose my autonomy.",
+        "People would have more autonomy if they had a job."
+      ]
+    },
+    {
+      "id": "ky-30",
+      "word": "suite",
+      "phonetic": "swi:t",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a musical composition of several movements only loosely connected",
+        "n. apartment consisting of a series of connected rooms used as a living unit (as in a hotel)",
+        "n. a matching set of furniture"
+      ],
+      "zh": [
+        "n. 随员, 套房, (一)组, (一)套, 组曲, 继之而来的事"
+      ],
+      "forms": [
+        "复数 suites"
+      ],
+      "examples": [
+        "Each piece of furniture in their home suited the style of the house.",
+        "The time and date suited our coach."
+      ]
+    },
+    {
+      "id": "ky-31",
+      "word": "theological",
+      "phonetic": "θiә'lɔdʒikәl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. of or relating to or concerning theology"
+      ],
+      "zh": [
+        "a. 神学上的"
+      ],
+      "forms": [],
+      "examples": []
+    },
+    {
+      "id": "ky-32",
+      "word": "disc",
+      "phonetic": "disk",
+      "pos": "n:100",
+      "defsEn": [
+        "n sound recording consisting of a disk with a continuous groove",
+        "used to reproduce music by rotating while a phonograph needle tracks in the groove",
+        "n something with a round shape resembling a flat circular plate",
+        "n (computer science) a memory device consisting of a flat disk covered with a magnetic coating on which information is stored",
+        "n a flat circular plate"
+      ],
+      "zh": [
+        "n. 圆盘, 唱片",
+        "vt. 灌唱片"
+      ],
+      "forms": [
+        "复数 discs"
+      ],
+      "examples": [
+        "Would you like to play a round of disc golf?",
+        "Have you run out of disc space?"
+      ]
+    },
+    {
+      "id": "ky-33",
+      "word": "bride",
+      "phonetic": "braid",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a woman who has recently been married",
+        "n. a woman participant in her own marriage ceremony"
+      ],
+      "zh": [
+        "n. 新娘"
+      ],
+      "forms": [
+        "复数 brides"
+      ],
+      "examples": [
+        "All at once the bride burst into laughter.",
+        "I will bring him a beautiful bride."
+      ]
+    },
+    {
+      "id": "ky-34",
+      "word": "biography",
+      "phonetic": "bai'ɒgrәfi",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an account of the series of events making up a person's life"
+      ],
+      "zh": [
+        "n. 传记"
+      ],
+      "forms": [
+        "复数 biographies"
+      ],
+      "examples": [
+        "Have you ever read a biography?",
+        "He was writing a biography of a famous poet."
+      ]
+    },
+    {
+      "id": "ky-35",
+      "word": "compelling",
+      "phonetic": "kәm'peliŋ",
+      "pos": "j:100",
+      "defsEn": [
+        "s. driving or forcing",
+        "s. tending to persuade by forcefulness of argument"
+      ],
+      "zh": [
+        "a. 强制的, 强迫性的, 激发兴趣的"
+      ],
+      "forms": [
+        "复数 compellings"
+      ],
+      "examples": []
+    },
+    {
+      "id": "ky-36",
+      "word": "spine",
+      "phonetic": "spain",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a small sharp-pointed tip resembling a spike on a stem or leaf",
+        "n. the part of a book's cover that encloses the inner side of the book's pages and that faces outward when the book is shelved",
+        "n. a sharp rigid animal process or appendage",
+        "as a porcupine quill or a ridge on a bone or a ray of a fish fin"
+      ],
+      "zh": [
+        "n. 背骨, 脊柱, 尖刺"
+      ],
+      "forms": [
+        "复数 spines"
+      ],
+      "examples": [
+        "The book was split along its spine.",
+        "It sent a rush down my spine."
+      ]
+    },
+    {
+      "id": "ky-37",
+      "word": "compassion",
+      "phonetic": "kәm'pæʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a deep awareness of and sympathy for another's suffering",
+        "n. the humane quality of understanding the suffering of others and wanting to do something about it"
+      ],
+      "zh": [
+        "n. 同情, 怜悯"
+      ],
+      "forms": [
+        "复数 compassions"
+      ],
+      "examples": [
+        "You have to show compassion to your girl.",
+        "Compassion you get as a gift. Envy you have to work hard for."
+      ]
+    },
+    {
+      "id": "ky-38",
+      "word": "locker",
+      "phonetic": "'lɒkә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a fastener that locks or closes"
+      ],
+      "zh": [
+        "n. 抽屉, 小柜, 上锁人"
+      ],
+      "forms": [
+        "复数 lockers"
+      ],
+      "examples": [
+        "I left most of my stuff in my locker.",
+        "He found a surprise in his locker."
+      ]
+    },
+    {
+      "id": "ky-39",
+      "word": "merger",
+      "phonetic": "'mә:dʒә",
+      "pos": "n:100",
+      "defsEn": [
+        "n the combination of two or more commercial companies",
+        "n an occurrence that involves the production of a union"
+      ],
+      "zh": [
+        "n. 合并, 归并"
+      ],
+      "forms": [
+        "复数 mergers"
+      ],
+      "examples": [
+        "The tea leaves all point to a merger, if you ask me.",
+        "Did you hear about the merger?"
+      ]
+    },
+    {
+      "id": "ky-40",
+      "word": "stunning",
+      "phonetic": "'stʌniŋ",
+      "pos": "j:100",
+      "defsEn": [
+        "s. causing great astonishment and consternation",
+        "s. causing or capable of causing bewilderment or shock or insensibility",
+        "s. strikingly beautiful or attractive"
+      ],
+      "zh": [
+        "a. 打昏迷的, 弄得人昏头昏脑的, 令人震惊的"
+      ],
+      "forms": [
+        "复数 stunnings"
+      ],
+      "examples": []
+    },
+    {
+      "id": "ky-41",
+      "word": "chat",
+      "phonetic": "tʃæt",
+      "pos": "n:37/v:63",
+      "defsEn": [
+        "n. an informal conversation"
+      ],
+      "zh": [
+        "n. 闲谈",
+        "vi. 闲谈, 聊天"
+      ],
+      "forms": [
+        "复数 chats",
+        "三单 chats",
+        "过去式 chatted",
+        "过去分词 chatted",
+        "现在分词 chatting"
+      ],
+      "examples": [
+        "I would like to have a chat with you.",
+        "I might call an old friend for a chat."
+      ]
+    },
+    {
+      "id": "ky-42",
+      "word": "prosecute",
+      "phonetic": "'prɒsikju:t",
+      "pos": "v:100",
+      "defsEn": [
+        "v. conduct a prosecution in a court of law",
+        "v. bring a criminal action against (in a trial)",
+        "v. carry out or participate in an activity",
+        "be involved in"
+      ],
+      "zh": [
+        "vt. 告发, 起诉, 彻底进行, 执行, 从事",
+        "vi. 告发, 起诉, 作检察官"
+      ],
+      "forms": [
+        "三单 prosecutes",
+        "过去式 prosecuted",
+        "过去分词 prosecuted",
+        "现在分词 prosecuting"
+      ],
+      "examples": [
+        "He will be prosecuted to the full extent of the law.",
+        "This is enough for them to prosecute me."
+      ]
+    },
+    {
+      "id": "ky-43",
+      "word": "capitalism",
+      "phonetic": "'kæpitәlizәm",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an economic system based on private ownership of capital"
+      ],
+      "zh": [
+        "n. 资本主义"
+      ],
+      "forms": [
+        "复数 capitalisms"
+      ],
+      "examples": [
+        "We need a new version of capitalism.",
+        "One way or another, capitalism will end."
+      ]
+    },
+    {
+      "id": "ky-44",
+      "word": "memo",
+      "phonetic": "'memәu",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a written proposal or reminder"
+      ],
+      "zh": [
+        "n. 备忘录"
+      ],
+      "forms": [
+        "复数 memos"
+      ],
+      "examples": [
+        "I put a memo on my calendar.",
+        "The company sent out a memo with an apology for the mistake."
+      ]
+    },
+    {
+      "id": "ky-45",
+      "word": "enlist",
+      "phonetic": "in'list",
+      "pos": "v:100",
+      "defsEn": [
+        "v. join the military",
+        "v. engage somebody to enter the army"
+      ],
+      "zh": [
+        "vt. 征募, 参与, 谋取",
+        "vi. 从军, 应募, 赞助"
+      ],
+      "forms": [
+        "三单 enlists",
+        "过去式 enlisted",
+        "过去分词 enlisted",
+        "现在分词 enlisting"
+      ],
+      "examples": [
+        "I need to enlist your help.",
+        "I enlisted in the Space Force."
+      ]
+    },
+    {
+      "id": "ky-46",
+      "word": "juvenile",
+      "phonetic": "'dʒu:vinail",
+      "pos": "j:82/n:18",
+      "defsEn": [
+        "n. a young person, not fully developed",
+        "a. of or relating to or characteristic of or appropriate for children or young people"
+      ],
+      "zh": [
+        "n. 少年, 少年读物",
+        "a. 少年的, 不成熟的, 适于少年的"
+      ],
+      "forms": [
+        "复数 juveniles"
+      ],
+      "examples": [
+        "Juvenile delinquency is on the increase at a rapid pace.",
+        "Sami was a juvenile at the time of the murder."
+      ]
+    },
+    {
+      "id": "ky-47",
+      "word": "comic",
+      "phonetic": "'kɒmik",
+      "pos": "j:61/n:39",
+      "defsEn": [
+        "a. of or relating to or characteristic of comedy"
+      ],
+      "zh": [
+        "n. 连环漫画, 喜剧演员, 滑稽的人",
+        "a. 滑稽的, 有趣的, 喜剧的"
+      ],
+      "forms": [
+        "复数 comics"
+      ],
+      "examples": [
+        "How much will it cost to buy that comic book?",
+        "Have you ever read a French comic book?"
+      ]
+    },
+    {
+      "id": "ky-48",
+      "word": "lure",
+      "phonetic": "luә",
+      "pos": "n:40/v:60",
+      "defsEn": [
+        "n. qualities that attract by seeming to promise some kind of reward"
+      ],
+      "zh": [
+        "n. 饵, 诱惑",
+        "vt. 引诱, 诱惑"
+      ],
+      "forms": [
+        "复数 lures",
+        "三单 lures",
+        "过去式 lured",
+        "过去分词 lured",
+        "现在分词 luring"
+      ],
+      "examples": [
+        "No man can resist the lure of a woman.",
+        "You have to lure the cat out from under the bed."
+      ]
+    },
+    {
+      "id": "ky-49",
+      "word": "loom",
+      "phonetic": "lu:m",
+      "pos": "n:15/v:85",
+      "defsEn": [
+        "n. a textile machine for weaving yarn into a textile",
+        "v. come into view indistinctly, often threateningly",
+        "v. appear very large or occupy a commanding position",
+        "v. weave on a loom"
+      ],
+      "zh": [
+        "n. 织布机, 若隐若现的景象",
+        "vi. 朦胧地出现, 隐约可见, 可怕地出现"
+      ],
+      "forms": [
+        "复数 looms",
+        "三单 looms",
+        "过去式 loomed",
+        "过去分词 loomed",
+        "现在分词 looming"
+      ],
+      "examples": [
+        "Many good grades will loom on the horizon.",
+        "The fear of failure looms over me."
+      ]
+    },
+    {
+      "id": "ky-50",
+      "word": "witch",
+      "phonetic": "witʃ",
+      "pos": "v:3/n:97",
+      "defsEn": [
+        "n. a being (usually female) imagined to have special powers derived from the devil"
+      ],
+      "zh": [
+        "n. 巫婆, 女巫",
+        "vt. 施巫术, 迷惑"
+      ],
+      "forms": [
+        "复数 witches",
+        "三单 witches",
+        "过去式 witched",
+        "过去分词 witched",
+        "现在分词 witching"
+      ],
+      "examples": [
+        "The witch cast a spell on the naughty boy.",
+        "He asked the witch to reverse the spell."
+      ]
+    },
+    {
+      "id": "ky-51",
+      "word": "graphic",
+      "phonetic": "'græfik",
+      "pos": "j:45/n:55",
+      "defsEn": [
+        "n. an image that is generated by a computer",
+        "s. written or drawn or engraved",
+        "s. describing nudity or sexual activity in graphic detail",
+        "a. of or relating to the graphic arts"
+      ],
+      "zh": [
+        "a. 生动的, 轮廓分明的, 绘画似的, 图解的"
+      ],
+      "forms": [
+        "复数 graphics"
+      ],
+      "examples": [
+        "You will need a graphic card to play this game.",
+        "Attention! This video may contain expletives and graphic violence. Its content may offend you."
+      ]
+    },
+    {
+      "id": "ky-52",
+      "word": "champagne",
+      "phonetic": "ʃæm'pein",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a white sparkling wine either produced in Champagne or resembling that produced there",
+        "n. a region of northeastern France"
+      ],
+      "zh": [
+        "n. 香槟酒, 香槟酒色"
+      ],
+      "forms": [
+        "复数 champagnes"
+      ],
+      "examples": [
+        "Could we get a bottle of your best champagne?",
+        "He will drink the champagne at midnight."
+      ]
+    },
+    {
+      "id": "ky-53",
+      "word": "posture",
+      "phonetic": "'pɒstʃә",
+      "pos": "v:7/n:93",
+      "defsEn": [
+        "n the arrangement of the body and its limbs",
+        "n characteristic way of bearing one's body",
+        "n a rationalized mental attitude",
+        "n capability in terms of personnel and materiel that affect the capacity to fight a war",
+        "v behave affectedly or unnaturally in order to impress others",
+        "v assume a posture as for artistic purposes"
+      ],
+      "zh": [
+        "n. 姿势, 态度, 情形, 形势",
+        "vt. 作...的姿势",
+        "vi. 作姿势"
+      ],
+      "forms": [
+        "复数 postures",
+        "三单 postures",
+        "过去式 postured",
+        "过去分词 postured",
+        "现在分词 posturing"
+      ],
+      "examples": [
+        "Change your posture and the confidence will come.",
+        "Stand up straight and maintain good posture."
+      ]
+    },
+    {
+      "id": "ky-54",
+      "word": "holder",
+      "phonetic": "'hәuldә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a holding device",
+        "n. a person who holds something",
+        "n. the person who is in possession of a check or note or bond or document of title that is endorsed to him or to whoever holds it"
+      ],
+      "zh": [
+        "n. 持有人, 所有人, 支持物"
+      ],
+      "forms": [
+        "复数 holders"
+      ],
+      "examples": [
+        "There's a paper towel holder next to the sink.",
+        "Tom put his cup in the cup holder."
+      ]
+    },
+    {
+      "id": "ky-55",
+      "word": "clarity",
+      "phonetic": "'klærәti",
+      "pos": "n:100",
+      "defsEn": [
+        "n. free from obscurity and easy to understand",
+        "the comprehensibility of clear expression"
+      ],
+      "zh": [
+        "n. 清楚, 明晰"
+      ],
+      "forms": [
+        "复数 clarities"
+      ],
+      "examples": [
+        "Keep your cool and answer with clarity and precision.",
+        "I find clarity in the quiet of dawn."
+      ]
+    },
+    {
+      "id": "ky-56",
+      "word": "ironic",
+      "phonetic": "aiә'rɔnik",
+      "pos": "j:100",
+      "defsEn": [
+        "s. characterized by often poignant difference or incongruity between what is expected and what actually is"
+      ],
+      "zh": [
+        "a. 冷嘲的, 挖苦的, 反话的, 讽刺的, 令人啼笑皆非的, 出乎意料的"
+      ],
+      "forms": [],
+      "examples": [
+        "Do you even know what ironic means?",
+        "Is he being serious or ironic?"
+      ]
+    },
+    {
+      "id": "ky-57",
+      "word": "audit",
+      "phonetic": "'ɒ:dit",
+      "pos": "v:20/n:80",
+      "defsEn": [
+        "n. a methodical examination or review of a condition or situation",
+        "v. examine carefully for accuracy with the intent of verification",
+        "v. attend academic courses without getting credit"
+      ],
+      "zh": [
+        "n. 审计, 查帐",
+        "vt. 查(帐), 旁听",
+        "vi. 查账"
+      ],
+      "forms": [
+        "复数 audits",
+        "三单 audits",
+        "过去式 audited",
+        "过去分词 audited",
+        "现在分词 auditing"
+      ],
+      "examples": [
+        "You will be in trouble if you become the target of a tax audit.",
+        "He prepares the office for the audit."
+      ]
+    },
+    {
+      "id": "ky-58",
+      "word": "calcium",
+      "phonetic": "'kælsiәm",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a white metallic element that burns with a brilliant light",
+        "the fifth most abundant element in the earth's crust",
+        "an important component of most plants and animals"
+      ],
+      "zh": [
+        "n. 钙"
+      ],
+      "forms": [
+        "复数 calciums"
+      ],
+      "examples": [
+        "Calcium is an essential mineral for the human body.",
+        "Milk is a good source of calcium."
+      ]
+    },
+    {
+      "id": "ky-59",
+      "word": "sip",
+      "phonetic": "sip",
+      "pos": "n:46/v:54",
+      "defsEn": [
+        "n. a small drink",
+        "v. drink in sips"
+      ],
+      "zh": [
+        "n. 啜饮, 小口喝, 抿",
+        "vi. 啜饮",
+        "vt. 啜"
+      ],
+      "forms": [
+        "复数 sips",
+        "三单 sips",
+        "过去式 sipped",
+        "过去分词 sipped",
+        "现在分词 sipping"
+      ],
+      "examples": [
+        "Can I just have a sip of your wine?",
+        "Could I have a sip of your drink?"
+      ]
+    },
+    {
+      "id": "ky-60",
+      "word": "fabulous",
+      "phonetic": "'fæbjulәs",
+      "pos": "j:100",
+      "defsEn": [
+        "s. extremely pleasing",
+        "s. based on or told of in traditional stories",
+        "lacking factual basis or historical validity",
+        "s. barely credible"
+      ],
+      "zh": [
+        "a. 传说的, 寓言般的, 难以置信的"
+      ],
+      "forms": [],
+      "examples": [
+        "The laboratory acquired a fabulous reputation for its historic discovery.",
+        "He has a fabulous reputation for his high integrity."
+      ]
+    },
+    {
+      "id": "ky-61",
+      "word": "machinery",
+      "phonetic": "mә'ʃi:nәri",
+      "pos": "n:100",
+      "defsEn": [
+        "n. machines or machine systems collectively",
+        "n. a system of means and activities whereby a social institution functions"
+      ],
+      "zh": [
+        "n. 机器, 机械装置, 机构"
+      ],
+      "forms": [
+        "复数 machineries"
+      ],
+      "examples": [
+        "What if you could check out, say, machinery at the library?",
+        "The company asked the bank to loan them some money to buy new machinery."
+      ]
+    },
+    {
+      "id": "ky-62",
+      "word": "erase",
+      "phonetic": "i'reis",
+      "pos": "v:100",
+      "defsEn": [
+        "v. remove from memory or existence",
+        "v. remove by or as if by rubbing or erasing",
+        "v. wipe out digitally or magnetically recorded information"
+      ],
+      "zh": [
+        "vt. 抹去, 擦掉"
+      ],
+      "forms": [
+        "三单 erases",
+        "过去式 erased",
+        "过去分词 erased",
+        "现在分词 erasing"
+      ],
+      "examples": [
+        "I try to erase her from my mind.",
+        "They want to erase our identity."
+      ]
+    },
+    {
+      "id": "ky-63",
+      "word": "reasoning",
+      "phonetic": "'ri:zniŋ",
+      "pos": "n:100",
+      "defsEn": [
+        "n. thinking that is coherent and logical"
+      ],
+      "zh": [
+        "n. 推论, 推理, 论证"
+      ],
+      "forms": [
+        "复数 reasonings"
+      ],
+      "examples": [
+        "Do you think reasoning with him would do some good?",
+        "Your argument should have a line of reasoning."
+      ]
+    },
+    {
+      "id": "ky-64",
+      "word": "courtyard",
+      "phonetic": "'kɒ:tjɑ:d",
+      "pos": "n:100",
+      "defsEn": [
+        "n an area wholly or partly surrounded by walls or buildings"
+      ],
+      "zh": [
+        "n. 庭院, 天井"
+      ],
+      "forms": [
+        "复数 courtyards"
+      ],
+      "examples": [
+        "The windows of our flat look out on to the courtyard.",
+        "He ran away from the room to the courtyard."
+      ]
+    },
+    {
+      "id": "ky-65",
+      "word": "dividend",
+      "phonetic": "'dividend",
+      "pos": "n:100",
+      "defsEn": [
+        "n. that part of the earnings of a corporation that is distributed to its shareholders",
+        "usually paid quarterly",
+        "n. a number to be divided by another number",
+        "n. a bonus",
+        "something extra (especially a share of a surplus)"
+      ],
+      "zh": [
+        "n. 被除数, 股利"
+      ],
+      "forms": [
+        "复数 dividends"
+      ],
+      "examples": []
+    },
+    {
+      "id": "ky-66",
+      "word": "heroin",
+      "phonetic": "'herәuin",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a narcotic that is considered a hard drug",
+        "a highly addictive morphine derivative",
+        "intravenous injection provides the fastest and most intense rush"
+      ],
+      "zh": [
+        "n. 海洛因, 吗啡"
+      ],
+      "forms": [
+        "复数 heroins"
+      ],
+      "examples": [
+        "This substitute can help wean you off heroin.",
+        "I'll pay the bill as soon as I stop taking heroin."
+      ]
+    },
+    {
+      "id": "ky-67",
+      "word": "laptop",
+      "phonetic": null,
+      "pos": "n:100",
+      "defsEn": [
+        "n. a portable computer small enough to use in your lap"
+      ],
+      "zh": [
+        "膝上型的"
+      ],
+      "forms": [
+        "复数 laptops"
+      ],
+      "examples": [
+        "Remember to shut down your laptop properly after use.",
+        "Can I install a new program on your laptop?"
+      ]
+    },
+    {
+      "id": "ky-68",
+      "word": "easter",
+      "phonetic": "'i:stә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a Christian celebration of the Resurrection of Christ",
+        "celebrated on the Sunday following the first full moon after the vernal equinox"
+      ],
+      "zh": [
+        "n. 复活节"
+      ],
+      "forms": [
+        "复数 easters"
+      ],
+      "examples": [
+        "Many people refuse to eat meat during Easter.",
+        "I wish you and your family a very happy Easter."
+      ]
+    },
+    {
+      "id": "ky-69",
+      "word": "sophomore",
+      "phonetic": "'sɒfәmɒ:",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a second-year undergraduate",
+        "s. used of the second year in United States high school or college"
+      ],
+      "zh": [
+        "n. (大学)二年级生",
+        "a. 二年级学生的, 二年级的"
+      ],
+      "forms": [
+        "复数 sophomores"
+      ],
+      "examples": [
+        "This all happened in sophomore year of high school.",
+        "He met her in his sophomore year."
+      ]
+    },
+    {
+      "id": "ky-70",
+      "word": "accountant",
+      "phonetic": "ә'kauntәnt",
+      "pos": "n:100",
+      "defsEn": [
+        "n. someone who maintains and audits business accounts"
+      ],
+      "zh": [
+        "n. 会计人员, 会计师"
+      ],
+      "forms": [
+        "复数 accountants"
+      ],
+      "examples": [
+        "The accountant would not concede the mistake.",
+        "I have an accountant to do that."
+      ]
+    },
+    {
+      "id": "ky-71",
+      "word": "artery",
+      "phonetic": "'ɑ:tәri",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a blood vessel that carries blood from the heart to the body",
+        "n. a major thoroughfare that bears important traffic"
+      ],
+      "zh": [
+        "n. 动脉, 干道, 要道"
+      ],
+      "forms": [
+        "复数 arteries"
+      ],
+      "examples": [
+        "The bullet cut through an artery.",
+        "Be careful not to nick an artery."
+      ]
+    },
+    {
+      "id": "ky-72",
+      "word": "fishery",
+      "phonetic": "'fiʃәri",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a workplace where fish are caught and processed and sold"
+      ],
+      "zh": [
+        "n. 渔业"
+      ],
+      "forms": [
+        "复数 fisheries"
+      ],
+      "examples": [
+        "The fishery remained empty and devoid of fish for many centuries.",
+        "Agriculture, crafts, animal husbandry and fishery are the main traditional sources of income."
+      ]
+    },
+    {
+      "id": "ky-73",
+      "word": "embed",
+      "phonetic": "im'bed",
+      "pos": "v:100",
+      "defsEn": [
+        "v. attach to, as a journalist to a military unit when reporting on a war"
+      ],
+      "zh": [
+        "vt. 使插入, 使嵌入, 使深留脑中"
+      ],
+      "forms": [
+        "复数 embeds",
+        "三单 embeds",
+        "过去式 embedded",
+        "过去分词 embedded",
+        "现在分词 embedding"
+      ],
+      "examples": [
+        "How can I embed the debt clock on my Web site?",
+        "I wish I could figure out how to embed a YouTube video."
+      ]
+    },
+    {
+      "id": "ky-74",
+      "word": "ozone",
+      "phonetic": "'әuzәun",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a colorless gas (O3) soluble in alkalis and cold water",
+        "a strong oxidizing agent",
+        "can be produced by electric discharge in oxygen or by the action of ultraviolet radiation on oxygen in the stratosphere (where it acts as a screen for ultraviolet radiation)"
+      ],
+      "zh": [
+        "n. 新鲜的空气, 臭氧, 使人愉快的影响"
+      ],
+      "forms": [
+        "复数 ozones"
+      ],
+      "examples": [
+        "Without the ozone layer, we would be in danger.",
+        "We should do more to protect the ozone layer from damage."
+      ]
+    },
+    {
+      "id": "ky-75",
+      "word": "lottery",
+      "phonetic": "'lɒtәri",
+      "pos": "n:100",
+      "defsEn": [
+        "n. something that is regarded as a chance event",
+        "n. players buy (or are given) chances and prizes are distributed by casting lots"
+      ],
+      "zh": [
+        "n. 奖券, 彩票, 运气"
+      ],
+      "forms": [
+        "复数 lotteries"
+      ],
+      "examples": [
+        "I want to win the lottery!",
+        "Do you often do the lottery?"
+      ]
+    },
+    {
+      "id": "ky-76",
+      "word": "census",
+      "phonetic": "'sensәs",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a periodic count of the population",
+        "v. conduct a census"
+      ],
+      "zh": [
+        "n. 户口普查",
+        "vt. 实施统计调查"
+      ],
+      "forms": [
+        "复数 censuses"
+      ],
+      "examples": [
+        "In Japan, a census is taken every five years.",
+        "In Japan, a census is conducted every five years."
+      ]
+    },
+    {
+      "id": "ky-77",
+      "word": "quota",
+      "phonetic": "'kwәutә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a prescribed number",
+        "n. a proportional share assigned to each participant",
+        "n. a limitation on imports"
+      ],
+      "zh": [
+        "n. 配额, 限额"
+      ],
+      "forms": [
+        "复数 quotas"
+      ],
+      "examples": [
+        "How can I meet this quota?",
+        "We will begin by considering the concept of \"quota\"."
+      ]
+    },
+    {
+      "id": "ky-78",
+      "word": "excerpt",
+      "phonetic": "'eksә:pt",
+      "pos": "v:31/n:69",
+      "defsEn": [
+        "n. a passage selected from a larger work",
+        "v. take out of a literary work in order to cite or copy"
+      ],
+      "zh": [
+        "n. 摘录",
+        "v. 引用, 摘录"
+      ],
+      "forms": [
+        "复数 excerpts",
+        "三单 excerpts",
+        "过去式 excerpted",
+        "过去分词 excerpted",
+        "现在分词 excerpting"
+      ],
+      "examples": [
+        "The students have to analyze an excerpt from the book.",
+        "Dan played an excerpt of classical music to the students."
+      ]
+    },
+    {
+      "id": "ky-79",
+      "word": "copyright",
+      "phonetic": "'kɒpirait",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a document granting exclusive right to publish and sell literary or musical or artistic work",
+        "v. secure a copyright on a written work"
+      ],
+      "zh": [
+        "n. 版权, 著作权"
+      ],
+      "forms": [
+        "复数 copyrights",
+        "三单 copyrights",
+        "过去式 copyrighted",
+        "过去分词 copyrighted",
+        "现在分词 copyrighting"
+      ],
+      "examples": [
+        "Do you like copyrights as much as I do?",
+        "Copyright only exists if you want it to."
+      ]
+    },
+    {
+      "id": "ky-80",
+      "word": "activate",
+      "phonetic": "'æktiveit",
+      "pos": "v:100",
+      "defsEn": [
+        "v. make active or more active",
+        "v. make more adsorptive",
+        "v. aerate (sewage) so as to favor the growth of organisms that decompose organic matter",
+        "v. make (substances) radioactive"
+      ],
+      "zh": [
+        "vt. 使活动, 使激活, 正式建成",
+        "vi. 有活力"
+      ],
+      "forms": [
+        "复数 activates",
+        "三单 activates",
+        "过去式 activated",
+        "过去分词 activated",
+        "现在分词 activating"
+      ],
+      "examples": [
+        "In what way do they activate this mechanism?",
+        "If you want to activate my mean side, just go on."
+      ]
+    },
+    {
+      "id": "ky-81",
+      "word": "kindergarten",
+      "phonetic": "'kindә.gɑ:tn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a preschool for children age 4 to 6 to prepare them for primary school"
+      ],
+      "zh": [
+        "n. 幼稚园"
+      ],
+      "forms": [
+        "复数 kindergartens"
+      ],
+      "examples": [
+        "What can I do to get my child ready for kindergarten?",
+        "How do you say kindergarten in German?"
+      ]
+    },
+    {
+      "id": "ky-82",
+      "word": "pyramid",
+      "phonetic": "'pirәmid",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a polyhedron having a polygonal base and triangular sides with a common vertex",
+        "n. (stock market) a series of transactions in which the speculator increases his holdings by using the rising market value of those holdings as margin for further purchases",
+        "n. a massive monument with a square base and four triangular sides",
+        "begun by Cheops around 2700 BC as royal tombs in ancient Egypt",
+        "v. enlarge one's holdings on an exchange on a continued rise by using paper profits as margin to buy additional amounts"
+      ],
+      "zh": [
+        "n. 角锥, 金字塔",
+        "v. (使)成金字塔状, (使)渐增, (使)上涨"
+      ],
+      "forms": [
+        "复数 pyramids",
+        "三单 pyramids",
+        "过去式 pyramided",
+        "过去分词 pyramided",
+        "现在分词 pyramiding"
+      ],
+      "examples": [
+        "The shape of the roof looks like a pyramid.",
+        "Did you go to the top of the pyramid?"
+      ]
+    },
+    {
+      "id": "ky-83",
+      "word": "affiliation",
+      "phonetic": "ә.fili'eiʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a social or business relationship",
+        "n. the act of becoming formally connected or joined"
+      ],
+      "zh": [
+        "n. 联系, 从属关系"
+      ],
+      "forms": [
+        "复数 affiliations"
+      ],
+      "examples": [
+        "I have no affiliation with your university.",
+        "Do you have any religious affiliation?"
+      ]
+    },
+    {
+      "id": "ky-84",
+      "word": "meditation",
+      "phonetic": ".medi'teiʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. continuous and profound contemplation or musing on a subject or series of subjects of a deep or abstruse nature",
+        "n. (religion) contemplation of spiritual matters (usually on religious or philosophical subjects)"
+      ],
+      "zh": [
+        "n. 沉思, 冥想"
+      ],
+      "forms": [
+        "复数 meditations"
+      ],
+      "examples": [
+        "Through regular meditation, you can control your \"monkey mind.\"",
+        "He hit on the plan after long meditation."
+      ]
+    },
+    {
+      "id": "ky-85",
+      "word": "overturn",
+      "phonetic": ".әuvә'tә:n",
+      "pos": "v:100",
+      "defsEn": [
+        "n. an improbable and unexpected victory",
+        "v. turn from an upright or normal position",
+        "v. cause to overturn from an upright or normal position"
+      ],
+      "zh": [
+        "n. 倾覆, 破灭, 革命",
+        "vt. 推翻, 颠倒",
+        "vi. 翻倒"
+      ],
+      "forms": [
+        "复数 overturns",
+        "三单 overturns",
+        "过去式 overturned",
+        "过去分词 overturned",
+        "现在分词 overturning"
+      ],
+      "examples": [
+        "Then I'll help you overturn the wagon.",
+        "The load of ice cream melted after the truck overturned on the highway."
+      ]
+    },
+    {
+      "id": "ky-86",
+      "word": "marital",
+      "phonetic": "'mæritәl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. of or relating to the state of marriage"
+      ],
+      "zh": [
+        "a. 丈夫的, 婚姻的, 夫妇间的"
+      ],
+      "forms": [],
+      "examples": [
+        "Can you tell me about your marital status?",
+        "He should fill out his marital status in the questionnaire."
+      ]
+    },
+    {
+      "id": "ky-87",
+      "word": "fairy",
+      "phonetic": "'fєәri",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a small being, human in form, playful and having magical powers"
+      ],
+      "zh": [
+        "n. 仙女, 精灵",
+        "a. 仙女的"
+      ],
+      "forms": [
+        "复数 fairies"
+      ],
+      "examples": [
+        "The fairy tale told of the frog who turned into a prince.",
+        "Democracy is a fairy tale in which some people still believe."
+      ]
+    },
+    {
+      "id": "ky-88",
+      "word": "prestigious",
+      "phonetic": "pre'stidʒiәs",
+      "pos": "j:100",
+      "defsEn": [
+        "s. exerting influence by reason of high status or prestige"
+      ],
+      "zh": [
+        "a. 享有声望的"
+      ],
+      "forms": [],
+      "examples": [
+        "She told her family about her prestigious service award.",
+        "He is a prestigious and influential member of the Democratic Party."
+      ]
+    },
+    {
+      "id": "ky-89",
+      "word": "archive",
+      "phonetic": "'ɑ:kaiv",
+      "pos": "v:12/n:88",
+      "defsEn": [
+        "n. a depository containing historical records and documents",
+        "v. put into an archive"
+      ],
+      "zh": [
+        "vt. 把...存档",
+        "n. 档案馆, 档案文件"
+      ],
+      "forms": [
+        "复数 archives",
+        "三单 archives",
+        "过去式 archived",
+        "过去分词 archived",
+        "现在分词 archiving"
+      ],
+      "examples": [
+        "I have an archive of a video.",
+        "Sure, there's the Internet Archive, and you can contribute to it."
+      ]
+    },
+    {
+      "id": "ky-90",
+      "word": "radically",
+      "phonetic": "'rædikәli",
+      "pos": "r:100",
+      "defsEn": [
+        "r. in a radical manner"
+      ],
+      "zh": [
+        "adv. 根本地, 完全地"
+      ],
+      "forms": [],
+      "examples": [
+        "His idea will radically alter our way of life.",
+        "This discovery has the potential to radically change the field."
+      ]
+    },
+    {
+      "id": "ky-91",
+      "word": "contention",
+      "phonetic": "kәn'teinʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a point asserted as part of an argument"
+      ],
+      "zh": [
+        "n. 争论, 争辩, 所持的论点"
+      ],
+      "forms": [
+        "复数 contentions"
+      ],
+      "examples": [
+        "Spread the table, and contention will cease.",
+        "The division of the property was a bone of contention between the brothers."
+      ]
+    },
+    {
+      "id": "ky-92",
+      "word": "compartment",
+      "phonetic": "kәm'pɑ:tmәnt",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a space into which an area is subdivided",
+        "n. a partitioned section, chamber, or separate room within a larger enclosed area"
+      ],
+      "zh": [
+        "n. 分隔间, 卧车包房, 防水舱隔"
+      ],
+      "forms": [
+        "复数 compartments"
+      ],
+      "examples": [
+        "Here's an empty compartment. Where would you like to sit?",
+        "I asked for a seat in the no-smoking compartment."
+      ]
+    },
+    {
+      "id": "ky-93",
+      "word": "brochure",
+      "phonetic": "'brәuʃә",
+      "pos": "n:100",
+      "defsEn": [
+        "n a small book usually having a paper cover"
+      ],
+      "zh": [
+        "n. 小册子, 小册"
+      ],
+      "forms": [
+        "复数 brochures"
+      ],
+      "examples": [
+        "Would you please send me a brochure and price information?",
+        "Can you please send them a brochure?"
+      ]
+    },
+    {
+      "id": "ky-94",
+      "word": "pact",
+      "phonetic": "pækt",
+      "pos": "n:100",
+      "defsEn": [
+        "n a written agreement between two states or sovereigns"
+      ],
+      "zh": [
+        "n. 契约, 协定, 条约"
+      ],
+      "forms": [
+        "复数 pacts"
+      ],
+      "examples": [
+        "The Constitution is not a suicide pact.",
+        "Let's make a pact to support each other in our endeavors."
+      ]
+    },
+    {
+      "id": "ky-95",
+      "word": "inhale",
+      "phonetic": "in'heil",
+      "pos": "v:100",
+      "defsEn": [
+        "v. draw deep into the lungs in by breathing",
+        "v. draw in (air)"
+      ],
+      "zh": [
+        "vt. 吸入",
+        "vi. 吸气"
+      ],
+      "forms": [
+        "三单 inhales",
+        "过去式 inhaled",
+        "过去分词 inhaled",
+        "现在分词 inhaling"
+      ],
+      "examples": [
+        "Inhale and watch your belly expand.",
+        "If you inhale the exhaust, you'll be dead in no time."
+      ]
+    },
+    {
+      "id": "ky-96",
+      "word": "barbecue",
+      "phonetic": "'bɑ:bikju:",
+      "pos": "v:20/n:80",
+      "defsEn": [
+        "n. meat that has been barbecued or grilled in a highly seasoned sauce",
+        "n. a cookout in which food is cooked over an open fire",
+        "especially a whole animal carcass roasted on a spit",
+        "n. a rack to hold meat for cooking over hot charcoal usually out of doors"
+      ],
+      "zh": [
+        "n. 烤肉",
+        "vt. 烤肉, 烧烤"
+      ],
+      "forms": [
+        "复数 barbecues",
+        "三单 barbecues",
+        "过去式 barbecued",
+        "过去分词 barbecued",
+        "现在分词 barbecuing"
+      ],
+      "examples": [
+        "You can make a barbecue any time you want.",
+        "Do you want to have a barbecue this evening?"
+      ]
+    },
+    {
+      "id": "ky-97",
+      "word": "beverage",
+      "phonetic": "'bevәridʒ",
+      "pos": "n:100",
+      "defsEn": [
+        "n. any liquid suitable for drinking"
+      ],
+      "zh": [
+        "n. 饮料"
+      ],
+      "forms": [
+        "复数 beverages"
+      ],
+      "examples": [
+        "Tea is a popular beverage throughout the world.",
+        "Do you serve any sugar-free beverages?"
+      ]
+    },
+    {
+      "id": "ky-98",
+      "word": "serial",
+      "phonetic": "'siәriәl",
+      "pos": "j:80/n:20",
+      "defsEn": [
+        "n. a serialized set of programs",
+        "a. pertaining to or composed in serial technique",
+        "a. pertaining to or occurring in or producing a series",
+        "s. of or relating to the sequential performance of multiple operations"
+      ],
+      "zh": [
+        "n. 分期连载作品, 连载小说",
+        "a. 连续的, 一连串的, 连载的, 分期偿还的"
+      ],
+      "forms": [
+        "复数 serials"
+      ],
+      "examples": [
+        "Record the serial number in the space provided below.",
+        "Refer to the serial number whenever you call for technical assistance."
+      ]
+    },
+    {
+      "id": "ky-99",
+      "word": "postcard",
+      "phonetic": "'pәustkɑ:d",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a card for sending messages by post without an envelope"
+      ],
+      "zh": [
+        "n. 明信片"
+      ],
+      "forms": [
+        "复数 postcards"
+      ],
+      "examples": [
+        "On the postcard, you can see a church.",
+        "A friend of mine asked me to send him a postcard."
+      ]
+    },
+    {
+      "id": "ky-100",
+      "word": "staple",
+      "phonetic": "'steipl",
+      "pos": "v:16/n:84",
+      "defsEn": [
+        "n. a natural fiber (raw cotton, wool, hemp, flax) that can be twisted to form yarn",
+        "n. a short U-shaped wire nail for securing cables",
+        "n. paper fastener consisting of a short length of U-shaped wire that can fasten papers together",
+        "v. secure or fasten with a staple or staples"
+      ],
+      "zh": [
+        "n. 主要产物, 常用品, 主要要素, 原料, 订书钉, 钩环",
+        "a. 主要的, 重要的",
+        "vt. 分级, 钉住"
+      ],
+      "forms": [
+        "复数 staples",
+        "三单 staples",
+        "过去式 stapled",
+        "过去分词 stapled",
+        "现在分词 stapling"
+      ],
+      "examples": [
+        "In my opinion, there is no one American staple.",
+        "She stapled the report and left it on her supervisor's desk."
+      ]
+    },
+    {
+      "id": "ky-101",
+      "word": "certify",
+      "phonetic": "'sә:tifai",
+      "pos": "v:100",
+      "defsEn": [
+        "v. guarantee payment on",
+        "of checks",
+        "v. guarantee as meeting a certain standard",
+        "v. declare legally insane"
+      ],
+      "zh": [
+        "v. 证明, 保证"
+      ],
+      "forms": [
+        "复数 certifies",
+        "三单 certifies",
+        "过去式 certified",
+        "过去分词 certified",
+        "现在分词 certifying"
+      ],
+      "examples": [
+        "He tried to certify the matter as correct.",
+        "What's the difference between regular mail and certified mail?"
+      ]
+    },
+    {
+      "id": "ky-102",
+      "word": "honorable",
+      "phonetic": "'ɒnәrәbl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. worthy of being honored",
+        "entitled to honor and respect"
+      ],
+      "zh": [
+        "a. 值得尊敬的, 荣耀的, 高贵的"
+      ],
+      "forms": [],
+      "examples": [
+        "You should do the honorable thing and resign.",
+        "God save this state and this honorable court."
+      ]
+    },
+    {
+      "id": "ky-103",
+      "word": "infrared",
+      "phonetic": ".infrә'red",
+      "pos": "j:98/n:2",
+      "defsEn": [
+        "n. the infrared region of the electromagnetic spectrum",
+        "electromagnetic wave frequencies below the visible range",
+        "n. electromagnetic radiation with wavelengths longer than visible light but shorter than radio waves",
+        "s. having or employing wavelengths longer than light but shorter than radio waves",
+        "lying outside the visible spectrum at its red end"
+      ],
+      "zh": [
+        "a. 红外线的",
+        "n. 红外线"
+      ],
+      "forms": [
+        "复数 infrareds"
+      ],
+      "examples": [
+        "People show up bright on an infrared camera because of their body heat.",
+        "Infrared and ultraviolet light are invisible to the human eye."
+      ]
+    },
+    {
+      "id": "ky-104",
+      "word": "awe",
+      "phonetic": "ɒ:",
+      "pos": "v:15/n:85",
+      "defsEn": [
+        "n. an overwhelming feeling of wonder or admiration",
+        "v. inspire awe in"
+      ],
+      "zh": [
+        "n. 敬畏",
+        "vt. 使敬畏"
+      ],
+      "forms": [
+        "复数 awes",
+        "三单 awes",
+        "过去式 awed",
+        "过去分词 awed",
+        "现在分词 awing"
+      ],
+      "examples": [
+        "The scene would awe and terrify anyone.",
+        "I love life because every mountain view fills me with awe and inspiration."
+      ]
+    },
+    {
+      "id": "ky-105",
+      "word": "harass",
+      "phonetic": "'hærәs",
+      "pos": "v:100",
+      "defsEn": [
+        "v. annoy continually or chronically",
+        "v. exhaust by attacking repeatedly"
+      ],
+      "zh": [
+        "vt. 使困扰, 使烦恼, 折磨"
+      ],
+      "forms": [
+        "三单 harasses",
+        "过去式 harassed",
+        "过去分词 harassed",
+        "现在分词 harassing"
+      ],
+      "examples": [
+        "Do not harass the new people!",
+        "Tell your son not to harass my daughter anymore."
+      ]
+    },
+    {
+      "id": "ky-106",
+      "word": "daytime",
+      "phonetic": "'deitaim",
+      "pos": "n:100",
+      "defsEn": [
+        "n the time after sunrise and before sunset while it is light outside"
+      ],
+      "zh": [
+        "n. 白天, 日间"
+      ],
+      "forms": [
+        "复数 daytimes"
+      ],
+      "examples": [
+        "There are some people who sleep in the daytime and work at night.",
+        "The sun shines in the daytime and the moon at night."
+      ]
+    },
+    {
+      "id": "ky-107",
+      "word": "dental",
+      "phonetic": "'dentl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. of or relating to the teeth",
+        "a. of or relating to dentistry"
+      ],
+      "zh": [
+        "a. 牙齿的"
+      ],
+      "forms": [
+        "复数 dentals"
+      ],
+      "examples": [
+        "How do I complain about my dental treatment?",
+        "Can you heal a dental cavity naturally?"
+      ]
+    },
+    {
+      "id": "ky-108",
+      "word": "feat",
+      "phonetic": "fi:t",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a notable achievement"
+      ],
+      "zh": [
+        "n. 壮举, 功绩, 技艺表演",
+        "a. 灵巧的, 合适的, 整洁的"
+      ],
+      "forms": [
+        "复数 feats"
+      ],
+      "examples": [
+        "It can seem like an impossible feat.",
+        "The international space station is an amazing feat of engineering."
+      ]
+    },
+    {
+      "id": "ky-109",
+      "word": "maneuver",
+      "phonetic": "mә'nu:vә",
+      "pos": "n:48/v:52",
+      "defsEn": [
+        "n. a military training exercise",
+        "n. a deliberate coordinated movement requiring dexterity and skill",
+        "n. a move made to gain a tactical end"
+      ],
+      "zh": [
+        "n. 演习, 调遣, 策略",
+        "v. 调遣, 演习, 用计"
+      ],
+      "forms": [
+        "复数 maneuvers",
+        "三单 maneuvers",
+        "过去式 maneuvered",
+        "过去分词 maneuvered",
+        "现在分词 maneuvering"
+      ],
+      "examples": [
+        "Should I perform the Heimlich Maneuver?",
+        "Do you know the Heimlich maneuver?"
+      ]
+    },
+    {
+      "id": "ky-110",
+      "word": "subsidize",
+      "phonetic": "'sʌbsidaiz",
+      "pos": "v:100",
+      "defsEn": [
+        "v. support through subsidies",
+        "v. secure the assistance of by granting a subsidy, as of nations or military forces"
+      ],
+      "zh": [
+        "vt. 补助, 资助, 贿赂"
+      ],
+      "forms": [
+        "三单 subsidizes",
+        "过去式 subsidized",
+        "过去分词 subsidized",
+        "现在分词 subsidizing"
+      ],
+      "examples": [
+        "It is not uncommon for the government to subsidize agriculture.",
+        "Some people think that subsidized low-income housing options should be offered by the state."
+      ]
+    },
+    {
+      "id": "ky-111",
+      "word": "giggle",
+      "phonetic": "'gigl",
+      "pos": "n:36/v:64",
+      "defsEn": [
+        "n. a foolish or nervous laugh",
+        "v. laugh nervously"
+      ],
+      "zh": [
+        "v. 吃吃地笑, 咯咯地笑",
+        "n. 咯咯笑, 傻笑"
+      ],
+      "forms": [
+        "复数 giggles",
+        "三单 giggles",
+        "过去式 giggled",
+        "过去分词 giggled",
+        "现在分词 giggling"
+      ],
+      "examples": [
+        "She burst into a malevolent giggle.",
+        "Yanni heard the giggle of a little girl."
+      ]
+    },
+    {
+      "id": "ky-112",
+      "word": "bully",
+      "phonetic": "'buli",
+      "pos": "v:44/n:56",
+      "defsEn": [
+        "n. a cruel and brutal fellow",
+        "n. a hired thug"
+      ],
+      "zh": [
+        "n. 欺凌弱小者, 土霸",
+        "vt. 威胁, 恐吓, 欺负",
+        "vi. 欺负",
+        "a. 特好的, 第一流的",
+        "adv. 十分"
+      ],
+      "forms": [
+        "复数 bullies",
+        "三单 bullies",
+        "过去式 bullied",
+        "过去分词 bullied",
+        "现在分词 bullying"
+      ],
+      "examples": [
+        "A bully used a lighter to burn his hair.",
+        "Go and beat up that bully."
+      ]
+    },
+    {
+      "id": "ky-113",
+      "word": "plight",
+      "phonetic": "plait",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a solemn pledge of fidelity"
+      ],
+      "zh": [
+        "n. 困境, 窘境",
+        "vt. 宣誓, 保证"
+      ],
+      "forms": [
+        "复数 plights",
+        "三单 plights",
+        "过去式 plighted",
+        "过去分词 plighted",
+        "现在分词 plighting"
+      ],
+      "examples": [
+        "The king was unsympathetic to the plight of the peasants, so he was unpopular."
+      ]
+    },
+    {
+      "id": "ky-114",
+      "word": "madame",
+      "phonetic": "'mædәm",
+      "pos": "n:100",
+      "defsEn": [
+        "n. title used for a married Frenchwoman"
+      ],
+      "zh": [
+        "n. 夫人, 小姐, 太太, 女士, 主妇, (非正式)喜欢差使/指使别人的女子, 鸨母"
+      ],
+      "forms": [
+        "复数 madames"
+      ],
+      "examples": [
+        "Thank you for the warm welcome, madame.",
+        "Could you tell me the way to Madame Tussaud's?"
+      ]
+    },
+    {
+      "id": "ky-115",
+      "word": "pub",
+      "phonetic": "pʌb",
+      "pos": "n:100",
+      "defsEn": [
+        "n tavern consisting of a building with a bar and public rooms",
+        "often provides light meals"
+      ],
+      "zh": [
+        "n. 酒馆, 客栈"
+      ],
+      "forms": [
+        "复数 pubs"
+      ],
+      "examples": [
+        "When will you be back from the pub?",
+        "I hardly ever go to the pub."
+      ]
+    },
+    {
+      "id": "ky-116",
+      "word": "escalate",
+      "phonetic": "'eskәleit",
+      "pos": "v:100",
+      "defsEn": [
+        "v. increase in extent or intensity"
+      ],
+      "zh": [
+        "vi. 逐步扩大, 逐步升高, 逐步增强",
+        "vt. 使逐步上升"
+      ],
+      "forms": [
+        "三单 escalates",
+        "过去式 escalated",
+        "过去分词 escalated",
+        "现在分词 escalating"
+      ],
+      "examples": [
+        "The White House worries that the crisis could escalate.",
+        "How can we de-escalate the conflict?"
+      ]
+    },
+    {
+      "id": "ky-117",
+      "word": "blueprint",
+      "phonetic": "'blu:'print",
+      "pos": "n:100",
+      "defsEn": [
+        "n. something intended as a guide for making something else",
+        "n. photographic print of plans or technical drawings etc.",
+        "v. make a blueprint of"
+      ],
+      "zh": [
+        "n. 蓝图, 设计图, (周详的)计划",
+        "vt. 制成蓝图, 计划"
+      ],
+      "forms": [
+        "复数 blueprints",
+        "三单 blueprints",
+        "过去式 blueprinted",
+        "过去分词 blueprinted",
+        "现在分词 blueprinting"
+      ],
+      "examples": [
+        "Make a blueprint of your house.",
+        "To test whether a structure is sound, do you look at the blueprint?"
+      ]
+    },
+    {
+      "id": "ky-118",
+      "word": "bracket",
+      "phonetic": "'brækit",
+      "pos": "v:16/n:84",
+      "defsEn": [
+        "n. a category falling within certain defined limits",
+        "n. either of two punctuation marks (`<' or `>') used in computer programming and sometimes used to enclose textual material",
+        "n. either of two punctuation marks ([ or ]) used to enclose textual material",
+        "n. a support projecting from a wall (as to hold a shelf)"
+      ],
+      "zh": [
+        "n. 支架, 括弧, 托架",
+        "vt. 装托架, 括入括弧"
+      ],
+      "forms": [
+        "复数 brackets",
+        "三单 brackets",
+        "过去式 bracketed",
+        "过去分词 bracketed",
+        "现在分词 bracketing"
+      ],
+      "examples": [
+        "Please write a word between the brackets.",
+        "Parents in low age brackets have a tendency to spoil their children."
+      ]
+    },
+    {
+      "id": "ky-119",
+      "word": "briefcase",
+      "phonetic": "'bri:fkeis",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a case with a handle",
+        "for carrying papers or files or books"
+      ],
+      "zh": [
+        "n. 公事包"
+      ],
+      "forms": [
+        "复数 briefcases"
+      ],
+      "examples": [
+        "He put his briefcase on the seat next to him.",
+        "I have this briefcase in a different color."
+      ]
+    },
+    {
+      "id": "ky-120",
+      "word": "recede",
+      "phonetic": "ri'si:d",
+      "pos": "v:100",
+      "defsEn": [
+        "v. become faint or more distant"
+      ],
+      "zh": [
+        "vi. 向后退, 退却, 收回, 降低, 减弱"
+      ],
+      "forms": [
+        "三单 recedes",
+        "过去式 receded",
+        "过去分词 receded",
+        "现在分词 receding"
+      ],
+      "examples": [
+        "The water recedes at low tide.",
+        "My memory of her has begun to recede."
+      ]
+    },
+    {
+      "id": "ky-121",
+      "word": "abound",
+      "phonetic": "ә'baund",
+      "pos": "v:100",
+      "defsEn": [
+        "v. be abundant or plentiful",
+        "exist in large quantities",
+        "v. be in a state of movement or action"
+      ],
+      "zh": [
+        "vi. 大量存在, 富于, 充满"
+      ],
+      "forms": [
+        "复数 abounds",
+        "三单 abounds",
+        "过去式 abounded",
+        "过去分词 abounded",
+        "现在分词 abounding"
+      ],
+      "examples": [
+        "Game birds abound in the area.",
+        "This river abounds in small fish."
+      ]
+    },
+    {
+      "id": "ky-122",
+      "word": "repression",
+      "phonetic": "ri'preʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a state of forcible subjugation",
+        "n. (psychiatry) the classical defense mechanism that protects you from impulses or ideas that would cause anxiety by preventing them from becoming conscious",
+        "n. the act of repressing",
+        "control by holding down"
+      ],
+      "zh": [
+        "n. 抑制, 压抑, 制止"
+      ],
+      "forms": [
+        "复数 repressions"
+      ],
+      "examples": [
+        "The seed of revolution is repression.",
+        "They all took part in the repressions."
+      ]
+    },
+    {
+      "id": "ky-123",
+      "word": "outing",
+      "phonetic": "'autiŋ",
+      "pos": "n:100",
+      "defsEn": [
+        "n a journey taken for pleasure",
+        "n a day devoted to an outdoor social gathering",
+        "v to state openly and publicly one's homosexuality",
+        "v reveal (something) about somebody's identity or lifestyle",
+        "v be made known",
+        "be disclosed or revealed"
+      ],
+      "zh": [
+        "n. 郊游, 远足",
+        "a. 远足适用的"
+      ],
+      "forms": [
+        "复数 outings"
+      ],
+      "examples": [
+        "This is the perfect day for an outing.",
+        "It's the perfect day for an outing."
+      ]
+    },
+    {
+      "id": "ky-124",
+      "word": "spicy",
+      "phonetic": "'spaisi",
+      "pos": "j:100",
+      "defsEn": [
+        "s having an agreeably pungent taste",
+        "s producing a burning sensation on the taste nerves",
+        "s suggestive of sexual impropriety"
+      ],
+      "zh": [
+        "a. 香的, 多香料的, 辛辣的, 下流的"
+      ],
+      "forms": [
+        "比较级 spicier",
+        "最高级 spiciest"
+      ],
+      "examples": [
+        "Many people around the world love spicy food.",
+        "I found the food here to be a little spicy."
+      ]
+    },
+    {
+      "id": "ky-125",
+      "word": "scrutinize",
+      "phonetic": "'skrutinaiz",
+      "pos": "v:100",
+      "defsEn": [
+        "v to look at critically or searchingly, or in minute detail",
+        "v examine carefully for accuracy with the intent of verification"
+      ],
+      "zh": [
+        "vt.vi. 细看, 仔细检查, 审查, 细阅"
+      ],
+      "forms": [
+        "三单 scrutinizes",
+        "过去式 scrutinized",
+        "过去分词 scrutinized",
+        "现在分词 scrutinizing"
+      ],
+      "examples": [
+        "He scrutinized the document one final time before approving it.",
+        "Spenser's mother often scrutinizes him for every small mistake he makes."
+      ]
+    },
+    {
+      "id": "ky-126",
+      "word": "aspire",
+      "phonetic": "ә'spaiә",
+      "pos": "v:100",
+      "defsEn": [
+        "v have an ambitious plan or a lofty goal"
+      ],
+      "zh": [
+        "vi. 渴望, 立志于"
+      ],
+      "forms": [
+        "三单 aspires",
+        "过去式 aspired",
+        "过去分词 aspired",
+        "现在分词 aspiring"
+      ],
+      "examples": [
+        "I have every right to aspire to a better life.",
+        "Their children aspire to be more independent."
+      ]
+    },
+    {
+      "id": "ky-127",
+      "word": "breach",
+      "phonetic": "bri:tʃ",
+      "pos": "v:33/n:67",
+      "defsEn": [
+        "n. a failure to perform some promised act or obligation",
+        "n. an opening (especially a gap in a dike or fortification)"
+      ],
+      "zh": [
+        "n. 裂口, 违背, 破坏, 违反, 突破, 破裂",
+        "vt. 攻破, 突破",
+        "vi. 跳出水面"
+      ],
+      "forms": [
+        "复数 breaches",
+        "三单 breaches",
+        "过去式 breached",
+        "过去分词 breached",
+        "现在分词 breaching"
+      ],
+      "examples": [
+        "That would be a breach of contract.",
+        "Can you forgive a breach of trust?"
+      ]
+    },
+    {
+      "id": "ky-128",
+      "word": "noodle",
+      "phonetic": "'nu:dl",
+      "pos": "v:22/n:78",
+      "defsEn": [
+        "n. a ribbonlike strip of pasta"
+      ],
+      "zh": [
+        "n. 面条, 笨蛋"
+      ],
+      "forms": [
+        "复数 noodles"
+      ],
+      "examples": [
+        "Throw the noodle against the wall to see if it will stick.",
+        "I wish he'd use his noodle every once in a while."
+      ]
+    },
+    {
+      "id": "ky-129",
+      "word": "bowling",
+      "phonetic": "'bәuliŋ",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a game in which balls are rolled at an object or group of objects with the aim of knocking them over or moving them",
+        "n. (cricket) the act of delivering a cricket ball to the batsman",
+        "n. the playing of a game of tenpins or duckpins etc"
+      ],
+      "zh": [
+        "n. 保龄球戏"
+      ],
+      "forms": [
+        "复数 bowlings"
+      ],
+      "examples": [
+        "My significant other and I often go bowling.",
+        "Do you own your own bowling ball?"
+      ]
+    },
+    {
+      "id": "ky-130",
+      "word": "sprout",
+      "phonetic": "spraut",
+      "pos": "n:37/v:63",
+      "defsEn": [
+        "n. any new growth of a plant such as a new branch or a bud",
+        "n. a newly grown bud (especially from a germinating seed)",
+        "v. put forth and grow sprouts or shoots"
+      ],
+      "zh": [
+        "n. 芽, 萌芽",
+        "vt. 使发芽, 摘去芽",
+        "vi. 长芽, 抽条"
+      ],
+      "forms": [
+        "复数 sprouts",
+        "三单 sprouts",
+        "过去式 sprouted",
+        "过去分词 sprouted",
+        "现在分词 sprouting"
+      ],
+      "examples": [
+        "Treat the sprout gently, as you would treat a baby.",
+        "How long will it take for these bird seeds to sprout?"
+      ]
+    },
+    {
+      "id": "ky-131",
+      "word": "pharmacy",
+      "phonetic": "'fɑ:mәsi",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the art and science of preparing and dispensing drugs and medicines,"
+      ],
+      "zh": [
+        "n. 药房, 配药学, 制药业"
+      ],
+      "forms": [
+        "复数 pharmacies"
+      ],
+      "examples": [
+        "I go to the pharmacy and buy medicine.",
+        "We can buy medicine at the pharmacy."
+      ]
+    },
+    {
+      "id": "ky-132",
+      "word": "advent",
+      "phonetic": "'ædvәnt",
+      "pos": "n:100",
+      "defsEn": [
+        "n. arrival that has been awaited (especially of something momentous)",
+        "n. the season including the four Sundays preceding Christmas"
+      ],
+      "zh": [
+        "n. 来到, 来临"
+      ],
+      "forms": [
+        "复数 advents"
+      ],
+      "examples": [
+        "The advent of stormtroopers brought about a turn in trench warfare.",
+        "A chocolate is hidden behind each door of this Advent calendar."
+      ]
+    },
+    {
+      "id": "ky-133",
+      "word": "solitude",
+      "phonetic": "'sɒlitju:d",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a state of social isolation",
+        "n. the state or situation of being alone",
+        "n. a solitary place"
+      ],
+      "zh": [
+        "n. 孤独, 单独, 孤寂"
+      ],
+      "forms": [
+        "复数 solitudes"
+      ],
+      "examples": [
+        "Better solitude than the company of the wicked.",
+        "Japanese enjoy solitude, even amongst a crowd."
+      ]
+    },
+    {
+      "id": "ky-134",
+      "word": "paperback",
+      "phonetic": "'peipәbæk",
+      "pos": "n:100",
+      "defsEn": [
+        "s. (of books) having a flexible binding"
+      ],
+      "zh": [
+        "n. 平装本, 纸面本"
+      ],
+      "forms": [
+        "复数 paperbacks"
+      ],
+      "examples": [
+        "Is there also a paperback edition of this book?",
+        "I bought the novel in paperback because it was cheaper than the hardcover."
+      ]
+    },
+    {
+      "id": "ky-135",
+      "word": "prosper",
+      "phonetic": "'prɒspә",
+      "pos": "v:100",
+      "defsEn": [
+        "v make steady progress",
+        "be at the high point in one's career or reach a high point in historical significance or importance"
+      ],
+      "zh": [
+        "vi. 繁荣, 兴隆, 成功",
+        "vt. 使成功, 使昌盛"
+      ],
+      "forms": [
+        "三单 prospers",
+        "过去式 prospered",
+        "过去分词 prospered",
+        "现在分词 prospering"
+      ],
+      "examples": [
+        "May you all live long and prosper.",
+        "Here's to our joint venture, and may it prosper!"
+      ]
+    },
+    {
+      "id": "ky-136",
+      "word": "sentimental",
+      "phonetic": ".senti'mentl",
+      "pos": "j:100",
+      "defsEn": [
+        "s. given to or marked by sentiment or sentimentality"
+      ],
+      "zh": [
+        "a. 感伤的, 感情用事的"
+      ],
+      "forms": [],
+      "examples": [
+        "This has sentimental value to me.",
+        "She told me I was sentimental."
+      ]
+    },
+    {
+      "id": "ky-137",
+      "word": "lateral",
+      "phonetic": "'lætәrәl",
+      "pos": "j:97/n:3",
+      "defsEn": [
+        "s. situated at or extending to the side",
+        "s. lying away from the median and sagittal plane of a body"
+      ],
+      "zh": [
+        "n. 侧部, 支线, 边音",
+        "a. 侧面的, 旁边的"
+      ],
+      "forms": [
+        "复数 laterals"
+      ],
+      "examples": [
+        "The lateral malleolus is the bone on the outside of the ankle joint."
+      ]
+    },
+    {
+      "id": "ky-138",
+      "word": "buffet",
+      "phonetic": "'bʌfit",
+      "pos": "v:19/n:81",
+      "defsEn": [
+        "n. a piece of furniture that stands at the side of a dining room",
+        "has shelves and drawers",
+        "n. a meal set out on a buffet at which guests help themselves",
+        "v. strike against forcefully",
+        "v. strike, beat repeatedly"
+      ],
+      "zh": [
+        "n. 自助餐, 小卖部, 碗橱, 殴打, 冲击",
+        "vt. 连续打, 冲击, 搏斗",
+        "vi. 奋斗"
+      ],
+      "forms": [
+        "复数 buffets",
+        "三单 buffets",
+        "过去式 buffeted",
+        "过去分词 buffetted",
+        "现在分词 buffeting"
+      ],
+      "examples": [
+        "Two for the lunch buffet, please.",
+        "The principal feature of the conference is the buffet."
+      ]
+    },
+    {
+      "id": "ky-139",
+      "word": "modernization",
+      "phonetic": ".mɒdәnai'zeiʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. making modern in appearance or behavior",
+        "n. a modernized version (as of a play)"
+      ],
+      "zh": [
+        "n. 现代化"
+      ],
+      "forms": [
+        "复数 modernizations"
+      ],
+      "examples": [
+        "Central to this issue is the problem of modernization.",
+        "Algiers needs to launch a vast infrastructure modernization program."
+      ]
+    },
+    {
+      "id": "ky-140",
+      "word": "anguish",
+      "phonetic": "'æŋgwiʃ",
+      "pos": "n:100",
+      "defsEn": [
+        "n. extreme mental distress",
+        "n. extreme distress of body or mind",
+        "v. suffer great pains or distress"
+      ],
+      "zh": [
+        "n. 剧痛, 痛苦",
+        "vt. 使极痛苦",
+        "vi. 感到痛苦"
+      ],
+      "forms": [
+        "复数 anguishes",
+        "三单 anguishes",
+        "过去式 anguished",
+        "过去分词 anguished",
+        "现在分词 anguishing"
+      ],
+      "examples": [
+        "I will speak in the anguish of my spirit.",
+        "The newspaper told of the mother's anguish at the death of her son."
+      ]
+    },
+    {
+      "id": "ky-141",
+      "word": "lash",
+      "phonetic": "læʃ",
+      "pos": "n:37/v:63",
+      "defsEn": [
+        "n. leather strip that forms the flexible part of a whip",
+        "v. lash or flick about sharply",
+        "v. bind with a rope, chain, or cord"
+      ],
+      "zh": [
+        "n. 鞭子, 鞭打, 睫毛, 责骂, 讽刺",
+        "vt. 鞭打, 摆动, 扎捆, 冲击, 讽刺, 煽动",
+        "vi. 冲洗, 鞭打, 责骂"
+      ],
+      "forms": [
+        "复数 lashes",
+        "三单 lashes",
+        "过去式 lashed",
+        "过去分词 lashed",
+        "现在分词 lashing"
+      ],
+      "examples": [
+        "The day after our night on the lash, we felt awful.",
+        "He lashed the ball with immense power."
+      ]
+    },
+    {
+      "id": "ky-142",
+      "word": "outskirts",
+      "phonetic": "'autskә:ts",
+      "pos": "n:100",
+      "defsEn": [
+        "n. outlying areas (as of a city or town)"
+      ],
+      "zh": [
+        "n. 近郊, 市郊"
+      ],
+      "forms": [],
+      "examples": []
+    },
+    {
+      "id": "ky-143",
+      "word": "parasite",
+      "phonetic": "'pærәsait",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an animal or plant that lives in or on a host (another animal or plant)",
+        "it obtains nourishment from the host without benefiting or killing the host"
+      ],
+      "zh": [
+        "n. 寄生生物, 寄生虫, 食客"
+      ],
+      "forms": [
+        "复数 parasites"
+      ],
+      "examples": [
+        "You're nothing more than a social parasite!",
+        "Which parasite is the most resistant?"
+      ]
+    },
+    {
+      "id": "ky-144",
+      "word": "doctorate",
+      "phonetic": "'dɒktәrit",
+      "pos": "n:100",
+      "defsEn": [
+        "n one of the highest earned academic degrees conferred by a university"
+      ],
+      "zh": [
+        "n. 博士头衔"
+      ],
+      "forms": [
+        "复数 doctorates"
+      ],
+      "examples": [
+        "Being blind did not prevent him from obtaining a doctorate in mathematics.",
+        "She has two postgraduate degrees, and will begin work on her doctorate next year."
+      ]
+    },
+    {
+      "id": "ky-145",
+      "word": "zoom",
+      "phonetic": "zu:m",
+      "pos": "n:27/v:73",
+      "defsEn": [
+        "v. move along very quickly",
+        "v. move with a low humming noise"
+      ],
+      "zh": [
+        "n. 急速上升, 变焦摄影, 嗡嗡声",
+        "vi. 猛增, 急速上升, 摄象机移动",
+        "vt. 使摄象机移动"
+      ],
+      "forms": [
+        "复数 zooms",
+        "三单 zooms",
+        "过去式 zoomed",
+        "过去分词 zoomed",
+        "现在分词 zooming"
+      ],
+      "examples": [
+        "Double click the map to zoom in on a place.",
+        "Zoom in on the face of that guy."
+      ]
+    },
+    {
+      "id": "ky-146",
+      "word": "renovate",
+      "phonetic": "'renәuveit",
+      "pos": "v:100",
+      "defsEn": [
+        "v. restore to a previous or better condition"
+      ],
+      "zh": [
+        "vt. 更新, 革新, 刷新, 修复, 使恢复活力"
+      ],
+      "forms": [
+        "复数 renovates",
+        "三单 renovates",
+        "过去式 renovated",
+        "过去分词 renovated",
+        "现在分词 renovating"
+      ],
+      "examples": [
+        "You must renovate the old house.",
+        "I want to renovate my kitchen."
+      ]
+    },
+    {
+      "id": "ky-147",
+      "word": "pneumonia",
+      "phonetic": "nju:'mәunjә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. respiratory disease characterized by inflammation of the lung parenchyma (excluding the bronchi) with congestion caused by viruses or bacteria or irritants"
+      ],
+      "zh": [
+        "n. 肺炎"
+      ],
+      "forms": [
+        "复数 pneumonias"
+      ],
+      "examples": [
+        "It took me a long time to recover from pneumonia.",
+        "My father contracted pneumonia last month."
+      ]
+    },
+    {
+      "id": "ky-148",
+      "word": "relish",
+      "phonetic": "'reliʃ",
+      "pos": "n:34/v:66",
+      "defsEn": [
+        "n. spicy or savory condiment",
+        "n. the taste experience when a savoury condiment is taken into the mouth"
+      ],
+      "zh": [
+        "n. 滋味, 风味, 美味, 爱好, 食欲, 调味品",
+        "vt. 调味, 喜欢, 玩味",
+        "vi. 有味道"
+      ],
+      "forms": [
+        "复数 relishes",
+        "三单 relishes",
+        "过去式 relished",
+        "过去分词 relished",
+        "现在分词 relishing"
+      ],
+      "examples": [
+        "He did not relish this simple family life.",
+        "I relish the diversity of flavors."
+      ]
+    },
+    {
+      "id": "ky-149",
+      "word": "commemorate",
+      "phonetic": "kә'memәreit",
+      "pos": "v:100",
+      "defsEn": [
+        "v. mark by some ceremony or observation",
+        "v. call to remembrance",
+        "keep alive the memory of someone or something, as in a ceremony",
+        "v. be or provide a memorial to a person or an event"
+      ],
+      "zh": [
+        "vt. 纪念"
+      ],
+      "forms": [
+        "三单 commemorates",
+        "过去式 commemorated",
+        "过去分词 commemorated",
+        "现在分词 commemorating"
+      ],
+      "examples": [
+        "Today we commemorate the defeat of the military regime.",
+        "Who will commemorate me when I die?"
+      ]
+    },
+    {
+      "id": "ky-150",
+      "word": "skeptic",
+      "phonetic": "'skeptik",
+      "pos": "n:100",
+      "defsEn": [
+        "n. someone who habitually doubts accepted beliefs"
+      ],
+      "zh": [
+        "n. 怀疑者, 怀疑论者, 不可知论者"
+      ],
+      "forms": [
+        "复数 skeptics"
+      ],
+      "examples": [
+        "In order to be a skeptic, maybe you should not be an expert.",
+        "I'll admit I was a skeptic at first."
+      ]
+    },
+    {
+      "id": "ky-151",
+      "word": "preoccupation",
+      "phonetic": "pri:.ɒkju'peiʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an idea that preoccupies the mind and holds the attention",
+        "n. the mental state of being preoccupied by something"
+      ],
+      "zh": [
+        "n. 抢先占据, 先人之见, 入神"
+      ],
+      "forms": [
+        "复数 preoccupations"
+      ],
+      "examples": [
+        "Preoccupation with sex is the basis of all mental activity.",
+        "My major preoccupation is the question, 'What is reality?'"
+      ]
+    },
+    {
+      "id": "ky-152",
+      "word": "obsolete",
+      "phonetic": "'ɒbsәli:t",
+      "pos": "j:100",
+      "defsEn": [
+        "s no longer in use"
+      ],
+      "zh": [
+        "a. 荒废的, 成废物的, 陈旧的, 老式的",
+        "n. 废词, 废物"
+      ],
+      "forms": [],
+      "examples": [
+        "Your computer is obsolete. You need to buy a new one.",
+        "Television is obsolete as a medium in any case."
+      ]
+    },
+    {
+      "id": "ky-153",
+      "word": "kinship",
+      "phonetic": "'kinʃip",
+      "pos": "n:100",
+      "defsEn": [
+        "n. (anthropology) relatedness or connection by blood or marriage or adoption"
+      ],
+      "zh": [
+        "n. 亲属关系"
+      ],
+      "forms": [
+        "复数 kinships"
+      ],
+      "examples": [
+        "Ties of kinship are very important in Islam."
+      ]
+    },
+    {
+      "id": "ky-154",
+      "word": "zip",
+      "phonetic": "zip",
+      "pos": "n:30/v:70",
+      "defsEn": [
+        "n a quantity of no importance",
+        "n a code of letters and digits added to a postal address to aid in the sorting of mail",
+        "n forceful exertion",
+        "n a fastener for locking together two toothed edges by means of a sliding tab",
+        "v close with a zipper",
+        "v move very fast"
+      ],
+      "zh": [
+        "n. 尖啸声, 拉链, 活力",
+        "vt. 给...以速度, 使增加活力, 拉(拉链)",
+        "vi. 有力而迅速地行动, 嘘嘘地响, 拉拉链"
+      ],
+      "forms": [
+        "复数 zips",
+        "三单 zips",
+        "过去式 zipped",
+        "过去分词 zipped",
+        "现在分词 zipping"
+      ],
+      "examples": [
+        "Why do I forget to write the zip code?",
+        "Can you come and help me zip this up?"
+      ]
+    },
+    {
+      "id": "ky-155",
+      "word": "anecdote",
+      "phonetic": "'ænikdәut",
+      "pos": "n:100",
+      "defsEn": [
+        "n. short account of an incident (especially a biographical one)"
+      ],
+      "zh": [
+        "n. 轶事, 奇闻"
+      ],
+      "forms": [
+        "复数 anecdotes"
+      ],
+      "examples": [
+        "Do you remember the anecdote the captain told yesterday afternoon?",
+        "Can you tell me the meaning of this anecdote?"
+      ]
+    },
+    {
+      "id": "ky-156",
+      "word": "obstruction",
+      "phonetic": "әb'strʌʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. any structure that makes progress difficult",
+        "n. the physical condition of blocking or filling a passage with an obstruction",
+        "n. the act of obstructing",
+        "n. getting in someone's way"
+      ],
+      "zh": [
+        "n. 障碍, 妨碍, 闭塞物"
+      ],
+      "forms": [
+        "复数 obstructions"
+      ],
+      "examples": [
+        "He was accused of obstruction of justice.",
+        "Obstructions near doors can impede people in an emergency."
+      ]
+    },
+    {
+      "id": "ky-157",
+      "word": "clone",
+      "phonetic": "klәun",
+      "pos": "v:37/n:63",
+      "defsEn": [
+        "n. a group of genetically identical cells or organisms derived from a single cell or individual by some kind of asexual reproduction",
+        "v. make multiple identical copies of"
+      ],
+      "zh": [
+        "n. 无性系"
+      ],
+      "forms": [
+        "复数 clones",
+        "三单 clones",
+        "过去式 cloned",
+        "过去分词 cloned",
+        "现在分词 cloning"
+      ],
+      "examples": [
+        "I wonder if a human will ever be cloned.",
+        "What animals have they been able to clone to date?"
+      ]
+    },
+    {
+      "id": "ky-158",
+      "word": "retrospective",
+      "phonetic": ".retrә'spektiv",
+      "pos": "j:93/n:7",
+      "defsEn": [
+        "n. an exhibition of a representative selection of an artist's life work",
+        "a. concerned with or related to the past"
+      ],
+      "zh": [
+        "a. 回顾的, 怀旧的, 在后面的",
+        "n. 回顾展"
+      ],
+      "forms": [
+        "复数 retrospectives"
+      ],
+      "examples": [
+        "We'll start the meeting with a retrospective look at the past year.",
+        "Kirsty went to the art gallery to see the Matisse retrospective."
+      ]
+    },
+    {
+      "id": "ky-159",
+      "word": "federation",
+      "phonetic": "fedә'reiʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an organization formed by merging several groups or parties",
+        "n. the act of constituting a political unity out of a number of separate states or colonies or provinces so that each member retains the management of its internal affairs"
+      ],
+      "zh": [
+        "n. 联邦, 联合, 联盟"
+      ],
+      "forms": [
+        "复数 federations"
+      ],
+      "examples": [
+        "This morning I spoke with the federation president.",
+        "He is now the president of Bangladesh Football Federation."
+      ]
+    },
+    {
+      "id": "ky-160",
+      "word": "vegetarian",
+      "phonetic": ".vedʒi'tєәriәn",
+      "pos": "j:58/n:42",
+      "defsEn": [
+        "n. eater of fruits and grains and nuts",
+        "someone who eats no meat or fish or (often) any animal products"
+      ],
+      "zh": [
+        "n. 素食者, 食草动物",
+        "a. 素食的"
+      ],
+      "forms": [
+        "复数 vegetarians"
+      ],
+      "examples": [
+        "Do I look like a vegetarian to you?",
+        "Why do you want to become a vegetarian?"
+      ]
+    },
+    {
+      "id": "ky-161",
+      "word": "glamor",
+      "phonetic": "'glæmә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. alluring beauty or charm (often with sex-appeal)"
+      ],
+      "zh": [
+        "n. 魅力, 迷人的美, 魔法",
+        "vt. 迷惑"
+      ],
+      "forms": [
+        "复数 glamors"
+      ],
+      "examples": [
+        "The model was featured on the cover of the glamor magazine.",
+        "They all moved to Algiers to start a new life of blitz and glamor."
+      ]
+    },
+    {
+      "id": "ky-162",
+      "word": "paddle",
+      "phonetic": "'pædl",
+      "pos": "n:43/v:57",
+      "defsEn": [
+        "n. small wooden bat with a flat surface",
+        "used for hitting balls in various games",
+        "n. a blade of a paddle wheel or water wheel",
+        "n. an instrument of punishment consisting of a flat board",
+        "n. a short light oar used without an oarlock to propel a canoe or small boat"
+      ],
+      "zh": [
+        "n. 桨, 划桨, 明轮翼",
+        "vi. 划桨, 戏水, 涉水",
+        "vt. 用桨划, 划船运送, 搅, 拌"
+      ],
+      "forms": [
+        "复数 paddles",
+        "三单 paddles",
+        "过去式 paddled",
+        "过去分词 paddled",
+        "现在分词 paddling"
+      ],
+      "examples": [
+        "No one can paddle against the stream of history.",
+        "We all have to paddle together."
+      ]
+    },
+    {
+      "id": "ky-163",
+      "word": "hypocrisy",
+      "phonetic": "hi'pɒkrәsi",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an expression of agreement that is not supported by real conviction",
+        "n. insincerity by virtue of pretending to have qualities or beliefs that you do not really have"
+      ],
+      "zh": [
+        "n. 伪善"
+      ],
+      "forms": [
+        "复数 hypocrisies"
+      ],
+      "examples": [
+        "I see a lot of hypocrisy.",
+        "In the scientific world, there is a lot of intellectual hypocrisy."
+      ]
+    },
+    {
+      "id": "ky-164",
+      "word": "numb",
+      "phonetic": "nʌm",
+      "pos": "j:70/v:30",
+      "defsEn": [
+        "v. make numb or insensitive",
+        "s. so frightened as to be unable to move",
+        "stunned or paralyzed with terror",
+        "petrified"
+      ],
+      "zh": [
+        "a. 麻木的, 失去知觉的",
+        "vt. 使麻木, 使昏迷, 使失去知觉"
+      ],
+      "forms": [
+        "复数 numbs",
+        "三单 numbs",
+        "过去式 numbed",
+        "过去分词 numbed",
+        "现在分词 numbing",
+        "比较级 number"
+      ],
+      "examples": [
+        "This shot will help numb the pain.",
+        "An ice pack will numb the pain."
+      ]
+    },
+    {
+      "id": "ky-165",
+      "word": "falter",
+      "phonetic": "'fɒ:ltә",
+      "pos": "v:100",
+      "defsEn": [
+        "v. be unsure or weak",
+        "v. move hesitatingly, as if about to give way"
+      ],
+      "zh": [
+        "vt. 支吾地说",
+        "vi. 支吾, 蹒跚地走",
+        "n. 颤抖, 支吾, 踌躇"
+      ],
+      "forms": [
+        "复数 falters",
+        "三单 falters",
+        "过去式 faltered",
+        "过去分词 faltered",
+        "现在分词 faltering"
+      ],
+      "examples": [
+        "Hold the weight above your head until your arms begin to falter.",
+        "In the end, he also faltered in the face of great adversity."
+      ]
+    },
+    {
+      "id": "ky-166",
+      "word": "humiliate",
+      "phonetic": "hju:'milieit",
+      "pos": "v:100",
+      "defsEn": [
+        "v. cause to feel shame",
+        "hurt the pride of"
+      ],
+      "zh": [
+        "vt. 使丢脸, 使蒙羞, 屈辱"
+      ],
+      "forms": [
+        "三单 humiliates",
+        "过去式 humiliated",
+        "过去分词 humiliated",
+        "现在分词 humiliating"
+      ],
+      "examples": [
+        "How could you humiliate me like that?",
+        "Have you come to humiliate me?"
+      ]
+    },
+    {
+      "id": "ky-167",
+      "word": "muted",
+      "phonetic": null,
+      "pos": "j:100",
+      "defsEn": [
+        "v deaden (a sound or noise), especially by wrapping",
+        "s in a softened tone",
+        "s being or made softer or less loud or clear"
+      ],
+      "zh": [
+        "a. 变弱了的, 变柔和了的"
+      ],
+      "forms": [],
+      "examples": []
+    },
+    {
+      "id": "ky-168",
+      "word": "lad",
+      "phonetic": "læd",
+      "pos": "n:100",
+      "defsEn": [
+        "n a boy or man",
+        "n a male child (a familiar term of address to a boy)"
+      ],
+      "zh": [
+        "n. 青年, 家伙, 少年, 情人"
+      ],
+      "forms": [
+        "复数 lads"
+      ],
+      "examples": [
+        "Just calm down, lad, and listen to me.",
+        "These bus ladies seem to like to do so."
+      ]
+    },
+    {
+      "id": "ky-169",
+      "word": "futile",
+      "phonetic": "'fju:tail",
+      "pos": "j:100",
+      "defsEn": [
+        "s. producing no result or effect"
+      ],
+      "zh": [
+        "a. 无用的, 琐细的, 不重要的"
+      ],
+      "forms": [],
+      "examples": [
+        "It would be futile to do that.",
+        "Any effort you make to stop me is futile."
+      ]
+    },
+    {
+      "id": "ky-170",
+      "word": "bowel",
+      "phonetic": "'bauәl",
+      "pos": "n:100",
+      "defsEn": [
+        "n the part of the alimentary canal between the stomach and the anus"
+      ],
+      "zh": [
+        "n. 肠, 内脏, 内部",
+        "vt. 挖...的内脏"
+      ],
+      "forms": [
+        "复数 bowels"
+      ],
+      "examples": [
+        "Do you have a regular bowel movement?",
+        "I have not had a bowel movement for a week."
+      ]
+    },
+    {
+      "id": "ky-171",
+      "word": "noteworthy",
+      "phonetic": "'nәutwә:ði",
+      "pos": "j:100",
+      "defsEn": [
+        "s. worthy of notice"
+      ],
+      "zh": [
+        "a. 值得注目的, 显著的"
+      ],
+      "forms": [],
+      "examples": [
+        "I have nothing noteworthy to say.",
+        "There is one very noteworthy element in this stage."
+      ]
+    },
+    {
+      "id": "ky-172",
+      "word": "evade",
+      "phonetic": "i'veid",
+      "pos": "v:100",
+      "defsEn": [
+        "v. practice evasion",
+        "v. use cunning or deceit to escape or avoid"
+      ],
+      "zh": [
+        "v. (巧妙地)逃脱, 规避, 逃避"
+      ],
+      "forms": [
+        "三单 evades",
+        "过去式 evaded",
+        "过去分词 evaded",
+        "现在分词 evading"
+      ],
+      "examples": [
+        "He thought he could evade suspicion.",
+        "No matter how much I try to find it, the truth evades me."
+      ]
+    },
+    {
+      "id": "ky-173",
+      "word": "sulfur",
+      "phonetic": "'sʌlfә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an abundant tasteless odorless multivalent nonmetallic element",
+        "best known in yellow crystals",
+        "occurs in many sulphide and sulphate minerals and even in native form (especially in volcanic regions)"
+      ],
+      "zh": [
+        "n. 硫, 硫磺",
+        "vt. 用硫磺处理"
+      ],
+      "forms": [
+        "复数 sulfurs",
+        "三单 sulfurs",
+        "过去式 sulfured",
+        "过去分词 sulfured",
+        "现在分词 sulfuring"
+      ],
+      "examples": [
+        "I like the smell of sulfur.",
+        "Sulfur burns with a blue flame."
+      ]
+    },
+    {
+      "id": "ky-174",
+      "word": "sane",
+      "phonetic": "sein",
+      "pos": "j:100",
+      "defsEn": [
+        "a. mentally healthy",
+        "free from mental disorder"
+      ],
+      "zh": [
+        "a. 神智健全的, 稳健的, 没病的, 合理的"
+      ],
+      "forms": [
+        "比较级 saner",
+        "最高级 sanest"
+      ],
+      "examples": [
+        "No sane person would ever do such a thing.",
+        "No sane parent would do that."
+      ]
+    },
+    {
+      "id": "ky-175",
+      "word": "auditorium",
+      "phonetic": ".ɒ:di'tɒ:riәm",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the area of a theater or concert hall where the audience sits"
+      ],
+      "zh": [
+        "n. 听众席, 礼堂"
+      ],
+      "forms": [
+        "复数 auditoriums"
+      ],
+      "examples": [
+        "Can you meet me in the auditorium?",
+        "This year, the prom will take place in the auditorium."
+      ]
+    },
+    {
+      "id": "ky-176",
+      "word": "juggle",
+      "phonetic": "dʒʌgl",
+      "pos": "v:100",
+      "defsEn": [
+        "n. the act of rearranging things to give a misleading impression",
+        "n. throwing and catching several objects simultaneously",
+        "v. influence by slyness",
+        "v. manipulate by or as if by moving around components"
+      ],
+      "zh": [
+        "vi. 玩戏法, 行骗, 篡改",
+        "vt. 耍弄, 歪曲, 篡改",
+        "n. 玩戏法, 魔术, 欺骗"
+      ],
+      "forms": [
+        "复数 juggles",
+        "三单 juggles",
+        "过去式 juggled",
+        "过去分词 juggled",
+        "现在分词 juggling"
+      ],
+      "examples": [
+        "Do you know how to juggle?",
+        "How did you learn to juggle so well? You make it look so easy."
+      ]
+    },
+    {
+      "id": "ky-177",
+      "word": "staggering",
+      "phonetic": "'stægәriŋ",
+      "pos": "j:100",
+      "defsEn": [
+        "v walk as if unable to control one's movements",
+        "v walk with great difficulty",
+        "v to arrange in a systematic order",
+        "v astound or overwhelm, as with shock",
+        "s so surprisingly impressive as to stun or overwhelm"
+      ],
+      "zh": [
+        "a. 蹒跚的, 巨大的, 惊人的"
+      ],
+      "forms": [
+        "复数 staggerings"
+      ],
+      "examples": []
+    },
+    {
+      "id": "ky-178",
+      "word": "fume",
+      "phonetic": "fju:m",
+      "pos": "v:34/n:66",
+      "defsEn": [
+        "v. be mad, angry, or furious",
+        "v. emit a cloud of fine particles"
+      ],
+      "zh": [
+        "n. 臭气, 烟, 激怒",
+        "vt. 熏",
+        "vi. 冒烟"
+      ],
+      "forms": [
+        "复数 fumes",
+        "三单 fumes",
+        "过去式 fumed",
+        "过去分词 fumed",
+        "现在分词 fuming"
+      ],
+      "examples": [
+        "There were a lot of fumes coming out of the car exhaust.",
+        "Don't just sit there and fume. Tell me what's wrong."
+      ]
+    },
+    {
+      "id": "ky-179",
+      "word": "soaring",
+      "phonetic": "'sɔ:riŋ 'sɔәr-",
+      "pos": "j:100",
+      "defsEn": [
+        "s. ascending to a level markedly higher than the usual"
+      ],
+      "zh": [
+        "a. 高飞的, 翱翔的, 高耸入云的, 崇高的, 高涨的"
+      ],
+      "forms": [
+        "复数 soarings"
+      ],
+      "examples": []
+    },
+    {
+      "id": "ky-180",
+      "word": "disdain",
+      "phonetic": "dis'dein",
+      "pos": "v:23/n:77",
+      "defsEn": [
+        "n lack of respect accompanied by a feeling of intense dislike",
+        "n a communication that indicates lack of respect by patronizing the recipient",
+        "v look down on with disdain",
+        "v reject with contempt"
+      ],
+      "zh": [
+        "n. 蔑视",
+        "vt. 蔑视, 鄙弃"
+      ],
+      "forms": [
+        "复数 disdains",
+        "三单 disdains",
+        "过去式 disdained",
+        "过去分词 disdained",
+        "现在分词 disdaining"
+      ],
+      "examples": [
+        "If you disdain him, the public will blame you.",
+        "It is necessary to have a healthy disdain for wealth."
+      ]
+    },
+    {
+      "id": "ky-181",
+      "word": "conspire",
+      "phonetic": "kәn'spaiә",
+      "pos": "v:100",
+      "defsEn": [
+        "v. engage in plotting or enter into a conspiracy, swear together",
+        "v. act in unison or agreement and in secret towards a deceitful or illegal purpose"
+      ],
+      "zh": [
+        "vi. 阴谋, 协力, 共谋",
+        "vt. 图谋"
+      ],
+      "forms": [
+        "复数 conspires",
+        "三单 conspires",
+        "过去式 conspired",
+        "过去分词 conspired",
+        "现在分词 conspiring"
+      ],
+      "examples": [
+        "I suspect that you have conspired against me.",
+        "He must have conspired with his grandfather."
+      ]
+    },
+    {
+      "id": "ky-182",
+      "word": "abdomen",
+      "phonetic": "'æbdәmen",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the region of the body of a vertebrate between the thorax and the pelvis"
+      ],
+      "zh": [
+        "n. 腹部"
+      ],
+      "forms": [
+        "复数 abdomens"
+      ],
+      "examples": [
+        "He hit him in the abdomen.",
+        "Sami had a severe pain in the abdomen."
+      ]
+    },
+    {
+      "id": "ky-183",
+      "word": "publicize",
+      "phonetic": "'pʌblisaiz",
+      "pos": "v:100",
+      "defsEn": [
+        "v. make public"
+      ],
+      "zh": [
+        "vt. 宣传"
+      ],
+      "forms": [
+        "复数 publicizes",
+        "三单 publicizes",
+        "过去式 publicized",
+        "过去分词 publicized",
+        "现在分词 publicizing"
+      ],
+      "examples": [
+        "You don't have to publicize your whole life on Facebook.",
+        "My job is to publicize the decisions made during the meeting."
+      ]
+    },
+    {
+      "id": "ky-184",
+      "word": "lapse",
+      "phonetic": "læps",
+      "pos": "v:37/n:63",
+      "defsEn": [
+        "n. a break or intermission in the occurrence of something",
+        "v. end, at least for a long time",
+        "v. drop to a lower level, as in one's morals or standards",
+        "v. let slip"
+      ],
+      "zh": [
+        "n. 过失, 流逝, 失效",
+        "vi. 犯错, 堕落, 减退, 消失, 流逝",
+        "vt. 使失效"
+      ],
+      "forms": [
+        "复数 lapses",
+        "三单 lapses",
+        "过去式 lapsed",
+        "过去分词 lapsed",
+        "现在分词 lapsing"
+      ],
+      "examples": [
+        "Every time we talk about this, you lapse into silence.",
+        "He lapsed into despair after that accident."
+      ]
+    },
+    {
+      "id": "ky-185",
+      "word": "psychiatry",
+      "phonetic": "sai'kaiәtri",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the branch of medicine dealing with the diagnosis and treatment of mental disorders"
+      ],
+      "zh": [
+        "n. 精神病学, 精神病治疗"
+      ],
+      "forms": [
+        "复数 psychiatries"
+      ],
+      "examples": [
+        "She decided to pursue a career in psychiatry.",
+        "Maria works in the field of psychiatry."
+      ]
+    },
+    {
+      "id": "ky-186",
+      "word": "mosaic",
+      "phonetic": "mәu'zeiik",
+      "pos": "j:30/n:70",
+      "defsEn": [
+        "n. art consisting of a design made of small pieces of colored stone or glass",
+        "n. viral disease in solanaceous plants (tomatoes, potatoes, tobacco) resulting in mottling and often shriveling of the leaves",
+        "n. a freeware browser",
+        "n. a pattern resembling a mosaic"
+      ],
+      "zh": [
+        "n. 马赛克, 镶嵌细工, 镶嵌工艺",
+        "a. 马赛克的, 镶嵌细工的, 拼花的",
+        "vt. 用镶嵌细工装饰"
+      ],
+      "forms": [
+        "复数 mosaics"
+      ],
+      "examples": []
+    },
+    {
+      "id": "ky-187",
+      "word": "coupon",
+      "phonetic": "'ku:pɒn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a negotiable certificate that can be detached and redeemed as needed",
+        "n. a test sample of some substance"
+      ],
+      "zh": [
+        "n. 息票, 赠券"
+      ],
+      "forms": [
+        "复数 coupons"
+      ],
+      "examples": [
+        "This coupon can only be redeemed in-store.",
+        "Please tell me how to use coupons."
+      ]
+    },
+    {
+      "id": "ky-188",
+      "word": "intrude",
+      "phonetic": "in'tru:d",
+      "pos": "v:100",
+      "defsEn": [
+        "v. enter uninvited",
+        "v. search or inquire in a meddlesome way",
+        "v. thrust oneself in as if by force"
+      ],
+      "zh": [
+        "vi. 闯入, 侵入",
+        "vt. 强加于"
+      ],
+      "forms": [
+        "复数 intrudes",
+        "三单 intrudes",
+        "过去式 intruded",
+        "过去分词 intruded",
+        "现在分词 intruding"
+      ],
+      "examples": [
+        "Take care not to intrude upon her privacy.",
+        "A tall man intruded into my apartment with a gun."
+      ]
+    },
+    {
+      "id": "ky-189",
+      "word": "highland",
+      "phonetic": "'hailәnd",
+      "pos": "n:100",
+      "defsEn": [
+        "n. elevated (e.g., mountainous) land"
+      ],
+      "zh": [
+        "n. 高地, 苏格兰高地"
+      ],
+      "forms": [
+        "复数 highlands"
+      ],
+      "examples": [
+        "Many years ago I wandered for a while on highlands completely unknown to tourists.",
+        "The potato is native to the highlands of Central and South America."
+      ]
+    },
+    {
+      "id": "ky-190",
+      "word": "thrift",
+      "phonetic": "θrift",
+      "pos": "n:100",
+      "defsEn": [
+        "n. any of numerous sun-loving low-growing evergreens of the genus Armeria having round heads of pink or white flowers"
+      ],
+      "zh": [
+        "n. 节约, 茂盛, 海石竹"
+      ],
+      "forms": [
+        "复数 thrifts"
+      ],
+      "examples": [
+        "Want to come with me to the thrift shop?",
+        "They can shop at the thrift store."
+      ]
+    },
+    {
+      "id": "ky-191",
+      "word": "narrate",
+      "phonetic": "nә'reit",
+      "pos": "v:100",
+      "defsEn": [
+        "v. provide commentary for a film, for example"
+      ],
+      "zh": [
+        "v. 说故事, 说明, 叙述"
+      ],
+      "forms": [
+        "复数 narrates",
+        "三单 narrates",
+        "过去式 narrated",
+        "过去分词 narrated",
+        "现在分词 narrating"
+      ],
+      "examples": [
+        "We need someone famous to narrate the script for our new documentary.",
+        "They narrated a story to him."
+      ]
+    },
+    {
+      "id": "ky-192",
+      "word": "encyclopedia",
+      "phonetic": "in.saiklәu'pi:diә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a reference work (often in several volumes) containing articles on various topics (often arranged in alphabetical order) dealing with the entire range of human knowledge or with some particular specialty"
+      ],
+      "zh": [
+        "n. 百科全书"
+      ],
+      "forms": [
+        "复数 encyclopedias"
+      ],
+      "examples": [
+        "I want to leave my name on the encyclopedia.",
+        "An up-to-date edition of the encyclopedia will come out next month."
+      ]
+    },
+    {
+      "id": "ky-193",
+      "word": "satire",
+      "phonetic": "'sætaiә",
+      "pos": "n:100",
+      "defsEn": [
+        "n witty language used to convey insults or scorn"
+      ],
+      "zh": [
+        "n. 讽刺文学, 讽刺"
+      ],
+      "forms": [
+        "复数 satires"
+      ],
+      "examples": [
+        "Our world must be a satire of some other world.",
+        "The play is a satire on the political world."
+      ]
+    },
+    {
+      "id": "ky-194",
+      "word": "dynasty",
+      "phonetic": "'dainæsti",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a sequence of powerful leaders in the same family"
+      ],
+      "zh": [
+        "n. 朝代, 王朝"
+      ],
+      "forms": [
+        "复数 dynasties"
+      ],
+      "examples": [
+        "The Almohad dynasty continued to expand its territory.",
+        "The Seljuk Dynasty ruled over a vast territory."
+      ]
+    },
+    {
+      "id": "ky-195",
+      "word": "reassurance",
+      "phonetic": ".ri:ә'ʃurәns",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the act of reassuring",
+        "restoring someone's confidence"
+      ],
+      "zh": [
+        "n. 安心, 放心, 再保证"
+      ],
+      "forms": [
+        "复数 reassurances"
+      ],
+      "examples": [
+        "He seeks reassurance about his masculinity.",
+        "He often seeks reassurance, a clear sign of his insecurity."
+      ]
+    },
+    {
+      "id": "ky-196",
+      "word": "obstruct",
+      "phonetic": "әb'strʌkt",
+      "pos": "v:100",
+      "defsEn": [
+        "v. hinder or prevent the progress or accomplishment of",
+        "v. block passage through",
+        "v. shut out from view or get in the way so as to hide from sight"
+      ],
+      "zh": [
+        "vt. 阻隔, 妨碍, 阻塞, 遮没",
+        "vi. 设障碍"
+      ],
+      "forms": [
+        "三单 obstructs",
+        "过去式 obstructed",
+        "过去分词 obstructed",
+        "现在分词 obstructing"
+      ],
+      "examples": [
+        "Pass on, please, and do not obstruct the way.",
+        "Do not obstruct the emergency exit with your big boxes."
+      ]
+    },
+    {
+      "id": "ky-197",
+      "word": "refund",
+      "phonetic": "'ri:fʌnd",
+      "pos": "v:20/n:80",
+      "defsEn": [
+        "n. money returned to a payer",
+        "n. the act of returning money received previously",
+        "v. pay back"
+      ],
+      "zh": [
+        "n. 偿还",
+        "vt. 付还, 偿还借款",
+        "vi. 归还, 偿还"
+      ],
+      "forms": [
+        "复数 refunds",
+        "三单 refunds",
+        "过去式 refunded",
+        "过去分词 refunded",
+        "现在分词 refunding"
+      ],
+      "examples": [
+        "Can I get a refund for this train ticket?",
+        "Please cancel my order and refund the money."
+      ]
+    },
+    {
+      "id": "ky-198",
+      "word": "intersect",
+      "phonetic": ".intә'sekt",
+      "pos": "v:100",
+      "defsEn": [
+        "v. meet at a point"
+      ],
+      "zh": [
+        "vt. 贯穿, 横穿",
+        "vi. 交错, 相交"
+      ],
+      "forms": [
+        "复数 intersects",
+        "三单 intersects",
+        "过去式 intersected",
+        "过去分词 intersected",
+        "现在分词 intersecting"
+      ],
+      "examples": [
+        "Parallel lines do not intersect each other.",
+        "All the numbered streets intersect this one."
+      ]
+    },
+    {
+      "id": "ky-199",
+      "word": "intrusive",
+      "phonetic": "in'tru:siv",
+      "pos": "j:100",
+      "defsEn": [
+        "a. tending to intrude (especially upon privacy)",
+        "a. of rock material",
+        "forced while molten into cracks between layers of other rock",
+        "a. thrusting inward"
+      ],
+      "zh": [
+        "a. 打扰的, 插入的"
+      ],
+      "forms": [
+        "复数 intrusives"
+      ],
+      "examples": [
+        "I let the intrusive thoughts win.",
+        "I did not appreciate his intrusive questions about my personal life."
+      ]
+    },
+    {
+      "id": "ky-200",
+      "word": "overhaul",
+      "phonetic": ".әuvә'hɒ:l",
+      "pos": "v:48/n:52",
+      "defsEn": [
+        "n. periodic maintenance on a car or machine",
+        "v. make repairs, renovations, revisions or adjustments to"
+      ],
+      "zh": [
+        "vt. 分解检查, 翻修, 精细检查, 彻底革新",
+        "n. 分解检查, 精细检查, 大检修"
+      ],
+      "forms": [
+        "复数 overhauls",
+        "三单 overhauls",
+        "过去式 overhauled",
+        "过去分词 overhauled",
+        "现在分词 overhauling"
+      ],
+      "examples": [
+        "The engine needs a total overhaul.",
+        "The Prime Minister tried to convince his coalition partners to overhaul pensions."
+      ]
+    },
+    {
+      "id": "ky-201",
+      "word": "eminent",
+      "phonetic": "'eminәnt",
+      "pos": "j:100",
+      "defsEn": [
+        "s. standing above others in quality or position",
+        "s. of imposing height",
+        "especially standing out above others"
+      ],
+      "zh": [
+        "a. 显赫的, 杰出的, 有名的"
+      ],
+      "forms": [],
+      "examples": [
+        "She is an eminent scientist in the field of genetics.",
+        "He is eminent both as a teacher and writer."
+      ]
+    },
+    {
+      "id": "ky-202",
+      "word": "discreet",
+      "phonetic": "dis'kri:t",
+      "pos": "j:100",
+      "defsEn": [
+        "a. marked by prudence or modesty and wise self-restraint"
+      ],
+      "zh": [
+        "a. 小心的, 慎重的"
+      ],
+      "forms": [],
+      "examples": [
+        "Next time, you need to be more discreet.",
+        "I think we need to be a little more discreet."
+      ]
+    },
+    {
+      "id": "ky-203",
+      "word": "esteem",
+      "phonetic": "i'sti:m",
+      "pos": "v:16/n:84",
+      "defsEn": [
+        "n. the condition of being honored (esteemed or respected or well regarded)"
+      ],
+      "zh": [
+        "n. 尊敬, 尊重",
+        "vt. 尊敬, 尊重, 认为"
+      ],
+      "forms": [
+        "复数 esteems",
+        "三单 esteems",
+        "过去式 esteemed",
+        "过去分词 esteemed",
+        "现在分词 esteeming"
+      ],
+      "examples": [
+        "I esteem it an honor to address this audience.",
+        "You need to work on your self-esteem."
+      ]
+    },
+    {
+      "id": "ky-204",
+      "word": "taboo",
+      "phonetic": "tә'bu:",
+      "pos": "j:37/n:63",
+      "defsEn": [
+        "n. a prejudice (especially in Polynesia and other South Pacific islands) that prohibits the use or mention of something because of its sacred nature",
+        "n. an inhibition or ban resulting from social custom or emotional aversion",
+        "v. declare as sacred and forbidden",
+        "s. forbidden to profane use especially in South Pacific islands"
+      ],
+      "zh": [
+        "n. 禁忌, 禁止接近, 禁止使用",
+        "a. 禁忌的, 忌讳的",
+        "vt. 禁忌, 忌讳, 禁止"
+      ],
+      "forms": [
+        "复数 taboos"
+      ],
+      "examples": [
+        "That subject is taboo. We do not speak about it.",
+        "For some, sex is a taboo subject."
+      ]
+    },
+    {
+      "id": "ky-205",
+      "word": "rut",
+      "phonetic": "rʌt",
+      "pos": "v:22/n:78",
+      "defsEn": [
+        "n. a groove or furrow (especially one in soft earth caused by wheels)",
+        "n. a settled and monotonous routine that is hard to escape",
+        "v. be in a state of sexual excitement",
+        "of male mammals"
+      ],
+      "zh": [
+        "n. 辙迹, 凹槽, 常规, 惯例, 发情期",
+        "vi. 交尾, 发情",
+        "vt. 挖槽于"
+      ],
+      "forms": [
+        "复数 ruts",
+        "三单 ruts",
+        "过去式 rutted",
+        "过去分词 rutted",
+        "现在分词 rutting"
+      ],
+      "examples": [
+        "Don't get stuck in a rut."
+      ]
+    },
+    {
+      "id": "ky-206",
+      "word": "doze",
+      "phonetic": "dәuz",
+      "pos": "n:7/v:93",
+      "defsEn": [
+        "n. a light fitful sleep"
+      ],
+      "zh": [
+        "vi. 打瞌睡, 假寐",
+        "vt. 打瞌睡度过",
+        "n. 瞌睡"
+      ],
+      "forms": [
+        "复数 dozes",
+        "三单 dozes",
+        "过去式 dozed",
+        "过去分词 dozed",
+        "现在分词 dozing"
+      ],
+      "examples": [
+        "The teacher makes them doze off in class.",
+        "I must have dozed off at some point."
+      ]
+    },
+    {
+      "id": "ky-207",
+      "word": "chancellor",
+      "phonetic": "'tʃɑ:nsәlә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the person who is head of state (in several countries)",
+        "n. the honorary or titular head of a university"
+      ],
+      "zh": [
+        "n. 大臣, 总理, 首相, 大使馆/领事馆的一等秘书, 司法官, 大学校长"
+      ],
+      "forms": [
+        "复数 chancellors"
+      ],
+      "examples": [
+        "The chancellor comes after the president of the parliament.",
+        "Who is the Chancellor of Germany?"
+      ]
+    },
+    {
+      "id": "ky-208",
+      "word": "connotation",
+      "phonetic": ".kɒnәu'teiʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an idea that is implied or suggested"
+      ],
+      "zh": [
+        "n. 含蓄, 内涵"
+      ],
+      "forms": [
+        "复数 connotations"
+      ],
+      "examples": [
+        "This word has a negative connotation.",
+        "Pitbulls often get this connotation of being the dangerous dogs."
+      ]
+    },
+    {
+      "id": "ky-209",
+      "word": "recurrent",
+      "phonetic": "ri'kʌrәnt",
+      "pos": "j:100",
+      "defsEn": [
+        "s recurring again and again"
+      ],
+      "zh": [
+        "a. 再发生的, 定期重复的, 循环的"
+      ],
+      "forms": [],
+      "examples": [
+        "Her recurrent nightmare involved a tsunami.",
+        "His recurrent nightmare involved a tsunami."
+      ]
+    },
+    {
+      "id": "ky-210",
+      "word": "axe",
+      "phonetic": null,
+      "pos": "v:19/n:81",
+      "defsEn": [
+        "v. chop or split with an ax"
+      ],
+      "zh": [
+        "n. 斧, 斧头",
+        "vt. 削减(人员、经费、计划、机构等)"
+      ],
+      "forms": [
+        "复数 axes",
+        "三单 axes",
+        "过去式 axed",
+        "过去分词 axed",
+        "现在分词 axeing"
+      ],
+      "examples": [
+        "He cut down the big tree with an axe.",
+        "I should go home to get my axe."
+      ]
+    },
+    {
+      "id": "ky-211",
+      "word": "repressive",
+      "phonetic": "ri'presiv",
+      "pos": "j:100",
+      "defsEn": [
+        "s restrictive of action"
+      ],
+      "zh": [
+        "a. 压抑的, 抑制的, 镇压的"
+      ],
+      "forms": [],
+      "examples": [
+        "Every dictatorship needs a strong repressive intelligence service.",
+        "Bouteflika stepped up his repressive tactics."
+      ]
+    },
+    {
+      "id": "ky-212",
+      "word": "appal",
+      "phonetic": "ә'pɒ:l",
+      "pos": null,
+      "defsEn": [
+        "v strike with disgust or revulsion",
+        "v fill with apprehension or alarm",
+        "cause to be unpleasantly surprised"
+      ],
+      "zh": [
+        "vt. 使惊骇, 使吓坏"
+      ],
+      "forms": [
+        "三单 appals",
+        "过去式 appalled",
+        "过去分词 appalled",
+        "现在分词 appalling"
+      ],
+      "examples": [
+        "The lack of care some people put into their subtitles is appalling.",
+        "There's an appalling shortage of phone booths in this area."
+      ]
+    },
+    {
+      "id": "ky-213",
+      "word": "saliva",
+      "phonetic": "sә'laivә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a clear liquid secreted into the mouth by the salivary glands and mucous glands of the mouth",
+        "moistens the mouth and starts the digestion of starches"
+      ],
+      "zh": [
+        "n. 唾液, 唾沫, 涎"
+      ],
+      "forms": [
+        "复数 salivas"
+      ],
+      "examples": [
+        "I hate the taste of my saliva after eating chocolate.",
+        "My mouth forms a lot of saliva."
+      ]
+    },
+    {
+      "id": "ky-214",
+      "word": "troupe",
+      "phonetic": "tru:p",
+      "pos": "n:100",
+      "defsEn": [
+        "n organization of performers and associated personnel (especially theatrical)"
+      ],
+      "zh": [
+        "n. 团, 班, 一伙",
+        "vi. 巡回演出"
+      ],
+      "forms": [
+        "复数 troupes"
+      ],
+      "examples": [
+        "The dance teacher was choreographing her troupe.",
+        "The troupe is enthralling audiences around the country with their energetic performances."
+      ]
+    },
+    {
+      "id": "ky-215",
+      "word": "foreseeable",
+      "phonetic": "'fɒ:'si:әbl",
+      "pos": "j:100",
+      "defsEn": [
+        "s. capable of being anticipated"
+      ],
+      "zh": [
+        "a. 可预知的, 能预测的"
+      ],
+      "forms": [],
+      "examples": [
+        "In the foreseeable future, we will be able to put an end to AIDS.",
+        "At the present moment, not all consequences of the scandal are foreseeable."
+      ]
+    },
+    {
+      "id": "ky-216",
+      "word": "conscientious",
+      "phonetic": ".kɒnʃi'enʃәs",
+      "pos": "j:100",
+      "defsEn": [
+        "s. characterized by extreme care and great effort",
+        "a. guided by or in accordance with conscience or sense of right and wrong"
+      ],
+      "zh": [
+        "a. 有责任心的, 负责的, 本着良心的"
+      ],
+      "forms": [],
+      "examples": [
+        "Tom demands a more conscientious approach from me.",
+        "Only the conscientious students came to the lecture."
+      ]
+    },
+    {
+      "id": "ky-217",
+      "word": "optimize",
+      "phonetic": "'ɒptimaiz",
+      "pos": "v:100",
+      "defsEn": [
+        "v. make optimal",
+        "get the most out of",
+        "use best",
+        "v. modify to achieve maximum efficiency in storage capacity or time or cost",
+        "v. act as an optimist and take a sunny view of the world"
+      ],
+      "zh": [
+        "vt. 使完美, 使完善, 充分利用, 乐观地对待, 优化",
+        "vi. 持乐观态度"
+      ],
+      "forms": [
+        "复数 optimizes",
+        "三单 optimizes",
+        "过去式 optimized",
+        "过去分词 optimized",
+        "现在分词 optimizing"
+      ],
+      "examples": [
+        "You should try to optimize your time.",
+        "If human life is convex, we can optimize it."
+      ]
+    },
+    {
+      "id": "ky-218",
+      "word": "apprehend",
+      "phonetic": ".æpri'hend",
+      "pos": "v:100",
+      "defsEn": [
+        "v. anticipate with dread or anxiety"
+      ],
+      "zh": [
+        "vt. 理解, 忧虑, 逮捕",
+        "vi. 担心, 理解"
+      ],
+      "forms": [
+        "三单 apprehends",
+        "过去式 apprehended",
+        "过去分词 apprehended",
+        "现在分词 apprehending"
+      ],
+      "examples": [
+        "The police expect to apprehend the robber before nightfall.",
+        "It was apprehended not as a gratitude but as an insult."
+      ]
+    },
+    {
+      "id": "ky-219",
+      "word": "transcendent",
+      "phonetic": "træn'sendәnt",
+      "pos": "j:100",
+      "defsEn": [
+        "s. exceeding or surpassing usual limits especially in excellence",
+        "s. beyond and outside the ordinary range of human experience or understanding"
+      ],
+      "zh": [
+        "a. 卓越的, 出类拔萃的, 超常的",
+        "n. 卓越的人, 超绝物"
+      ],
+      "forms": [
+        "复数 transcendents"
+      ],
+      "examples": [
+        "You believe that love is transcendent and eternal.",
+        "Is god an immanent or a transcendent being?"
+      ]
+    },
+    {
+      "id": "ky-220",
+      "word": "caress",
+      "phonetic": "kә'res",
+      "pos": "n:34/v:66",
+      "defsEn": [
+        "n. a gentle affectionate stroking (or something resembling it)",
+        "v. touch or stroke lightly in a loving or endearing manner"
+      ],
+      "zh": [
+        "n. 爱抚, 拥抱",
+        "vt. 爱抚, 抱, 宠爱"
+      ],
+      "forms": [
+        "复数 caresses",
+        "三单 caresses",
+        "过去式 caressed",
+        "过去分词 caressed",
+        "现在分词 caressing"
+      ],
+      "examples": [
+        "The mother caressed her baby with much affection.",
+        "He sat down on the bed and caressed my cheek."
+      ]
+    },
+    {
+      "id": "ky-221",
+      "word": "perceptual",
+      "phonetic": "pә'septʃuәl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. of or relating to the act of perceiving"
+      ],
+      "zh": [
+        "a. 知觉的, 有知觉的"
+      ],
+      "forms": [
+        "复数 perceptuals"
+      ],
+      "examples": [
+        "The brain has multiple perceptual systems."
+      ]
+    },
+    {
+      "id": "ky-222",
+      "word": "cyberspace",
+      "phonetic": null,
+      "pos": "n:100",
+      "defsEn": [
+        "n a computer network consisting of a worldwide network of computer networks that use the TCP/IP network protocols to facilitate data transmission and exchange"
+      ],
+      "zh": [
+        "空间, 网控空间"
+      ],
+      "forms": [
+        "复数 cyberspaces"
+      ],
+      "examples": [
+        "Is the information superhighway in cyberspace, or does it merely take you there?",
+        "Tom and Mary met in cyberspace."
+      ]
+    },
+    {
+      "id": "ky-223",
+      "word": "plumber",
+      "phonetic": "'plʌmә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a craftsman who installs and repairs pipes and fixtures and appliances"
+      ],
+      "zh": [
+        "n. 水管工人"
+      ],
+      "forms": [
+        "复数 plumbers"
+      ],
+      "examples": [
+        "Can you find a reliable plumber for the apartment?",
+        "Can you fix this or should I call a plumber?"
+      ]
+    },
+    {
+      "id": "ky-224",
+      "word": "literate",
+      "phonetic": "'litәrit",
+      "pos": "j:89/n:11",
+      "defsEn": [
+        "n. a person who can read and write",
+        "a. able to read and write",
+        "a. versed in literature",
+        "dealing with literature",
+        "s. knowledgeable and educated in one or several fields"
+      ],
+      "zh": [
+        "n. 学者",
+        "a. 有读写能力的, 精通文学的, 受过教育的"
+      ],
+      "forms": [
+        "复数 literates"
+      ],
+      "examples": [
+        "His mother asked him to read her the Quran because she wasn't very literate.",
+        "Becoming a literate news consumer requires us to be able to identify legitimate journalism."
+      ]
+    },
+    {
+      "id": "ky-225",
+      "word": "gallop",
+      "phonetic": "'gælәp",
+      "pos": "n:29/v:71",
+      "defsEn": [
+        "n. a fast gait of a horse",
+        "a two-beat stride during which all four legs are off the ground simultaneously",
+        "v. ride at a galloping pace",
+        "v. go at galloping speed",
+        "v. cause to move at full gallop"
+      ],
+      "zh": [
+        "n. 疾驰, 飞奔",
+        "vi. 飞驰, 急速进行, 急急忙忙地说",
+        "vt. 使飞跑, 迅速运输"
+      ],
+      "forms": [
+        "复数 gallops",
+        "三单 gallops",
+        "过去式 galloped",
+        "过去分词 galloped",
+        "现在分词 galloping"
+      ],
+      "examples": [
+        "As usual I run down the steps and gallop to class.",
+        "The horse never refuses to gallop to its stall."
+      ]
+    },
+    {
+      "id": "ky-226",
+      "word": "agitate",
+      "phonetic": "'ædʒiteit",
+      "pos": "v:100",
+      "defsEn": [
+        "v. try to stir up public opinion",
+        "v. cause to be agitated, excited, or roused",
+        "v. change the arrangement or position of"
+      ],
+      "zh": [
+        "vt. 使摇动, 搅动, 使激动, 使不安",
+        "vi. 鼓动, 煽动"
+      ],
+      "forms": [
+        "复数 agitates",
+        "三单 agitates",
+        "过去式 agitated",
+        "过去分词 agitated",
+        "现在分词 agitating"
+      ],
+      "examples": [
+        "I feel tense and agitated when I have too much work to do.",
+        "A sudden wind agitated the surface of the pond."
+      ]
+    },
+    {
+      "id": "ky-227",
+      "word": "polarize",
+      "phonetic": "'pәulәraiz",
+      "pos": "v:100",
+      "defsEn": [
+        "v. cause to vibrate in a definite pattern",
+        "v. cause to concentrate about two conflicting or contrasting positions",
+        "v. become polarized in a conflict or contrasting situation"
+      ],
+      "zh": [
+        "v. (使)偏振, (使)极化, (使)两极分化"
+      ],
+      "forms": [
+        "三单 polarizes",
+        "过去式 polarized",
+        "过去分词 polarized",
+        "现在分词 polarizing"
+      ],
+      "examples": [
+        "Do not defeat the safety purpose of the polarized or grounding-type plug.",
+        "Use of such divisive language tends to polarize the public."
+      ]
+    },
+    {
+      "id": "ky-228",
+      "word": "quirk",
+      "phonetic": "kwә:k",
+      "pos": "v:8/n:92",
+      "defsEn": [
+        "n. a narrow groove beside a beading",
+        "v. twist or curve abruptly"
+      ],
+      "zh": [
+        "n. 古怪举动, 俏皮话, 急转"
+      ],
+      "forms": [
+        "复数 quirks"
+      ],
+      "examples": [
+        "That's just a quirk of his.",
+        "It was just a quirk of fate."
+      ]
+    },
+    {
+      "id": "ky-229",
+      "word": "civility",
+      "phonetic": "si'viliti",
+      "pos": "n:100",
+      "defsEn": [
+        "n. formal or perfunctory politeness"
+      ],
+      "zh": [
+        "n. 礼貌, 礼仪"
+      ],
+      "forms": [
+        "复数 civilities"
+      ],
+      "examples": [
+        "She answered him with cold civility.",
+        "Humanity is experiencing a global crisis of civility."
+      ]
+    },
+    {
+      "id": "ky-230",
+      "word": "malignant",
+      "phonetic": "mә'lignәnt",
+      "pos": "j:100",
+      "defsEn": [
+        "a. dangerous to health",
+        "characterized by progressive and uncontrolled growth (especially of a tumor)"
+      ],
+      "zh": [
+        "a. 有恶意的, 恶性的, 有害的"
+      ],
+      "forms": [
+        "复数 malignants"
+      ],
+      "examples": [
+        "Her face was distorted and malignant with menace.",
+        "Get fuller, sexier, more malignant lips today!"
+      ]
+    },
+    {
+      "id": "ky-231",
+      "word": "paradoxical",
+      "phonetic": ".pærә'dɒksikl",
+      "pos": "j:100",
+      "defsEn": [
+        "s. seemingly contradictory but nonetheless possibly true"
+      ],
+      "zh": [
+        "a. 似非而是的, 矛盾的, 诡论的"
+      ],
+      "forms": [],
+      "examples": [
+        "As paradoxical as it may seem, defending tolerance requires to not tolerate the intolerant."
+      ]
+    },
+    {
+      "id": "ky-232",
+      "word": "mania",
+      "phonetic": "'meiniә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an irrational but irresistible motive for a belief or action",
+        "n. a mood disorder",
+        "an affective disorder in which the victim tends to respond excessively and sometimes violently"
+      ],
+      "zh": [
+        "n. 狂躁, 热衷, 狂热"
+      ],
+      "forms": [
+        "复数 manias"
+      ],
+      "examples": [
+        "He could not shake off the persecution mania.",
+        "This is pure and sterile mania of protagonism for its own sake."
+      ]
+    },
+    {
+      "id": "ky-233",
+      "word": "acclaim",
+      "phonetic": "ә'kleim",
+      "pos": "v:31/n:69",
+      "defsEn": [
+        "n. enthusiastic approval",
+        "v. praise vociferously"
+      ],
+      "zh": [
+        "n. 喝彩, 欢呼, 赞同",
+        "v. 欢呼, 喝彩, 称赞"
+      ],
+      "forms": [
+        "复数 acclaims",
+        "三单 acclaims",
+        "过去式 acclaimed",
+        "过去分词 acclaimed",
+        "现在分词 acclaiming"
+      ],
+      "examples": [
+        "She received international acclaim for her research.",
+        "They acclaimed him as their leader."
+      ]
+    },
+    {
+      "id": "ky-234",
+      "word": "jargon",
+      "phonetic": "'dʒɑ:gәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. specialized technical terminology characteristic of a particular subject"
+      ],
+      "zh": [
+        "n. 专门术语, 行话, 梦话, 土语"
+      ],
+      "forms": [
+        "复数 jargons"
+      ],
+      "examples": [
+        "There is too much jargon in this decree.",
+        "This article is full of legal jargon."
+      ]
+    },
+    {
+      "id": "ky-235",
+      "word": "conclusive",
+      "phonetic": "kәn'klu:siv",
+      "pos": "j:100",
+      "defsEn": [
+        "a. forming an end or termination",
+        "especially putting an end to doubt or question"
+      ],
+      "zh": [
+        "a. 决定性的, 确定性的, 最后的"
+      ],
+      "forms": [],
+      "examples": [
+        "There has been no conclusive proof regarding extra-sensory perception.",
+        "This horrible mistake led to Tom's conclusive dismissal."
+      ]
+    },
+    {
+      "id": "ky-236",
+      "word": "provocation",
+      "phonetic": ".prɒvә'keiʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. needed encouragement"
+      ],
+      "zh": [
+        "n. 激怒, 刺激, 挑拨"
+      ],
+      "forms": [
+        "复数 provocations"
+      ],
+      "examples": [
+        "There was a provocation on the border.",
+        "She cried at the least provocation."
+      ]
+    },
+    {
+      "id": "ky-237",
+      "word": "forfeit",
+      "phonetic": "'fɒ:fit",
+      "pos": "n:11/v:89",
+      "defsEn": [
+        "n. something that is lost or surrendered as a penalty",
+        "n. a penalty for a fault or mistake that involves losing or giving up something",
+        "n. the act of losing or surrendering something as a penalty for a mistake or fault or failure to perform etc.",
+        "v. lose (s.th.) or lose the right to (s.th.) by some error, offense, or crime"
+      ],
+      "zh": [
+        "n. 没收物, 罚金, 丧失",
+        "vt. 没收, 丧失",
+        "a. 丧失了的"
+      ],
+      "forms": [
+        "复数 forfeits",
+        "三单 forfeits",
+        "过去式 forfeited",
+        "过去分词 forfeited",
+        "现在分词 forfeiting"
+      ],
+      "examples": [
+        "You have forfeited the right to claim to care about freedom.",
+        "His health was the forfeit of heavy drinking."
+      ]
+    },
+    {
+      "id": "ky-238",
+      "word": "millimeter",
+      "phonetic": "'milimi:tә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a metric unit of length equal to one thousandth of a meter"
+      ],
+      "zh": [
+        "n. 毫米"
+      ],
+      "forms": [
+        "复数 millimeters"
+      ],
+      "examples": [
+        "If the bullet had been a millimeter to the left, he would have died.",
+        "Only a few millimeters are involved in that."
+      ]
+    },
+    {
+      "id": "ky-239",
+      "word": "strenuous",
+      "phonetic": "'strenjuәs",
+      "pos": "j:100",
+      "defsEn": [
+        "s. characterized by or performed with much energy or force"
+      ],
+      "zh": [
+        "a. 奋发的, 费劲的, 艰苦的"
+      ],
+      "forms": [],
+      "examples": [
+        "Neither of them cares for strenuous sports.",
+        "The trainer advised Angela to avoid strenuous exercise."
+      ]
+    },
+    {
+      "id": "ky-240",
+      "word": "appall",
+      "phonetic": "ә'pɒ:l",
+      "pos": "v:100",
+      "defsEn": [
+        "v strike with disgust or revulsion",
+        "v fill with apprehension or alarm",
+        "cause to be unpleasantly surprised"
+      ],
+      "zh": [
+        "vt. 使丧胆, 使惊骇"
+      ],
+      "forms": [
+        "复数 appalls",
+        "三单 appalls",
+        "过去式 appalled",
+        "过去分词 appalled",
+        "现在分词 appalling"
+      ],
+      "examples": [
+        "It constantly appalls me how stupid he can be."
+      ]
+    },
+    {
+      "id": "ky-241",
+      "word": "insightful",
+      "phonetic": "'in.saitful",
+      "pos": "j:100",
+      "defsEn": [
+        "s. exhibiting insight or clear and deep perception"
+      ],
+      "zh": [
+        "a. 有深刻见解的, 富有洞察力的"
+      ],
+      "forms": [],
+      "examples": [
+        "That was very insightful of you.",
+        "Thank you for your insightful comments."
+      ]
+    },
+    {
+      "id": "ky-242",
+      "word": "paternal",
+      "phonetic": "pә'tә:nl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. belonging to or inherited from one's father",
+        "a. characteristic of a father"
+      ],
+      "zh": [
+        "a. 父亲的, 父系的, 似父亲的, 得自父亲的, 家长式统治的"
+      ],
+      "forms": [],
+      "examples": [
+        "My paternal grandfather gave his life for his wife, children, and grandchildren.",
+        "My paternal grandfather is my father's father."
+      ]
+    },
+    {
+      "id": "ky-243",
+      "word": "dramatize",
+      "phonetic": "'dræmәtaiz",
+      "pos": "v:100",
+      "defsEn": [
+        "v. put into dramatic form",
+        "v. represent something in a dramatic manner"
+      ],
+      "zh": [
+        "vt. 改编成戏剧, 编写剧本",
+        "vi. 戏剧化"
+      ],
+      "forms": [
+        "复数 dramatizes",
+        "三单 dramatizes",
+        "过去式 dramatized",
+        "过去分词 dramatized",
+        "现在分词 dramatizing"
+      ],
+      "examples": [
+        "He mesmerized us all with the dramatized narration of his journey."
+      ]
+    },
+    {
+      "id": "ky-244",
+      "word": "chap",
+      "phonetic": "tʃæp",
+      "pos": "v:13/n:87",
+      "defsEn": [
+        "n. a boy or man",
+        "n. a crack in a lip caused usually by cold",
+        "n. (usually in the plural) leather leggings without a seat",
+        "joined by a belt",
+        "often have flared outer flaps",
+        "worn over trousers by cowboys to protect their legs",
+        "v. crack due to dehydration"
+      ],
+      "zh": [
+        "n. 小伙子, 颌, 龟裂",
+        "v. 皲裂"
+      ],
+      "forms": [
+        "复数 chaps",
+        "三单 chaps",
+        "过去式 chapped",
+        "过去分词 chapped",
+        "现在分词 chapping"
+      ],
+      "examples": [
+        "In the winter, my lips would chap.",
+        "That young chap is wearing a black scarf."
+      ]
+    },
+    {
+      "id": "ky-245",
+      "word": "cohesive",
+      "phonetic": "kәu'hi:siv",
+      "pos": "j:100",
+      "defsEn": [
+        "s. causing cohesion",
+        "s. cohering or tending to cohere",
+        "well integrated"
+      ],
+      "zh": [
+        "a. 黏合在一起的"
+      ],
+      "forms": [],
+      "examples": [
+        "A text could be coherent but not cohesive, and vice versa.",
+        "Their team is not very cohesive."
+      ]
+    },
+    {
+      "id": "ky-246",
+      "word": "sarcastic",
+      "phonetic": "sɑ:'kæstik",
+      "pos": "j:100",
+      "defsEn": [
+        "a. expressing or expressive of ridicule that wounds"
+      ],
+      "zh": [
+        "a. 讽刺的, 讥讽的"
+      ],
+      "forms": [
+        "复数 sarcastics"
+      ],
+      "examples": [
+        "That might come off as sarcastic.",
+        "Stop being sarcastic all the time!"
+      ]
+    },
+    {
+      "id": "ky-247",
+      "word": "panorama",
+      "phonetic": ".pænә'rɑ:mә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a picture (or series of pictures) representing a continuous scene"
+      ],
+      "zh": [
+        "n. 全景, 全貌, 概论, 范围"
+      ],
+      "forms": [
+        "复数 panoramas"
+      ],
+      "examples": [
+        "The hill commands the panorama of the city.",
+        "The panorama from up there is dreamlike."
+      ]
+    },
+    {
+      "id": "ky-248",
+      "word": "philharmonic",
+      "phonetic": ".filɑ:'mɒnik",
+      "pos": "j:100",
+      "defsEn": [
+        "a. composing or characteristic of an orchestral group",
+        "s. devoted to or appreciative of music"
+      ],
+      "zh": [
+        "a. 爱好音乐的, 交响乐团的, 爱乐团体的",
+        "n. 音乐爱好者, 音乐协会, 音乐会, 交响乐团"
+      ],
+      "forms": [
+        "复数 philharmonics"
+      ],
+      "examples": [
+        "Yesterday I was at a concert of the Vienna Philharmonic.",
+        "The Vienna Philharmonic is one of the most famous orchestras in the world."
+      ]
+    },
+    {
+      "id": "ky-249",
+      "word": "apprehensive",
+      "phonetic": ".æpri'hensiv",
+      "pos": "j:100",
+      "defsEn": [
+        "s. quick to understand",
+        "s. mentally upset over possible misfortune or danger etc",
+        "s. in fear or dread of possible evil or harm"
+      ],
+      "zh": [
+        "a. 惴惴不安的, 敏悟的, 知晓的"
+      ],
+      "forms": [],
+      "examples": [
+        "They are apprehensive that some further disaster might occur.",
+        "There's no need to be apprehensive."
+      ]
+    },
+    {
+      "id": "ky-250",
+      "word": "sarcasm",
+      "phonetic": "'sɑ:kæzm",
+      "pos": "n:100",
+      "defsEn": [
+        "n. witty language used to convey insults or scorn"
+      ],
+      "zh": [
+        "n. 挖苦, 讽刺, 讽刺话, 讽刺性"
+      ],
+      "forms": [
+        "复数 sarcasms"
+      ],
+      "examples": [
+        "Some people find sarcasm difficult to pick up on.",
+        "He should learn how to swallow his British sarcasm."
+      ]
+    },
+    {
+      "id": "ky-251",
+      "word": "futility",
+      "phonetic": "fju:'tiliti",
+      "pos": "n:100",
+      "defsEn": [
+        "n. uselessness as a consequence of having no practical result"
+      ],
+      "zh": [
+        "n. 无用, 无益, 无价值"
+      ],
+      "forms": [
+        "复数 futilities"
+      ],
+      "examples": [
+        "Tom was overcome with a sense of futility."
+      ]
+    },
+    {
+      "id": "ky-252",
+      "word": "perseverance",
+      "phonetic": "pә:si'viәrәns",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the act of persisting or persevering",
+        "continuing or repeating behavior"
+      ],
+      "zh": [
+        "n. 毅力, 忍耐, 锲而不舍, 不屈不挠"
+      ],
+      "forms": [
+        "复数 perseverances"
+      ],
+      "examples": [
+        "With skill and perseverance you can achieve any goal.",
+        "I admire your perseverance and determination."
+      ]
+    },
+    {
+      "id": "ky-253",
+      "word": "negligent",
+      "phonetic": "'neglidʒәnt",
+      "pos": "j:100",
+      "defsEn": [
+        "a. characterized by neglect and undue lack of concern"
+      ],
+      "zh": [
+        "a. 疏忽的, 粗心的, 不在意的"
+      ],
+      "forms": [],
+      "examples": [
+        "She is very negligent in her dress.",
+        "You are too negligent of those around you."
+      ]
+    },
+    {
+      "id": "ky-254",
+      "word": "bibliography",
+      "phonetic": ".bibli'ɒgrәfi",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a list of writings with time and place of publication (such as the writings of a single author or the works referred to in preparing a document etc.)"
+      ],
+      "zh": [
+        "n. 参考书目"
+      ],
+      "forms": [
+        "复数 bibliographies"
+      ],
+      "examples": [
+        "When do you start writing your bibliography?",
+        "Hand in a bibliography of your sources."
+      ]
+    },
+    {
+      "id": "ky-255",
+      "word": "anemia",
+      "phonetic": "ә'ni:miә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a deficiency of red blood cells",
+        "n. a lack of vitality",
+        "n. genus of terrestrial or lithophytic ferns having pinnatifid fronds",
+        "chiefly of tropical America"
+      ],
+      "zh": [
+        "n. 贫血, 贫血症, 无活力"
+      ],
+      "forms": [
+        "复数 anemias"
+      ],
+      "examples": [
+        "You have to eat foods rich in iron to prevent anemia.",
+        "The doctor analyzed the blood sample for anemia."
+      ]
+    },
+    {
+      "id": "ky-256",
+      "word": "superstitious",
+      "phonetic": ".sju:pә'stiʃәs",
+      "pos": "j:100",
+      "defsEn": [
+        "s. showing ignorance of the laws of nature and faith in magic or chance"
+      ],
+      "zh": [
+        "a. 迷信的"
+      ],
+      "forms": [],
+      "examples": [
+        "Here you will become superstitious against your will.",
+        "Here you will become superstitious whether you want to or not."
+      ]
+    },
+    {
+      "id": "ky-257",
+      "word": "deride",
+      "phonetic": "di'raid",
+      "pos": "v:100",
+      "defsEn": [
+        "v. treat or speak of with contempt"
+      ],
+      "zh": [
+        "vt. 嘲弄, 嘲笑"
+      ],
+      "forms": [
+        "复数 derides",
+        "三单 derides",
+        "过去式 derided",
+        "过去分词 derided",
+        "现在分词 deriding"
+      ],
+      "examples": [
+        "They constantly taunt and deride others.",
+        "He derides her choices, but never offers alternatives."
+      ]
+    },
+    {
+      "id": "ky-258",
+      "word": "malfunction",
+      "phonetic": ".mæl'fʌŋʃәn",
+      "pos": "v:27/n:73",
+      "defsEn": [
+        "n. a failure to function normally",
+        "v. fail to function or function improperly"
+      ],
+      "zh": [
+        "n. 故障, 失灵, 疾病",
+        "vi. 发生故障, 不起作用"
+      ],
+      "forms": [
+        "复数 malfunctions",
+        "三单 malfunctions",
+        "过去式 malfunctioned",
+        "过去分词 malfunctioned",
+        "现在分词 malfunctioning"
+      ],
+      "examples": [
+        "An engine in good condition should always run without any signs of malfunction.",
+        "The repair for the system malfunction lasted for an entire night."
+      ]
+    },
+    {
+      "id": "ky-259",
+      "word": "ebb",
+      "phonetic": "eb",
+      "pos": "v:48/n:52",
+      "defsEn": [
+        "n. a gradual decline (in size or strength or power or number)",
+        "n. the outward flow of the tide",
+        "v. flow back or recede"
+      ],
+      "zh": [
+        "n. 退潮, 衰退",
+        "vi. 潮退, 衰退"
+      ],
+      "forms": [
+        "复数 ebbs",
+        "三单 ebbs",
+        "过去式 ebbed",
+        "过去分词 ebbed",
+        "现在分词 ebbing"
+      ],
+      "examples": [
+        "Her life ebbed away from her through her wounds.",
+        "She has been with me through the ebb and flow of my fortunes."
+      ]
+    },
+    {
+      "id": "ky-260",
+      "word": "prudence",
+      "phonetic": "'pru:dns",
+      "pos": "n:100",
+      "defsEn": [
+        "n. discretion in practical affairs"
+      ],
+      "zh": [
+        "n. 审慎, 慎重, 精明, 节俭"
+      ],
+      "forms": [
+        "复数 prudences"
+      ],
+      "examples": [
+        "It is clear that he failed for lack of prudence.",
+        "Too often, wisdom is simply prudence that has ground to a halt."
+      ]
+    },
+    {
+      "id": "ky-261",
+      "word": "obsess",
+      "phonetic": "әb'ses",
+      "pos": "v:100",
+      "defsEn": [
+        "v. be preoccupied with something"
+      ],
+      "zh": [
+        "vt. 迷住, 使困扰"
+      ],
+      "forms": [
+        "三单 obsesses",
+        "过去式 obsessed",
+        "过去分词 obsessed",
+        "现在分词 obsessing"
+      ],
+      "examples": [
+        "He is obsessed about finding the perfect gift for his girlfriend.",
+        "Everybody blows it once in a while. It's better not to obsess on it."
+      ]
+    },
+    {
+      "id": "ky-262",
+      "word": "synchronize",
+      "phonetic": "'siŋkrәnaiz",
+      "pos": "v:100",
+      "defsEn": [
+        "v. make synchronous and adjust in time or manner",
+        "v. happen at the same time",
+        "v. make (motion picture sound) exactly simultaneous with the action",
+        "v. arrange or represent events so that they co-occur"
+      ],
+      "zh": [
+        "vt. 使同步, 使合拍",
+        "vi. 同时发生"
+      ],
+      "forms": [
+        "三单 synchronizes",
+        "过去式 synchronized",
+        "过去分词 synchronized",
+        "现在分词 synchronizing"
+      ],
+      "examples": [
+        "If one synchronized swimmer drowns, do all the rest have to drown too?",
+        "When couples hold hands, their brainwaves synchronize."
+      ]
+    },
+    {
+      "id": "ky-263",
+      "word": "amplifier",
+      "phonetic": "'æmplifaiә",
+      "pos": "n:100",
+      "defsEn": [
+        "n. electronic equipment that increases strength of signals passing through it"
+      ],
+      "zh": [
+        "n. 扩大的人(物), 放大器, 扩音器"
+      ],
+      "forms": [
+        "复数 amplifiers"
+      ],
+      "examples": [
+        "This is the best amplifier on the market.",
+        "The signal is weak, so an amplifier is used."
+      ]
+    },
+    {
+      "id": "ky-264",
+      "word": "cardinal",
+      "phonetic": "'kɑ:dinәl",
+      "pos": "j:33/n:67",
+      "defsEn": [
+        "n. (Roman Catholic Church) one of a group of more than 100 prominent bishops in the Sacred College who advise the Pope and elect new Popes",
+        "n. a variable color averaging a vivid red",
+        "n. crested thick-billed North American finch having bright red plumage in the male",
+        "s. serving as an essential component"
+      ],
+      "zh": [
+        "n. 红衣主教, 鲜红色",
+        "a. 主要的, 深红色的"
+      ],
+      "forms": [
+        "复数 cardinals"
+      ],
+      "examples": [
+        "Do you want to become a cardinal?",
+        "I want to become a cardinal."
+      ]
+    },
+    {
+      "id": "ky-265",
+      "word": "amiable",
+      "phonetic": "'eimjәbl",
+      "pos": "j:100",
+      "defsEn": [
+        "s. disposed to please"
+      ],
+      "zh": [
+        "a. 亲切的, 和蔼可亲的"
+      ],
+      "forms": [],
+      "examples": [
+        "She is not only beautiful but also amiable."
+      ]
+    },
+    {
+      "id": "ky-266",
+      "word": "housework",
+      "phonetic": "'hauswә:k",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the work of cleaning and running a house"
+      ],
+      "zh": [
+        "n. 家事, 家务"
+      ],
+      "forms": [
+        "复数 houseworks"
+      ],
+      "examples": [
+        "I help my mother with the housework every day.",
+        "Today, I do not have housework to do."
+      ]
+    },
+    {
+      "id": "ky-267",
+      "word": "superfluous",
+      "phonetic": "sju'pә:fluәs",
+      "pos": "j:100",
+      "defsEn": [
+        "s serving no useful purpose",
+        "having no excuse for being",
+        "s more than is needed, desired, or required"
+      ],
+      "zh": [
+        "a. 多余的, 过剩的"
+      ],
+      "forms": [],
+      "examples": [
+        "The superfluous, a very necessary thing.",
+        "The superfluous, a thing highly necessary."
+      ]
+    },
+    {
+      "id": "ky-268",
+      "word": "irrigate",
+      "phonetic": "'irigeit",
+      "pos": "v:100",
+      "defsEn": [
+        "v. supply with a constant flow or sprinkling of some liquid, for the purpose of cooling, cleansing, or disinfecting"
+      ],
+      "zh": [
+        "vt. 灌溉, 冲洗伤口, 使清新",
+        "vi. 灌溉"
+      ],
+      "forms": [
+        "三单 irrigates",
+        "过去式 irrigated",
+        "过去分词 irrigated",
+        "现在分词 irrigating"
+      ],
+      "examples": [
+        "How can we irrigate crops on Mars?",
+        "They need to be able to irrigate without relying solely on rain."
+      ]
+    },
+    {
+      "id": "ky-269",
+      "word": "feudal",
+      "phonetic": "'fju:dәl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. of or relating to or characteristic of feudalism"
+      ],
+      "zh": [
+        "a. 封建制度的, 封地的, 领地的"
+      ],
+      "forms": [],
+      "examples": [
+        "It seems a bit feudal to call him \"sir\".",
+        "To address him as \"Monseigneur\" seems too feudal."
+      ]
+    },
+    {
+      "id": "ky-270",
+      "word": "transcendental",
+      "phonetic": ".trænsen'dentl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. of or characteristic of a system of philosophy emphasizing the intuitive and spiritual above the empirical and material"
+      ],
+      "zh": [
+        "a. 卓越的, 超凡的, 先验的"
+      ],
+      "forms": [],
+      "examples": [
+        "For me, the word God is synonymous with Transcendental Intelligence."
+      ]
+    },
+    {
+      "id": "ky-271",
+      "word": "redundancy",
+      "phonetic": "ri'dʌndәnsi",
+      "pos": "n:100",
+      "defsEn": [
+        "n. repetition of messages to reduce the probability of errors in transmission",
+        "n. the attribute of being superfluous and unneeded",
+        "n. (electronics) a system design that duplicates components to provide alternatives in case one component fails",
+        "n. repetition of an act needlessly"
+      ],
+      "zh": [
+        "n. 过多, 冗长, 累赘, 多余, 冗余位, 冗余度, 冗余码, 多余信息"
+      ],
+      "forms": [
+        "复数 redundancies"
+      ],
+      "examples": [
+        "Redundancy is a part of language.",
+        "Ahead, you'll find the Department of Redundancy Department straight ahead."
+      ]
+    },
+    {
+      "id": "ky-272",
+      "word": "monotonous",
+      "phonetic": "mә'nɒtәnәs",
+      "pos": "j:100",
+      "defsEn": [
+        "s tediously repetitious or lacking in variety",
+        "all work and no play\"",
+        "s sounded or spoken in a tone unvarying in pitch"
+      ],
+      "zh": [
+        "a. 单调的, 无变化的"
+      ],
+      "forms": [],
+      "examples": [
+        "For an hour or more that evening I listened to his monotonous chirrup.",
+        "She says her life is monotonous."
+      ]
+    },
+    {
+      "id": "ky-273",
+      "word": "blackmail",
+      "phonetic": "'blækmeil",
+      "pos": "n:50/v:50",
+      "defsEn": [
+        "n. extortion of money by threats to divulge discrediting information",
+        "v. exert pressure on someone through threats",
+        "v. obtain through threats"
+      ],
+      "zh": [
+        "n. 勒索",
+        "vt. 勒索"
+      ],
+      "forms": [
+        "复数 blackmails",
+        "三单 blackmails",
+        "过去式 blackmailed",
+        "过去分词 blackmailed",
+        "现在分词 blackmailing"
+      ],
+      "examples": [
+        "His blackmail left me no choice.",
+        "Abusive people often use emotional blackmail to get what they want."
+      ]
+    },
+    {
+      "id": "ky-274",
+      "word": "zigzag",
+      "phonetic": "'zigzæg",
+      "pos": "n:48/v:52",
+      "defsEn": [
+        "n. an angular shape characterized by sharp turns in alternating directions",
+        "v. travel along a zigzag path",
+        "s. having short sharp turns or angles"
+      ],
+      "zh": [
+        "n. 曲折线条, Z字形道路",
+        "a. 之字形的, 曲折的, 锯齿形的",
+        "adv. 之字形地, 曲折地, 成锯齿形地",
+        "vt. 使成之字形, 使曲折进行",
+        "vi. 成之字形, 弯曲地走路"
+      ],
+      "forms": [
+        "复数 zigzags",
+        "三单 zigzags",
+        "过去式 zigzagged",
+        "过去分词 zigzagged",
+        "现在分词 zigzagging"
+      ],
+      "examples": [
+        "The path zigzagged up the steep slope.",
+        "The wind was so strong that the boat had to zigzag forward."
+      ]
+    },
+    {
+      "id": "ky-275",
+      "word": "stereotyped",
+      "phonetic": "'steriәjtaipt",
+      "pos": "j:100",
+      "defsEn": [
+        "s. lacking spontaneity or originality or individuality"
+      ],
+      "zh": [
+        "a. 用铅版印的, 老一套的, 套用老调的, 千篇一律的, 已成陈规的"
+      ],
+      "forms": [],
+      "examples": []
+    },
+    {
+      "id": "ky-276",
+      "word": "temperamental",
+      "phonetic": ".temprә'mentl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. relating to or caused by temperament"
+      ],
+      "zh": [
+        "a. 气质的, 性格的, 易兴奋的"
+      ],
+      "forms": [],
+      "examples": [
+        "Do people ever accuse you of being temperamental?",
+        "Stop acting like a temperamental child!"
+      ]
+    },
+    {
+      "id": "ky-277",
+      "word": "isle",
+      "phonetic": "ail",
+      "pos": "n:100",
+      "defsEn": [
+        "n. a small island"
+      ],
+      "zh": [
+        "n. 小岛, 群岛",
+        "vt. 使成为岛状",
+        "vi. 住在岛屿上"
+      ],
+      "forms": [
+        "复数 isles"
+      ],
+      "examples": [
+        "People speak English and Manx in the Isle of Man.",
+        "Douglas is the capital of the Isle of Man."
+      ]
+    },
+    {
+      "id": "ky-278",
+      "word": "acrobat",
+      "phonetic": "'ækrәbæt",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an athlete who performs acts requiring skill and agility and coordination"
+      ],
+      "zh": [
+        "n. 表演特技者, 杂技演员"
+      ],
+      "forms": [
+        "复数 acrobats"
+      ],
+      "examples": [
+        "Of course, an acrobat must have a perfect sense of balance.",
+        "To be an acrobat is the ambition of almost every boy."
+      ]
+    },
+    {
+      "id": "ky-279",
+      "word": "malign",
+      "phonetic": "mә'lain",
+      "pos": "j:27/v:73",
+      "defsEn": [
+        "a. evil or harmful in nature or influence"
+      ],
+      "zh": [
+        "a. 有害的, 恶性的, 有恶意的",
+        "vt. 诽谤, 说坏话"
+      ],
+      "forms": [
+        "三单 maligns",
+        "过去式 maligned",
+        "过去分词 maligned",
+        "现在分词 maligning"
+      ],
+      "examples": [
+        "George III has been unfairly maligned by historians."
+      ]
+    },
+    {
+      "id": "ky-280",
+      "word": "sociable",
+      "phonetic": "'sәuʃәbl",
+      "pos": "j:100",
+      "defsEn": [
+        "n. a party of people assembled to promote sociability and communal activity",
+        "a. inclined to or conducive to companionship with others",
+        "s. friendly and pleasant"
+      ],
+      "zh": [
+        "a. 好交际的, 社交的, 过社会生活的",
+        "n. 联谊会"
+      ],
+      "forms": [
+        "复数 sociables"
+      ],
+      "examples": [
+        "I only drink to be sociable.",
+        "Some of the most sociable people I know have friends both online and off-."
+      ]
+    },
+    {
+      "id": "ky-281",
+      "word": "virtuosity",
+      "phonetic": ".vә:tju'ɒsiti",
+      "pos": "n:100",
+      "defsEn": [
+        "n. technical skill or fluency or style exhibited by a virtuoso"
+      ],
+      "zh": [
+        "n. 精湛技巧, 对古董等的爱好"
+      ],
+      "forms": [
+        "复数 virtuosities"
+      ],
+      "examples": [
+        "Virtuosity requires years of daily practice from childhood.",
+        "This pianist is known for his virtuosity."
+      ]
+    },
+    {
+      "id": "ky-282",
+      "word": "overpass",
+      "phonetic": "'әuvәpɑ:s",
+      "pos": "v:7/n:93",
+      "defsEn": [
+        "n. bridge formed by the upper level of a crossing of two highways at different levels"
+      ],
+      "zh": [
+        "n. 天桥, 旱桥, 立交桥",
+        "vt. 超越, 胜过, 通过, 忽略, 侵犯"
+      ],
+      "forms": [
+        "复数 overpasses"
+      ],
+      "examples": [
+        "The body was found under the overpass.",
+        "Be especially careful of ice on overpasses and bridges while driving in the winter."
+      ]
+    },
+    {
+      "id": "ky-283",
+      "word": "neurology",
+      "phonetic": "nju'rɒlәdʒi",
+      "pos": "n:100",
+      "defsEn": [
+        "n. the branch of medical science that deals with the nervous system",
+        "n. (neurology) the branch of medicine that deals with the nervous system and its disorders"
+      ],
+      "zh": [
+        "n. 神经病学"
+      ],
+      "forms": [
+        "复数 neurologies"
+      ],
+      "examples": [
+        "Tom heard Mary is studying neurology at UCLA."
+      ]
+    },
+    {
+      "id": "ky-284",
+      "word": "instrumentalist",
+      "phonetic": ".instru'mentәlist. instrә-",
+      "pos": "n:100",
+      "defsEn": [
+        "n someone who plays a musical instrument (as a profession)"
+      ],
+      "zh": [
+        "n. 工具主义者；乐器演奏家"
+      ],
+      "forms": [
+        "复数 instrumentalists"
+      ],
+      "examples": []
+    },
+    {
+      "id": "ky-285",
+      "word": "distill",
+      "phonetic": "dis'til",
+      "pos": "v:100",
+      "defsEn": [
+        "v. undergo the process of distillation",
+        "v. extract by the process of distillation",
+        "v. give off (a liquid)"
+      ],
+      "zh": [
+        "vt. 蒸馏",
+        "vi. 滴下"
+      ],
+      "forms": [
+        "复数 distills",
+        "三单 distills",
+        "过去式 distilled",
+        "过去分词 distilled",
+        "现在分词 distilling"
+      ],
+      "examples": [
+        "Now we will distill this water.",
+        "In this essay, Tom distills the arguments for and against leaving the EU."
+      ]
+    },
+    {
+      "id": "ky-286",
+      "word": "sufficiency",
+      "phonetic": "sә'fiʃәnsi",
+      "pos": "n:100",
+      "defsEn": [
+        "n. sufficient resources to provide comfort and meet obligations",
+        "n. the quality of being sufficient for the end in view"
+      ],
+      "zh": [
+        "n. 充足, 充分的数量, 自负"
+      ],
+      "forms": [
+        "复数 sufficiencies"
+      ],
+      "examples": [
+        "What does Algeria need to do to achieve food self-sufficiency?",
+        "Algeria needs to achieve food self-sufficiency."
+      ]
+    },
+    {
+      "id": "ky-287",
+      "word": "bipedal",
+      "phonetic": "'bai,pedəl,bai'pe-",
+      "pos": "j:100",
+      "defsEn": [
+        "a. having two feet"
+      ],
+      "zh": [
+        "两足的"
+      ],
+      "forms": [
+        "复数 bipedals"
+      ],
+      "examples": [
+        "Ziri described the creature as a bipedal wolf."
+      ]
+    },
+    {
+      "id": "ky-288",
+      "word": "enquire",
+      "phonetic": "in'kwaiә",
+      "pos": "v:100",
+      "defsEn": [
+        "v inquire about",
+        "v conduct an inquiry or investigation of",
+        "v have a wish or desire to know something"
+      ],
+      "zh": [
+        "v. 询问"
+      ],
+      "forms": [
+        "三单 enquires",
+        "过去式 enquired",
+        "过去分词 enquired",
+        "现在分词 enquiring"
+      ],
+      "examples": [
+        "I enquired of a passer-by which road to take.",
+        "Miroslav enquired with Rima about that."
+      ]
+    },
+    {
+      "id": "ky-289",
+      "word": "genealogist",
+      "phonetic": ".dʒi:ni'ælәdʒist",
+      "pos": "n:100",
+      "defsEn": [
+        "n. an expert in genealogy"
+      ],
+      "zh": [
+        "n. 系谱学者, 系谱专家"
+      ],
+      "forms": [
+        "复数 genealogists"
+      ],
+      "examples": []
+    },
+    {
+      "id": "ky-290",
+      "word": "invariable",
+      "phonetic": "in'vєәriәbl",
+      "pos": "j:100",
+      "defsEn": [
+        "a. not liable to or capable of change"
+      ],
+      "zh": [
+        "n. 不变的东西, 常数",
+        "a. 不变的, 常数的"
+      ],
+      "forms": [
+        "复数 invariables"
+      ],
+      "examples": [
+        "In Toki Pona, all words are invariable."
+      ]
+    },
+    {
+      "id": "ky-291",
+      "word": "cosy",
+      "phonetic": null,
+      "pos": "j:100",
+      "defsEn": [
+        "n. a padded cloth covering to keep a teapot warm"
+      ],
+      "zh": [
+        "a. 温暖舒适的",
+        "n. 保暖套"
+      ],
+      "forms": [
+        "复数 cosies",
+        "比较级 cosier",
+        "最高级 cosiest"
+      ],
+      "examples": [
+        "We met in the evening for a cosy get-together.",
+        "That's a very cosy living room."
+      ]
+    },
+    {
+      "id": "ky-292",
+      "word": "maltreat",
+      "phonetic": "mæl'tri:t",
+      "pos": "v:100",
+      "defsEn": [
+        "v treat badly"
+      ],
+      "zh": [
+        "vt. 虐待, 滥用"
+      ],
+      "forms": [
+        "复数 maltreats",
+        "三单 maltreats",
+        "过去式 maltreated",
+        "过去分词 maltreated",
+        "现在分词 maltreating"
+      ],
+      "examples": [
+        "Tom complained of having been maltreated."
+      ]
+    },
+    {
+      "id": "ky-293",
+      "word": "goodby",
+      "phonetic": ".ɡud'bai",
+      "pos": "n:100",
+      "defsEn": [
+        "n a farewell remark"
+      ],
+      "zh": [
+        "int. 再见（等于goodbye）"
+      ],
+      "forms": [
+        "复数 goodbies"
+      ],
+      "examples": [
+        "He said his goodbyes and left.",
+        "Lukas said his goodbyes to his children."
+      ]
+    },
+    {
+      "id": "ky-294",
+      "word": "retrospection",
+      "phonetic": ".retrә'spekʃәn",
+      "pos": "n:100",
+      "defsEn": [
+        "n. reference to things past",
+        "n. memory for experiences that are past"
+      ],
+      "zh": [
+        "n. 回顾, 追忆, 反省"
+      ],
+      "forms": [
+        "复数 retrospections"
+      ],
+      "examples": []
+    },
+    {
+      "id": "ky-295",
+      "word": "apologise",
+      "phonetic": "ә'pɔlәdʒaiz",
+      "pos": null,
+      "defsEn": [
+        "v defend, explain, clear away, or make excuses for by reasoning",
+        "v acknowledge faults or shortcomings or failing"
+      ],
+      "zh": [
+        "vi. 道歉（等于apologize）"
+      ],
+      "forms": [
+        "复数 apologises",
+        "三单 apologises",
+        "过去式 apologised",
+        "过去分词 apologised",
+        "现在分词 apologising"
+      ],
+      "examples": [
+        "You should apologise to him for being late.",
+        "I think he should apologise to the teacher."
+      ]
+    },
+    {
+      "id": "ky-296",
+      "word": "bin",
+      "phonetic": "bin",
+      "pos": null,
+      "defsEn": [
+        "n. a container",
+        "usually has a lid",
+        "n. the quantity contained in a bin",
+        "v. store in bins"
+      ],
+      "zh": [
+        "n. (贮存谷物等的)容器, 箱子"
+      ],
+      "forms": [
+        "复数 bins",
+        "三单 bins",
+        "过去式 binned",
+        "过去分词 binned",
+        "现在分词 binning"
+      ],
+      "examples": [
+        "We need to bind gravel with cement.",
+        "Throw that plan into the bin."
+      ]
+    },
+    {
+      "id": "ky-297",
+      "word": "calorie",
+      "phonetic": "'kælәri",
+      "pos": null,
+      "defsEn": [
+        "n. a unit of heat equal to the amount of heat required to raise the temperature of one kilogram of water by one degree at one atmosphere pressure",
+        "used by nutritionists to characterize the energy-producing potential in food",
+        "n. unit of heat defined as the quantity of heat required to raise the temperature of 1 gram of water by 1 degree centigrade at atmospheric pressure"
+      ],
+      "zh": [
+        "n. 卡路里（热量单位）"
+      ],
+      "forms": [
+        "复数 calories"
+      ],
+      "examples": [
+        "You should check your calorie intake.",
+        "In an ideal world, chocolate would contain no calories but remain as delicious."
+      ]
+    },
+    {
+      "id": "ky-298",
+      "word": "credentials",
+      "phonetic": null,
+      "pos": null,
+      "defsEn": [
+        "n a document attesting to the truth of certain stated facts"
+      ],
+      "zh": [
+        "n. 信任状, 国书, 文件, 身份证明, 证书"
+      ],
+      "forms": [],
+      "examples": []
+    },
+    {
+      "id": "ky-299",
+      "word": "kilo",
+      "phonetic": "'kilәu",
+      "pos": null,
+      "defsEn": [
+        "n one thousand grams",
+        "the basic unit of mass adopted under the Systeme International d'Unites"
+      ],
+      "zh": [
+        "n. 千"
+      ],
+      "forms": [
+        "复数 kilos"
+      ],
+      "examples": [
+        "How much for a kilo of this mustard seed?",
+        "Can I get a kilo of chicken breast please?"
+      ]
+    },
+    {
+      "id": "ky-300",
+      "word": "kilometre",
+      "phonetic": "'kilәjmi:tә(r)",
+      "pos": null,
+      "defsEn": [
+        "n a metric unit of length equal to 1000 meters (or 0.621371 miles)"
+      ],
+      "zh": [
+        "n. 公里, 千米"
+      ],
+      "forms": [
+        "复数 kilometres"
+      ],
+      "examples": [
+        "I run at least a kilometre every morning.",
+        "Follow the road for about a kilometre."
+      ]
+    },
+    {
+      "id": "ky-301",
+      "word": "litre",
+      "phonetic": "li:tә(r)",
+      "pos": null,
+      "defsEn": [
+        "n a metric unit of capacity, formerly defined as the volume of one kilogram of pure water under standard conditions",
+        "now equal to 1,000 cubic centimeters (or approximately 1.75 pints)"
+      ],
+      "zh": [
+        "n. 升, 公升"
+      ],
+      "forms": [
+        "复数 litres"
+      ],
+      "examples": [
+        "I need a litre of milk.",
+        "You need to drink about two litres of water every day."
+      ]
+    },
+    {
+      "id": "ky-302",
+      "word": "passerby",
+      "phonetic": "'pæsә'bai",
+      "pos": null,
+      "defsEn": [
+        "n. a person who passes by casually or by chance"
+      ],
+      "zh": [
+        "n. 过路人, 行人"
+      ],
+      "forms": [
+        "复数 passerbies"
+      ],
+      "examples": [
+        "A root sits in the earth, and the passerby doesn't see it.",
+        "A passerby is accosting me in the street."
+      ]
+    },
+    {
+      "id": "ky-303",
+      "word": "programme",
+      "phonetic": "'prәugræm",
+      "pos": null,
+      "defsEn": [
+        "n an announcement of the events that will occur as part of a theatrical or sporting event",
+        "n an integrated course of academic studies",
+        "n a radio or television show",
+        "n (computer science) a sequence of instructions that a computer can interpret and execute",
+        "n a system of projects or services intended to meet a public need",
+        "n a series of steps to be carried out or goals to be accomplished",
+        "n a performance (or series of performances) at a public presentation",
+        "v write a computer program",
+        "v arrange a program of or for"
+      ],
+      "zh": [
+        "n. 节目, 节目单, 程序, 纲要, 大纲, 计划",
+        "vt. 规划, 拟...计划",
+        "vi. 安排节目, 编程序"
+      ],
+      "forms": [
+        "复数 programmes",
+        "三单 programs",
+        "过去式 programmed",
+        "过去分词 programmed",
+        "现在分词 programming"
+      ],
+      "examples": [
+        "We interrupt this programme to bring you an important announcement.",
+        "Do you want to watch this TV programme?"
+      ]
+    },
+    {
+      "id": "ky-304",
+      "word": "realise",
+      "phonetic": "'riәlaiz,'ri:-",
+      "pos": null,
+      "defsEn": [
+        "v earn on some commercial or business transaction",
+        "earn as salary or wages",
+        "v convert into cash",
+        "of goods and property",
+        "v expand or complete (a part in a piece of baroque music) by supplying the harmonies indicated in the figured bass",
+        "v make real or concrete",
+        "give reality or substance to",
+        "v be fully aware or cognizant of",
+        "v perceive (an idea or situation) mentally"
+      ],
+      "zh": [
+        "vt. 实现, 认识到, 体会到, 了解, 认清, 使显得逼真, 变卖财产为现钱"
+      ],
+      "forms": [
+        "三单 realises",
+        "过去式 realised",
+        "过去分词 realised",
+        "现在分词 realising"
+      ],
+      "examples": [
+        "When they realise, I will have already left.",
+        "People will eventually realise your true nature."
+      ]
+    },
+    {
+      "id": "ky-305",
+      "word": "rigour",
+      "phonetic": "'rigә",
+      "pos": null,
+      "defsEn": [
+        "n the quality of being valid and rigorous",
+        "n something hard to endure",
+        "n excessive sternness"
+      ],
+      "zh": [
+        "n. 严格, 严厉, 苛刻, 严酷, 严密, 精确"
+      ],
+      "forms": [
+        "复数 rigours"
+      ],
+      "examples": [
+        "The experiment must be conducted with rigour.",
+        "The student's essay was lacking in rigour."
+      ]
+    },
+    {
+      "id": "ky-306",
+      "word": "thriftless",
+      "phonetic": "'θriftlis",
+      "pos": null,
+      "defsEn": [
+        "s. careless of the future"
+      ],
+      "zh": [
+        "a. 不节俭的, 浪费的, 无用的"
+      ],
+      "forms": [],
+      "examples": []
+    },
+    {
+      "id": "ky-307",
+      "word": "tumour",
+      "phonetic": "'tju:mә",
+      "pos": null,
+      "defsEn": [
+        "n an abnormal new mass of tissue that serves no purpose"
+      ],
+      "zh": [
+        "n. 瘤, 肿块"
+      ],
+      "forms": [
+        "复数 tumours"
+      ],
+      "examples": [
+        "The tumour seems to be benign.",
+        "There are various kinds of tumour, both benign and malignant."
+      ]
+    }
+  ]
+}

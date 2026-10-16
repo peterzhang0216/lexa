@@ -31,6 +31,18 @@
 - **来源**：ECDICT 1.0.28（同上）。筛选 `tag` 含 `toefl` / `ielts` / `gre` 的词条，排除已入选 voa/awl 词书的词，按词频取前 1200 个。
 - **排序说明（重要）**：ECDICT 的 `frq` 字段是"当代语料库（COCA）词频**顺序**"即排名，**数值越小越常用**（见 ECDICT README 字段表）。为达成"按词频精选、常用优先"的目的，实现按 `frq` **升序**（最常用在前）取前 1200；`frq` 为 0/缺失（无排名）的排在最后。这与任务稿面写法"frq 降序"不同——按字面降序会把最生僻的词排最前（如 brindled、polyandry），与"进阶词汇精选"的意图相悖，故按语义实现并在此如实说明。
 
+## 3b. cet4_core / cet6_core / ky_core — 四级/六级/考研核心词汇（2026-10-16 加入）
+
+- **来源**：ECDICT 1.0.28 的 `tag` 字段（整词匹配 `cet4` / `cet6` / `ky` 考研标签）。
+- **构建**：`build_vocab.py --build-exam-books`（一条命令完成建书 + 增量配例句）。
+  去重规则：每词只进最先命中的书（优先级 cet4 → cet6 → ky），且排除已收录在
+  voa/awl/exam 词书中的词；按 `frq` 升序（最常用在前）。收词：cet4 1809、
+  cet6 1672、ky 307（考研词大多已在四六级/VOA 中）。
+- **已知历史问题**：voa↔awl 两本初代词书本身有 113 个重叠词（初版管线只对
+  exam 词书做了去重），各自独立 id、独立进度，不合并不重排——重排会破坏
+  存量用户的 word id 进度映射。
+- **授权**：同 ECDICT（MIT）；例句同 4b（Tatoeba CC BY 2.0 FR）。
+
 ## 4. ECDICT（三个词书共用的中文释义/音标/词性来源）
 
 - **来源**：<https://github.com/skywind3000/ECDICT/releases>（tag 1.0.28）
@@ -42,6 +54,18 @@
   **注意**：任务原计划下载 `ecdict.csv.zip`，但该资产已从 GitHub releases 移除（1.0.28 现仅有 eudic/mdx/mobi/sqlite/stardict 共 8 个包）。改用官方 **sqlite 版** `stardict.db`，字段与 csv 完全一致（word, phonetic, definition, translation, pos, collins, oxford, tag, bnc, frq），用 python3 标准库 `sqlite3` 读取。
 - **授权**：MIT 协议，可自由商用与再分发。
 
+## 4b. Tatoeba（例句来源，2026-10-15 加入）
+
+- **来源**：<https://tatoeba.org> 开放句库官方导出
+- **获取方式**：
+  ```
+  curl -L -C - "https://downloads.tatoeba.org/exports/sentences.tar.bz2" -o tatoeba_sentences.tar.bz2
+  # 219MB（全语言 sentences.csv）；本地文件已列入 .gitignore，不入库
+  ```
+- **授权**：句库整体以 **CC BY 2.0 FR** 发布，可自由使用/修改/再分发，需署名 tatoeba.org（app 内署名在 设置 → 词库来源）。
+- **处理**（`build_vocab.py --add-examples`，或完整重建时自动执行）：流式扫描 sentences.csv 的英语句（eng），选 6-14 词、纯常规标点的短句；按"句中词汇被三本词书+常用功能词覆盖的比例"打分（越接近学习者词汇量越好），同分偏好 9 词左右；目标词匹配含基础屈折形式（+s/+es/+ed/+ing/y→ies 等，与 app 端 `WordHighlight.inflectedForms` 一致）；**同一句子全库只配给一个词**；每个词最多 2 条；a/the/of 等纯功能词不配例句。
+- **兜底**：语料包缺失或处理失败时 `examples` 置空，词书生成/清洗不受影响。
+
 ## 5. build_vocab.py 处理逻辑摘要
 
 1. **VOA 解析**：pdftotext 按栏裁剪提取 PDF 第 12-88 页（左栏 x:0-205pt、右栏 x:205-420pt，跳过页眉页脚），按页序（先左栏后右栏）合并后用正则 `词 – 词性. 释义` 切分词条（1541 条）；处理 PDF 换行连字符（`respon- sible` → `responsible`）、行尾标点伪影（`material,.` → `material,`；换行处多余的句点），并修复官方 PDF 两处排版缺陷（p84：walk 释义续行与 wall 词条同排；同页文本层重复的孤立 "wall" token，见脚本 `KNOWN_LINE_FIXES`）。VOA 官方释义按 `;` 拆为 `defsEn`。
@@ -52,7 +76,9 @@
    - 丢弃含空格（`air force`、`civil rights`、`genetic engineering`、`nucleic acid`、`swear in`、`Web site` 等）或以非字母字符开头的异常词条；
    - 丢弃中文释义（translation 按换行拆分后）为空的词条；
    - `phonetic` / `pos` 空串转 `null`；ECDICT definition 的 `--` 占位符视同为空（→ 空 `defsEn` 数组）；
-   - `examples` 一律为 `[]`（MVP 不放例句）。
+   - `forms`：词形变化表，来自 ECDICT `exchange` 字段（`/` 分隔的 `code:form`），映射为「复数/三单/过去式/过去分词/现在分词/比较级/最高级」标签，最多 6 项、与原形相同的丢弃（2026-10-15 加入，`build_vocab.py --add-forms` 可单独补填）；
+   - `examples`：来自 Tatoeba 例句（见 4b；功能词不配，其余每词最多 2 条）。
+   - 中文释义降噪（2026-10-15）：ECDICT translation 行首带领域标签（"[计] …"、"[医] …"）的专业义项整行丢弃，行内短标签剥掉保留；`a/the/our` 等功能词词性按 override 表修正。
 5. **产出**：`voa_core.json` / `awl_academic.json` / `exam_plus.json`（UTF-8，结构一致：id/title/subtitle/words[]，词条含 id、word、phonetic、pos、defsEn、zh、examples）。
 
 ## 6. 各文件清单

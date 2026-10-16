@@ -3,3 +3,15 @@ DerivedData/
 .DS_Store
 xcuserdata/
 *.xcuserstate
+
+# data-pipeline 原始材料（大文件，抓取命令见 build_vocab.py 头部与 SOURCES.md）
+data-pipeline/*.pdf
+data-pipeline/*.db
+data-pipeline/*.zip
+data-pipeline/*.tar.bz2
+data-pipeline/sentences.csv
+data-pipeline/voa_cols/
+data-pipeline/awl_raw.json
+data-pipeline/voa_brandon.json
+
+__pycache__/
