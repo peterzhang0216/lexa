@@ -461,13 +461,16 @@ def inflected_forms(word):
     return forms
 
 
-def build_examples(words_by_book, preserve=None):
+def build_examples(words_by_book, preserve=None, prefer_zh_ids=None):
     """流式扫描 Tatoeba sentences.csv，给每个词挑最多 2 条例句。
 
     挑选规则：6-14 词的纯文本短句；按"句中词汇被词书+常用词覆盖的比例"打分
     （越高越接近学习者水平），同分偏好 9 词左右；同一句子全库只配给一个词。
     preserve: word -> [sentence, ...] 已有例句的词跳过重配，其句子也不再
     分给别的词（增量填充，保证幂等）。返回 word -> [sentence, ...]。
+    prefer_zh_ids: 带中文翻译的句子 id 集合——命中者优先于一切其他打分
+    （例句有母语对照的价值高于句子本身的"简单度"），无中译候选的词回退
+    纯英文句，保证总覆盖率不掉。
     """
     import tarfile
     if not os.path.exists(TATOEBA_TARBALL):
@@ -519,7 +522,8 @@ def build_examples(words_by_book, preserve=None):
                 coverage = sum(1 for t in lower if t in common) / len(lower)
                 # 累计超过上限后只在分数更好时替换，内存有界
                 cands = candidates[hit]
-                key = (-coverage, abs(len(lower) - 9), sid)
+                zh_bonus = 1 if (prefer_zh_ids and sid in prefer_zh_ids) else 0
+                key = (-zh_bonus, -coverage, abs(len(lower) - 9), sid)
                 if len(cands) < 50:
                     cands.append((key, sid, text))
                 else:
@@ -688,6 +692,145 @@ def build_exam_like_books(existing_words):
     return books
 
 
+# ------------------------------------------------------- 例句中文翻译（Tatoeba）----
+TATOEBA_LINKS = os.path.join(HERE, "links.tar.bz2")   # 句子 id ↔ 译文 id 对
+
+
+def _scan_csv_parts(path):
+    """逐行产出拆好列的列表（sentences.csv 3 列 / links.csv 2 列，调用方自解）。"""
+    import tarfile, io
+    with tarfile.open(path, "r:bz2") as tar:
+        member = next(m for m in tar.getmembers() if m.name.endswith(".csv"))
+        with io.TextIOWrapper(tar.extractfile(member), encoding="utf-8") as f:
+            for line in f:
+                yield line.rstrip("\n").split("\t")
+
+
+def eng_ids_with_cmn():
+    """返回带中文(cmn)翻译的英文句 id 集合（sentences.csv 找 cmn id，links.csv 连边）。"""
+    if not os.path.exists(TATOEBA_LINKS):
+        log("[error] 找不到 links.tar.bz2（抓取命令见 SOURCES.md）")
+        sys.exit(1)
+    cmn = {p[0] for p in _scan_csv_parts(TATOEBA_TARBALL)
+           if len(p) == 3 and p[1] == "cmn"}
+    log(f"[exzh] cmn 句 {len(cmn)} 条")
+    eng_with_zh = set()
+    for p in _scan_csv_parts(TATOEBA_LINKS):
+        a, b = p[0], p[-1]
+        if a in cmn:
+            eng_with_zh.add(b)
+        if b in cmn:
+            eng_with_zh.add(a)
+    log(f"[exzh] 带中文翻译的英文句 {len(eng_with_zh)} 条")
+    return eng_with_zh
+
+
+def build_example_zh():
+    """给已配例句补中文翻译：sentences.csv 建 英文文本→id 与 cmn id→文本 两个索引，
+    links.csv 连边后每句取最短译文（Tatoeba 的直译通常最短）。返回 文本 -> 中文。"""
+    import tarfile, io
+    if not os.path.exists(TATOEBA_LINKS):
+        log("[error] 找不到 links.tar.bz2（抓取命令见 SOURCES.md）")
+        sys.exit(1)
+
+    target_texts = set()                     # 全库例句文本
+    for name in BOOK_FILES:
+        path = os.path.join(RESOURCES_DIR, name)
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as f:
+            for w in json.load(f)["words"]:
+                target_texts.update(w.get("examples") or [])
+    log(f"[exzh] 目标例句 {len(target_texts)} 条")
+
+    text_to_id, cmn_text = {}, {}
+    for p in _scan_csv_parts(TATOEBA_TARBALL):
+        if len(p) != 3:
+            continue
+        sid, lang, text = p
+        if lang == "eng" and text in target_texts and text not in text_to_id:
+            text_to_id[text] = sid
+        elif lang == "cmn":
+            cmn_text[sid] = text
+    log(f"[exzh] 例句命中 id {len(text_to_id)} 个；cmn 句 {len(cmn_text)} 条")
+
+    eng_ids = set(text_to_id.values())
+    zh_of_id = {}                            # eng sid -> 最短中文译文
+    for p in _scan_csv_parts(TATOEBA_LINKS):
+        a, b = p[0], p[-1]
+        for x, y in ((a, b), (b, a)):
+            if x in eng_ids:
+                zh = cmn_text.get(y)
+                if zh and (x not in zh_of_id or len(zh) < len(zh_of_id[x])):
+                    zh_of_id[x] = zh
+    out = {t: zh_of_id[i] for t, i in text_to_id.items() if i in zh_of_id}
+    log(f"[exzh] 配到中文翻译 {len(out)}/{len(text_to_id)} 条"
+        f"（{len(out)*100//max(1,len(text_to_id))}%）")
+    return out
+
+
+def to_simplified(texts):
+    """繁→简（Tatoeba cmn 语料繁简混杂，app 面向简体用户）。macOS 用 ICU 的
+    Traditional-Simplified 转换（经 swift 一次性批转）；非 macOS 或失败时原样返回。"""
+    uniq = sorted({t for t in texts if t})
+    if not uniq or sys.platform != "darwin":
+        return dict(zip(uniq, uniq))
+    import subprocess, tempfile
+    swift_src = '''
+import Foundation
+let inp = try String(contentsOf: URL(fileURLWithPath: CommandLine.arguments[1]), encoding: .utf8)
+var out: [String] = []
+for line in inp.split(separator: "\\n", omittingEmptySubsequences: false) {
+    let s = NSMutableString(string: String(line))
+    if !CFStringTransform(s, nil, "Traditional-Simplified" as CFString, false) { out.append(String(line)) }
+    else { out.append(s as String) }
+}
+try out.joined(separator: "\\n").data(using: .utf8)!.write(to: URL(fileURLWithPath: CommandLine.arguments[2]))
+'''
+    with tempfile.TemporaryDirectory() as td:
+        src = os.path.join(td, "in.txt")
+        dst = os.path.join(td, "out.txt")
+        spt = os.path.join(td, "conv.swift")
+        with open(src, "w", encoding="utf-8") as f:
+            f.write("\n".join(t.replace("\n", " ") for t in uniq))
+        with open(spt, "w", encoding="utf-8") as f:
+            f.write(swift_src)
+        r = subprocess.run(["swift", spt, src, dst], capture_output=True,
+                           text=True, timeout=120)
+        if r.returncode != 0 or not os.path.exists(dst):
+            log(f"[warn] 繁简转换失败，保留原文：{r.stderr[:200]}")
+            return dict(zip(uniq, uniq))
+        with open(dst, encoding="utf-8") as f:
+            conv = f.read().split("\n")
+    if len(conv) < len(uniq):
+        log("[warn] 繁简转换行数不齐，保留原文")
+        return dict(zip(uniq, uniq))
+    return dict(zip(uniq, conv))
+
+
+def apply_example_zh(zh_map):
+    """把例句翻译写进词书 JSON：与 examples 平行的 exampleZh 数组，缺译为空串。
+    译文统一繁→简。"""
+    zh_map = {k: v for k, v in zh_map.items()}
+    conv = to_simplified(zh_map.values())
+    zh_map = {k: conv.get(v, v) for k, v in zh_map.items()}
+    for name in BOOK_FILES:
+        path = os.path.join(RESOURCES_DIR, name)
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as f:
+            book = json.load(f)
+        filled = 0
+        for w in book["words"]:
+            zs = [zh_map.get(s, "") for s in (w.get("examples") or [])]
+            w["exampleZh"] = zs
+            filled += sum(1 for z in zs if z)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(book, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        log(f"[exzh] {name}: {filled} 句有翻译")
+
+
 def clean_committed():
     """对已生成的三个词书 JSON 就地应用 clean_zh/clean_pos（不依赖原始材料）。
     只清洗字段内容，不增删词条、不改 id —— 用户学习进度按 word id 存，不能动。"""
@@ -754,5 +897,13 @@ if __name__ == "__main__":
     elif "--add-forms" in sys.argv:
         books = load_committed_books()
         apply_forms(build_forms(words_by_book_of(books)))
+    elif "--add-example-zh" in sys.argv:
+        apply_example_zh(build_example_zh())
+    elif "--examples-with-zh" in sys.argv:
+        # 全量重建例句：带中文翻译的句子优先入选，随后填平行译文数组
+        prefer = eng_ids_with_cmn()
+        books = load_committed_books()
+        apply_examples(build_examples(words_by_book_of(books), prefer_zh_ids=prefer))
+        apply_example_zh(build_example_zh())
     else:
         main()

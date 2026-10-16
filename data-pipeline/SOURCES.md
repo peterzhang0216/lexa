@@ -54,17 +54,19 @@
   **注意**：任务原计划下载 `ecdict.csv.zip`，但该资产已从 GitHub releases 移除（1.0.28 现仅有 eudic/mdx/mobi/sqlite/stardict 共 8 个包）。改用官方 **sqlite 版** `stardict.db`，字段与 csv 完全一致（word, phonetic, definition, translation, pos, collins, oxford, tag, bnc, frq），用 python3 标准库 `sqlite3` 读取。
 - **授权**：MIT 协议，可自由商用与再分发。
 
-## 4b. Tatoeba（例句来源，2026-10-15 加入）
+## 4b. Tatoeba（例句来源，2026-10-15 加入；2026-10-16 增加中文翻译）
 
 - **来源**：<https://tatoeba.org> 开放句库官方导出
 - **获取方式**：
   ```
   curl -L -C - "https://downloads.tatoeba.org/exports/sentences.tar.bz2" -o tatoeba_sentences.tar.bz2
-  # 219MB（全语言 sentences.csv）；本地文件已列入 .gitignore，不入库
+  curl -L -C - "https://downloads.tatoeba.org/exports/links.tar.bz2" -o links.tar.bz2
+  # 分别 219MB / 150MB（全语言）；均已列入 .gitignore，不入库
   ```
 - **授权**：句库整体以 **CC BY 2.0 FR** 发布，可自由使用/修改/再分发，需署名 tatoeba.org（app 内署名在 设置 → 词库来源）。
-- **处理**（`build_vocab.py --add-examples`，或完整重建时自动执行）：流式扫描 sentences.csv 的英语句（eng），选 6-14 词、纯常规标点的短句；按"句中词汇被三本词书+常用功能词覆盖的比例"打分（越接近学习者词汇量越好），同分偏好 9 词左右；目标词匹配含基础屈折形式（+s/+es/+ed/+ing/y→ies 等，与 app 端 `WordHighlight.inflectedForms` 一致）；**同一句子全库只配给一个词**；每个词最多 2 条；a/the/of 等纯功能词不配例句。
-- **兜底**：语料包缺失或处理失败时 `examples` 置空，词书生成/清洗不受影响。
+- **例句选取**（`--examples-with-zh`，或 `--add-examples` 仅补缺）：流式扫描 sentences.csv 的英语句（eng），选 6-14 词、纯常规标点的短句；按"句中词汇被三本词书+常用功能词覆盖的比例"打分（越接近学习者词汇量越好），同分偏好 9 词左右；目标词匹配含基础屈折形式（+s/+es/+ed/+ing/y→ies 等，与 app 端 `WordHighlight.inflectedForms` 一致）；**同一句子全库只配给一个词**；每个词最多 2 条；a/the/of 等纯功能词不配例句。
+- **中文翻译**（`--add-example-zh`）：links.csv 连边取英文句对应的 cmn（普通话）译文，一句多译取最短（直译通常最短）；译文统一 **繁→简**（macOS ICU `Traditional-Simplified`，经 swift 批转，非 macOS 保留原文）。`--examples-with-zh` 会以"带中文翻译的句子优先"的打分重建全部例句（约 37% 例句带译文，其余为纯英文回退），单独跑 `--add-example-zh` 只补平行 `exampleZh` 数组、不改例句本身。
+- **兜底**：语料包缺失或处理失败时对应字段留空，词书生成/清洗不受影响。
 
 ## 5. build_vocab.py 处理逻辑摘要
 
