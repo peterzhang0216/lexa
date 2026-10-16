@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E329D5D9FBF794F1861B71A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CD5FF1B2B722F629BA79BFAD /* PrivacyInfo.xcprivacy */; };
 		2237DC95D990F8EC557819E6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00295A9585C92EEE954B2A8D /* HomeView.swift */; };
 		25034A7DE447A5A783D8ECA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872FA54A473372A152C0B709 /* Assets.xcassets */; };
 		2F417E1F202988268761DD43 /* cet6_core.json in Resources */ = {isa = PBXBuildFile; fileRef = 26EC4883F8056260571AFD24 /* cet6_core.json */; };
@@ -51,6 +52,7 @@
 		9C0FB104E5B9602A62217344 /* Lexa.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Lexa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C881FBD6183190A96D4CB75 /* LexaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexaApp.swift; sourceTree = "<group>"; };
 		BB6B613C2D731F479B1EFAE6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		CD5FF1B2B722F629BA79BFAD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D433180BA06B9F030BE9DFD8 /* exam_plus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exam_plus.json; sourceTree = "<group>"; };
 		E5619B18695BBABF6E794E1E /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		F8FDABF7473572A723A1DF6A /* ky_core.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ky_core.json; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				26EC4883F8056260571AFD24 /* cet6_core.json */,
 				D433180BA06B9F030BE9DFD8 /* exam_plus.json */,
 				F8FDABF7473572A723A1DF6A /* ky_core.json */,
+				CD5FF1B2B722F629BA79BFAD /* PrivacyInfo.xcprivacy */,
 				53C0744BFE717C566662A5B5 /* voa_core.json */,
 			);
 			path = Resources;
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25034A7DE447A5A783D8ECA9 /* Assets.xcassets in Resources */,
+				1E329D5D9FBF794F1861B71A /* PrivacyInfo.xcprivacy in Resources */,
 				6823DA4FA8A8D02763BF013E /* awl_academic.json in Resources */,
 				A16D1C35108891CFB55E91BE /* cet4_core.json in Resources */,
 				2F417E1F202988268761DD43 /* cet6_core.json in Resources */,
