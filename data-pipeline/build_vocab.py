@@ -512,39 +512,65 @@ def build_examples(words_by_book, preserve=None, prefer_zh_ids=None):
                 lower = TOKEN_RE.findall(text.lower())
                 if not lower:
                     continue
-                hit = None
+                # 登记给句中所有目标词（≤3 个）：只记第一个命中词会让多词句
+                # 被词频较高的词独占，稀缺词永远分不到——句子的最终归属由
+                # 分配阶段按稀缺度决定。
+                hits = []
                 for t in lower:
-                    hit = form_index.get(t)
-                    if hit:
-                        break
-                if not hit:
+                    w = form_index.get(t)
+                    if w and w not in hits:
+                        hits.append(w)
+                        if len(hits) == 3:
+                            break
+                if not hits:
                     continue
                 coverage = sum(1 for t in lower if t in common) / len(lower)
-                # 累计超过上限后只在分数更好时替换，内存有界
-                cands = candidates[hit]
                 zh_bonus = 1 if (prefer_zh_ids and sid in prefer_zh_ids) else 0
                 key = (-zh_bonus, -coverage, abs(len(lower) - 9), sid)
-                if len(cands) < 50:
-                    cands.append((key, sid, text))
-                else:
-                    worst = max(range(len(cands)), key=lambda i: cands[i][0])
-                    if key < cands[worst][0]:
-                        cands[worst] = (key, sid, text)
+                for hit in hits:
+                    # 累计超过上限后只在分数更好时替换，内存有界
+                    cands = candidates[hit]
+                    if len(cands) < 50:
+                        cands.append((key, sid, text))
+                    else:
+                        worst = max(range(len(cands)), key=lambda i: cands[i][0])
+                        if key < cands[worst][0]:
+                            cands[worst] = (key, sid, text)
                 if scanned % 2_000_000 == 0:
                     log(f"[tatoeba] 已扫描 {scanned} 行…")
 
+    # 三轮分配（有 prefer_zh_ids 时）：
+    #   1) 每词先保证一条带译句，带译候选最稀缺的词优先 —— 最大化"带译词数"
+    #      （直接贪心每词拿 2 条会让候选多的词多吃一句，饿死只有一两个带译
+    #       候选的词）；
+    #   2) 有剩余带译句的词补第二条；
+    #   3) 不足 2 条的词用无译句按质量分填齐。
+    # 无 prefer_zh_ids 时退化为按候选稀缺度的一轮贪心。
     examples, used = dict(preserve), set()
-    for w in sorted(all_words, key=lambda x: len(candidates[x])):
-        picked = []
-        for key, sid, text in sorted(candidates[w]):
-            if sid in used:
+
+    def pick(w, pool, limit):
+        picked = examples.get(w, [])
+        for key, sid, text in sorted(pool):
+            if len(picked) >= limit or sid in used:
                 continue
             used.add(sid)
             picked.append(text)
-            if len(picked) == 2:
-                break
         if picked:
             examples[w] = picked
+
+    if prefer_zh_ids:
+        zh_pool = {w: [c for c in candidates[w] if c[0][0] < 0] for w in all_words}
+        en_pool = {w: [c for c in candidates[w] if c[0][0] >= 0] for w in all_words}
+        zh_order = sorted(all_words, key=lambda w: len(zh_pool[w]))
+        for w in zh_order:                      # 1) 人人有译
+            pick(w, zh_pool[w], 1)
+        for w in zh_order:                      # 2) 能两条都带译更好
+            pick(w, zh_pool[w], 2)
+        for w in sorted(all_words, key=lambda x: len(en_pool[x])):   # 3) 无译句填齐
+            pick(w, en_pool[w], 2)
+    else:
+        for w in sorted(all_words, key=lambda x: len(candidates[x])):
+            pick(w, candidates[w], 2)
     fresh = len(examples) - len(preserve)
     log(f"[tatoeba] 扫描 {scanned} 行，目标 {len(all_words)} 词"
         + (f"（保留已有 {len(preserve)}）" if preserve else "")
