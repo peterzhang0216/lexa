@@ -3,6 +3,7 @@ DerivedData/
 .DS_Store
 xcuserdata/
 *.xcuserstate
+.obelisk/
 
 # data-pipeline 原始材料（大文件，抓取命令见 build_vocab.py 头部与 SOURCES.md）
 data-pipeline/*.pdf
