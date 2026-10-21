@@ -68,14 +68,13 @@ enum WordHighlight {
 
     /// 把例句渲染成目标词加粗（着主题色）的 Text；无匹配则原样返回
     static func text(_ sentence: String, highlighting word: String) -> Text {
-        var out = Text("")
-        for (i, token) in sentence.components(separatedBy: " ").enumerated() {
+        sentence.components(separatedBy: " ").enumerated().reduce(Text("")) { out, pair in
+            let (i, token) = pair
             let piece = i == 0 ? token : " " + token
-            out = out + (isMatch(token, for: word)
-                         ? Text(piece).bold().foregroundColor(Theme.accent)
-                         : Text(piece))
+            return out + (isMatch(token, for: word)
+                          ? Text(piece).bold().foregroundColor(Theme.accent)
+                          : Text(piece))
         }
-        return out
     }
 }
 

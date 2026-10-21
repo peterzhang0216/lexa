@@ -145,8 +145,8 @@ final class Store: ObservableObject {
     var favoriteDueCount: Int {
         let nowStamp = Date().timeIntervalSince1970
         return favorites.filter { id in
-            guard let p = progress[id] else { return false }
-            return p.due <= nowStamp
+            guard let entry = progress[id] else { return false }
+            return entry.due <= nowStamp
         }.count
     }
 

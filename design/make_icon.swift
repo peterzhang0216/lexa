@@ -8,22 +8,22 @@ guard args.count == 3, let variant = args[1].first else {
 }
 let out = args[2]
 
-let S: CGFloat = 1024
+let size: CGFloat = 1024
 let accent   = NSColor(srgbRed: 0.35, green: 0.37, blue: 0.92, alpha: 1)      // #595EEB
 let deepEnd  = NSColor(srgbRed: 0.24, green: 0.27, blue: 0.80, alpha: 1)      // 渐变深端
 let lightEnd = NSColor(srgbRed: 0.44, green: 0.47, blue: 0.98, alpha: 1)      // 渐变浅端
 
 let cs = CGColorSpace(name: CGColorSpace.sRGB)!
-let ctx = CGContext(data: nil, width: Int(S), height: Int(S), bitsPerComponent: 8,
+let ctx = CGContext(data: nil, width: Int(size), height: Int(size), bitsPerComponent: 8,
                     bytesPerRow: 0, space: cs, bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)!
 let ns = NSGraphicsContext(cgContext: ctx, flipped: true)
 NSGraphicsContext.saveGraphicsState()
 NSGraphicsContext.current = ns
 
 // 背景：靛蓝对角渐变 + 左上柔光（导出时会整体垂直翻转一次，方向参数预先镜像）
-NSGradient(colors: [lightEnd, deepEnd])!.draw(in: NSRect(x: 0, y: 0, width: S, height: S), angle: 55)
+NSGradient(colors: [lightEnd, deepEnd])!.draw(in: NSRect(x: 0, y: 0, width: size, height: size), angle: 55)
 NSGradient(colors: [NSColor.white.withAlphaComponent(0.16), NSColor.white.withAlphaComponent(0)])!
-    .draw(in: NSRect(x: 0, y: 0, width: S, height: S),
+    .draw(in: NSRect(x: 0, y: 0, width: size, height: size),
           relativeCenterPosition: NSPoint(x: -0.35, y: -0.42))
 
 func rounded(_ r: NSRect, _ radius: CGFloat) -> NSBezierPath {
@@ -35,18 +35,18 @@ func drawString(_ text: String, size: CGFloat, weight: NSFont.Weight,
     var desc = NSFont.systemFont(ofSize: size, weight: weight).fontDescriptor
     if rounded, let rd = desc.withDesign(.rounded) { desc = rd }
     let font = NSFont(descriptor: desc, size: size) ?? .systemFont(ofSize: size, weight: weight)
-    let s = NSAttributedString(string: text, attributes: [.font: font, .foregroundColor: color])
-    let b = s.boundingRect(with: .zero, options: [.usesLineFragmentOrigin])
-    s.draw(at: NSPoint(x: center.x - b.width / 2, y: center.y - b.height / 2))
+    let attributed = NSAttributedString(string: text, attributes: [.font: font, .foregroundColor: color])
+    let b = attributed.boundingRect(with: .zero, options: [.usesLineFragmentOrigin])
+    attributed.draw(at: NSPoint(x: center.x - b.width / 2, y: center.y - b.height / 2))
 }
 
 func card(_ r: NSRect, radius: CGFloat, fill: NSColor, rotation: CGFloat, shadow: Bool) {
     NSGraphicsContext.saveGraphicsState()
-    let t = NSAffineTransform()
-    t.translateX(by: r.midX, yBy: r.midY)
-    t.rotate(byDegrees: rotation)
-    t.translateX(by: -r.midX, yBy: -r.midY)
-    t.concat()
+    let transform = NSAffineTransform()
+    transform.translateX(by: r.midX, yBy: r.midY)
+    transform.rotate(byDegrees: rotation)
+    transform.translateX(by: -r.midX, yBy: -r.midY)
+    transform.concat()
     if shadow {
         ctx.setShadow(offset: NSSize(width: 0, height: 26), blur: 70,
                       color: NSColor.black.withAlphaComponent(0.28).cgColor)
@@ -73,7 +73,7 @@ case "A", "C":
     }
 case "B":
     drawString("L", size: 560, weight: .bold, color: .white,
-               center: NSPoint(x: S / 2, y: S / 2 - 30), rounded: true)
+               center: NSPoint(x: size / 2, y: size / 2 - 30), rounded: true)
     let dot = NSBezierPath(ovalIn: NSRect(x: 640, y: 640, width: 74, height: 74))
     NSColor.white.withAlphaComponent(0.9).setFill()
     dot.fill()
@@ -83,11 +83,11 @@ default: break
 NSGraphicsContext.restoreGraphicsState()
 // flipped 上下文写出的原始位图是上下颠倒的，导出时翻回来
 let raw = ctx.makeImage()!
-let flip = CGContext(data: nil, width: Int(S), height: Int(S), bitsPerComponent: 8,
+let flip = CGContext(data: nil, width: Int(size), height: Int(size), bitsPerComponent: 8,
                      bytesPerRow: 0, space: cs, bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)!
-flip.translateBy(x: 0, y: S)
+flip.translateBy(x: 0, y: size)
 flip.scaleBy(x: 1, y: -1)
-flip.draw(raw, in: CGRect(x: 0, y: 0, width: S, height: S))
+flip.draw(raw, in: CGRect(x: 0, y: 0, width: size, height: size))
 let rep = NSBitmapImageRep(cgImage: flip.makeImage()!)
 try rep.representation(using: .png, properties: [:])!.write(to: URL(fileURLWithPath: out))
 print("wrote \(out)")

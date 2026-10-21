@@ -47,14 +47,14 @@ struct StudyView: View {
     private var swipeGesture: some Gesture {
         DragGesture(minimumDistance: 24)
             .onEnded { value in
-                let t = value.translation
-                guard abs(t.width) > 60 || abs(t.height) > 60 else { return }
+                let translation = value.translation
+                guard abs(translation.width) > 60 || abs(translation.height) > 60 else { return }
                 guard revealed else {
                     withAnimation(.snappy) { revealed = true }
                     return
                 }
-                guard abs(t.width) > abs(t.height) * 1.5 else { return }
-                answer(t.width > 0)
+                guard abs(translation.width) > abs(translation.height) * 1.5 else { return }
+                answer(translation.width > 0)
             }
     }
 

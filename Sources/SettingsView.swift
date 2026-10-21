@@ -120,10 +120,10 @@ struct SettingsView: View {
             let model = StudyHeatmap()
             VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .top, spacing: 3) {
-                    ForEach(model.weeks.indices, id: \.self) { w in
+                    ForEach(model.weeks.indices, id: \.self) { week in
                         VStack(spacing: 3) {
-                            ForEach(model.weeks[w].indices, id: \.self) { d in
-                                let date = model.weeks[w][d]
+                            ForEach(model.weeks[week].indices, id: \.self) { day in
+                                let date = model.weeks[week][day]
                                 RoundedRectangle(cornerRadius: 2.5)
                                     .fill(cellColor(model: model, date: date))
                                     .frame(width: 13, height: 13)
