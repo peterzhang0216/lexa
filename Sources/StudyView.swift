@@ -30,6 +30,7 @@ struct StudyView: View {
                     withAnimation(.snappy) { revealed = true }
                 }
                 .gesture(swipeGesture)
+                swipeHint
                 answerBar
             }
         }
@@ -41,13 +42,18 @@ struct StudyView: View {
         }
     }
 
-    // 右滑=认识，左滑=不认识；仅在翻面后生效，与按钮行为一致
+    // 未翻面：滑动任意方向翻面；已翻面：右滑=认识，左滑=不认识（与按钮行为一致），
+    // 整个流程可以只用滑动手势完成，不必点击
     private var swipeGesture: some Gesture {
         DragGesture(minimumDistance: 24)
             .onEnded { value in
-                guard revealed else { return }
                 let t = value.translation
-                guard abs(t.width) > 60, abs(t.width) > abs(t.height) * 1.5 else { return }
+                guard abs(t.width) > 60 || abs(t.height) > 60 else { return }
+                guard revealed else {
+                    withAnimation(.snappy) { revealed = true }
+                    return
+                }
+                guard abs(t.width) > abs(t.height) * 1.5 else { return }
                 answer(t.width > 0)
             }
     }
@@ -85,6 +91,21 @@ struct StudyView: View {
 
     private var progressFraction: Double {
         items.isEmpty ? 0 : Double(min(index, items.count)) / Double(items.count)
+    }
+
+    // 翻面后提示左右滑答题，与下方按钮左右对位；未翻面时占位隐藏，避免卡片高度跳动
+    private var swipeHint: some View {
+        HStack {
+            Label("不认识", systemImage: "arrow.left")
+                .foregroundStyle(.red)
+            Spacer()
+            Label("认识", systemImage: "arrow.right")
+                .foregroundStyle(Theme.accent)
+        }
+        .font(.caption.weight(.medium))
+        .padding(.horizontal, 24)
+        .padding(.top, 6)
+        .opacity(revealed ? 1 : 0)
     }
 
     private var answerBar: some View {
@@ -229,7 +250,7 @@ private struct StudyCard: View {
                     .foregroundStyle(.secondary)
             }
             Spacer()
-            Text("点击卡片查看释义")
+            Text("上滑或点击卡片查看释义")
                 .font(.footnote)
                 .foregroundStyle(.tertiary)
         }
