@@ -11,6 +11,7 @@
 		2237DC95D990F8EC557819E6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00295A9585C92EEE954B2A8D /* HomeView.swift */; };
 		24EE64220FDB66635C0B58ED /* AppStoreScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2A770B374831AE5C9AA9B /* AppStoreScreenshotTests.swift */; };
 		25034A7DE447A5A783D8ECA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872FA54A473372A152C0B709 /* Assets.xcassets */; };
+		2BCA7FE81CE78521EB576A2D /* DemoFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4EDDAC1FAD8026F1EFD71 /* DemoFlow.swift */; };
 		2F417E1F202988268761DD43 /* cet6_core.json in Resources */ = {isa = PBXBuildFile; fileRef = 26EC4883F8056260571AFD24 /* cet6_core.json */; };
 		3388123CF848BBBC2DE6D940 /* LexaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C881FBD6183190A96D4CB75 /* LexaApp.swift */; };
 		45BEF9F7675DB05E095D41AA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660FF034832FEF5F7BD0B847 /* Store.swift */; };
@@ -66,6 +67,7 @@
 		D433180BA06B9F030BE9DFD8 /* exam_plus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exam_plus.json; sourceTree = "<group>"; };
 		E5619B18695BBABF6E794E1E /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		F8FDABF7473572A723A1DF6A /* ky_core.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ky_core.json; sourceTree = "<group>"; };
+		FAB4EDDAC1FAD8026F1EFD71 /* DemoFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoFlow.swift; sourceTree = "<group>"; };
 		FB7E5F87602FB1C98388ECD2 /* LexaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexaTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				6EA2A770B374831AE5C9AA9B /* AppStoreScreenshotTests.swift */,
+				FAB4EDDAC1FAD8026F1EFD71 /* DemoFlow.swift */,
 			);
 			path = UITests;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24EE64220FDB66635C0B58ED /* AppStoreScreenshotTests.swift in Sources */,
+				2BCA7FE81CE78521EB576A2D /* DemoFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

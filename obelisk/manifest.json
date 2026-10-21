@@ -41,6 +41,10 @@
       "static": {
         "app": "obelisk/screenshots/app/"
       }
+    },
+    "demoVideo": {
+      "scheme": "Lexa",
+      "onlyTesting": "LexaUITests/DemoFlow/testReviewDemo"
     }
   },
   "scheme": "Lexa",
