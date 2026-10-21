@@ -41,13 +41,6 @@
       "static": {
         "app": "obelisk/screenshots/app/"
       }
-    },
-    "urls": {
-      "marketing": "https://github.com/peterzhang0216/lexa",
-      "privacy": "https://github.com/peterzhang0216/lexa#隐私政策-privacy-policy",
-      "support": "https://github.com/peterzhang0216/lexa/issues",
-      "terms": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-      "deletion": "https://github.com/peterzhang0216/lexa#数据删除-data-deletion"
     }
   },
   "scheme": "Lexa",
