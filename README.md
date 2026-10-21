@@ -75,6 +75,15 @@ xcodebuild -project Lexa.xcodeproj -scheme Lexa \
 
 Lexa does not collect any data. All learning progress and preferences are stored locally on your device only. The app contains no ads, no analytics SDKs, and requires no account.
 
+## 数据删除 Data Deletion
+
+拾词没有账号体系，也不上传任何数据，因此无需"删除账户"流程：
+
+- 卸载应用即彻底删除全部本地学习数据；
+- 也可以在应用内 设置 → 重置全部学习进度，一键清空记录但保留应用。
+
+Lexa has no accounts and no server-side data, so there is no account-deletion flow: uninstalling the app permanently erases all local study data, or you can reset your progress in Settings without removing the app.
+
 ## Roadmap
 
 - [ ] 例句（来自 VOA Learning English 新闻语料）
