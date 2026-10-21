@@ -50,17 +50,32 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.peter.Lexa.unittests
         GENERATE_INFOPLIST_FILE: YES
+  LexaUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: UITests
+    dependencies:
+      - target: Lexa
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.peter.Lexa.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: Lexa
 schemes:
   Lexa:
     build:
       targets:
         Lexa: all
         LexaTests: [test]
+        LexaUITests: [test]
     run:
       config: Debug
     test:
       config: Debug
       targets:
         - LexaTests
+        - LexaUITests
     archive:
       config: Release

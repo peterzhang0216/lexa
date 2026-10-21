@@ -35,6 +35,20 @@
                ReferencedContainer = "container:Lexa.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7DBCDEF83D6D2B6C9DE0DA66"
+               BuildableName = "LexaUITests.xctest"
+               BlueprintName = "LexaUITests"
+               ReferencedContainer = "container:Lexa.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -61,6 +75,17 @@
                BlueprintIdentifier = "ADDD2C6EA56D5FA4C4370E27"
                BuildableName = "LexaTests.xctest"
                BlueprintName = "LexaTests"
+               ReferencedContainer = "container:Lexa.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7DBCDEF83D6D2B6C9DE0DA66"
+               BuildableName = "LexaUITests.xctest"
+               BlueprintName = "LexaUITests"
                ReferencedContainer = "container:Lexa.xcodeproj">
             </BuildableReference>
          </TestableReference>

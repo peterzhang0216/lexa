@@ -17,3 +17,4 @@ data-pipeline/voa_brandon.json
 
 __pycache__/
 data-pipeline/sentences_with_audio.csv
+.xcresults/

@@ -19,9 +19,12 @@ struct ContentView: View {
         }
         .tint(Theme.accent)
         .onAppear {
-            // 自动化验证用：--tab-settings 直达设置页
+            // 自动化验证用：--tab-browse / --tab-settings 直达对应 tab
             if ProcessInfo.processInfo.arguments.contains("--tab-settings") {
                 selectedTab = 2
+            }
+            if ProcessInfo.processInfo.arguments.contains("--tab-browse") {
+                selectedTab = 1
             }
         }
         .onChange(of: scenePhase) { _, phase in

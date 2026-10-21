@@ -31,7 +31,15 @@
     "screenshots": {
       "scheme": "Lexa",
       "devices": {
-        "ios": {}
+        "ios": [
+          "iPhone 17 Pro Max",
+          "iPad Pro 13-inch (M5)"
+        ]
+      },
+      "onlyTesting": "LexaUITests/AppStoreScreenshotTests/testCaptureAppStoreScreenshots",
+      "fitDimensions": "letterbox",
+      "static": {
+        "app": "obelisk/screenshots/app/"
       }
     }
   },
