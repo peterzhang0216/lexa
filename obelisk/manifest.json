@@ -45,7 +45,8 @@
     "demoVideo": {
       "scheme": "Lexa",
       "onlyTesting": "LexaUITests/DemoFlow/testReviewDemo"
-    }
+    },
+    "reviewDemoVideo": "obelisk/demo/6.9-zh-Hans.mp4"
   },
   "scheme": "Lexa",
   "appPrivacy": {
