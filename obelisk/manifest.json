@@ -1,6 +1,6 @@
 {
   "id": "lexa",
-  "name": "Lexa",
+  "name": "拾词 Lexa - 背单词",
   "themeColor": "#595FEB",
   "downloads": [],
   "appStore": {
@@ -54,7 +54,7 @@
       "subtitle": "四六级·考研·VOA·AWL 词库",
       "keywords": "背单词,英语,词汇,VOA,托福,雅思,单词卡,记忆,英语学习,学习英语,词汇量,四六级,英语单词,闪卡",
       "whatsNew": "内容大扩充：新增四级、六级、考研三本词书与考试合集（全库 7091 词）；例句配中文对照与点读、词形变化表、生词本收藏、错词当场重现、滑动快捷答题、每日学习提醒与 12 周学习日历。",
-      "fullDescription": "拾词 Lexa 是一款为非母语学习者设计的英语背单词应用。词库取自美国官方与权威学术材料，配合科学的记忆算法，帮助你高效、持久地扩大词汇量。\n\n【权威词库 · 7091 词】\n• VOA 核心词汇（1533 词）：源自\"美国之音\"VOA Learning English 官方 Word Book，覆盖最常用的英语核心表达，适合初学者打基础；\n• AWL 学术词汇（570 词）：Academic Word List，北美大学英语教学广泛使用的学术词族，是阅读学术文章、备考托福的必备词汇；\n• 四级核心词汇（1809 词）与六级核心词汇（1672 词）：覆盖四六级考试词表；\n• 考研核心词汇（307 词）：考研词表去重精选，另有\"考试合集\"一键聚合学习；\n• 托福雅思进阶词汇（1200 词）：按语料库词频精选的考试进阶词，适合四六级以上水平提升。\n\n【科学记忆】\n采用 Leitner 间隔重复算法：答对自动进入下一复习阶段，答错立即回炉，复习间隔从 10 分钟到 32 天逐级拉长。你只需要每天打开 App，剩下的交给算法。\n\n【核心功能】\n• 卡片式学习：正面记单词，翻面查看释义、词形变化与中英对照例句（例句可点读），\"认识 / 不认识\"或左右滑动作答，答错的词当场重现；\n• 生词本：学习时一键收藏难词，集中练习；\n• 标准美音发音：每个单词自动朗读（可关闭），边听边记；\n• 词库浏览与搜索：按词书切换，随时查看音标、英文释义和中文释义；\n• 每日目标：自定义每日新词数量，连续打卡记录，见证积累；\n• 学习统计：已学、已掌握、待复习一目了然；\n• 完全离线：词库内置于应用，进度保存在本地，无需注册登录，无广告、无内购。\n\n【适合人群】\n英语初学者、四六级考生、托福雅思备考者、想系统提升词汇量的英语学习者。\n\n【词库数据来源与授权】\nVOA Word Book（美国政府作品，公有领域）；Academic Word List（© Averil Coxhead，教学科研使用）；ECDICT 词典（MIT 开源协议）；例句与译文来自 Tatoeba 开放句库（CC BY 2.0 FR）。\n\n隐私政策：https://github.com/peterzhang0216/lexa#privacy-policy",
+      "fullDescription": "拾词 Lexa 是一款为非母语学习者设计的英语背单词应用。词库取自美国官方与权威学术材料，配合科学的记忆算法，帮助你高效、持久地扩大词汇量。\n\n【权威词库 · 7091 词】\n• VOA 核心词汇（1533 词）：源自\"美国之音\"VOA Learning English 官方 Word Book，覆盖最常用的英语核心表达，适合初学者打基础；\n• AWL 学术词汇（570 词）：Academic Word List，北美大学英语教学广泛使用的学术词族，是阅读学术文章、备考托福的必备词汇；\n• 四级核心词汇（1809 词）与六级核心词汇（1672 词）：覆盖四六级考试词表；\n• 考研核心词汇（307 词）：考研词表去重精选，另有\"考试合集\"一键聚合学习；\n• 托福雅思进阶词汇（1200 词）：按语料库词频精选的考试进阶词，适合四六级以上水平提升。\n\n【科学记忆】\n采用 Leitner 间隔重复算法：答对自动进入下一复习阶段，答错立即回炉，复习间隔从 10 分钟到 32 天逐级拉长。你只需要每天打开 App，剩下的交给算法。\n\n【核心功能】\n• 卡片式学习：正面记单词，翻面查看释义、词形变化与中英对照例句（例句可点读），\"认识 / 不认识\"或左右滑动作答，答错的词当场重现；\n• 生词本：学习时一键收藏难词，集中练习；\n• 标准美音发音：每个单词自动朗读（可关闭），边听边记；\n• 词库浏览与搜索：按词书切换，随时查看音标、英文释义和中文释义；\n• 每日目标：自定义每日新词数量，连续打卡记录，见证积累；\n• 学习统计：已学、已掌握、待复习一目了然；\n• 完全离线：词库内置于应用，进度保存在本地，无需注册登录，无广告、无内购。\n\n【适合人群】\n英语初学者、四六级考生、托福雅思备考者、想系统提升词汇量的英语学习者。\n\n— 拾词的独特之处 —\n• 词库即权威：VOA 官方词书（公有领域）+ AWL 学术词表 + ECDICT 词典数据（MIT），六本词书与考试合集共 7091 词，来源与授权透明，应用内可查；\n• 每个词都有语境：音标、中英释义与词形变化之外，还有精选例句与中文对照，目标词含屈折形式高亮，可点读发音；\n• 记忆交给算法：Leitner 间隔重复，答对自动拉长间隔，答错当场回炉，复习间隔从 10 分钟到 32 天逐级拉长；\n• 隐私即默认：无账号、无广告、无内购、不联网、不收集任何数据，进度只存在你的设备上。\n\n— 定价 —\n拾词完全免费：六本词书、考试合集与全部功能开箱即用，无内购、无订阅、无广告。\n\n— 反馈 —\n由独立开发者开发。反馈、bug 报告或功能建议，欢迎发邮件至 obeliskclubclub@gmail.com。\n\n服务条款（EULA）：https://obelisk.club/lexa/terms\n\n【词库数据来源与授权】\nVOA Word Book（美国政府作品，公有领域）；Academic Word List（© Averil Coxhead，教学科研使用）；ECDICT 词典（MIT 开源协议）；例句与译文来自 Tatoeba 开放句库（CC BY 2.0 FR）。\n\n隐私政策：https://obelisk.club/lexa/privacy",
       "features": [
         "VOA 官方词表 + AWL 学术词表 + 考试进阶词库，共 3300 词",
         "卡片式学习：翻面查看音标、英文释义与中文释义",
@@ -67,6 +67,27 @@
         "privacy": "拾词 Lexa 隐私政策\n最后更新：2026-10-14\n\n本应用不收集任何个人数据。所有学习进度与偏好设置仅存储在你的设备本地，不上传、不共享、不追踪。",
         "terms": "拾词 Lexa 服务条款\n最后更新：2026-10-14\n\n下载或使用本应用即表示你同意本服务条款。本应用使用 Apple 标准 EULA：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "support": "拾词 Lexa 支持\n\n如果你在使用中遇到问题或有功能建议，欢迎在 GitHub 仓库提交 Issue，我们通常会在一到两个工作日内回复。\n\n项目主页：https://github.com/peterzhang0216/lexa",
+        "deletion": "拾词 Lexa 数据删除\n\n本应用不在任何外部服务器存储用户数据。删除应用即可移除设备上的全部本地学习数据；也可以在应用内「设置 → 重置全部学习进度」一键清除。"
+      }
+    },
+    "en": {
+      "name": "Lexa: Vocabulary Trainer",
+      "subtitle": "VOA & AWL words, offline",
+      "keywords": "vocabulary,english,words,flashcards,spaced repetition,voa,awl,cet,toefl,ielts,study,learning",
+      "whatsNew": "First App Store release: six word books with 7,091 words, exam collections, bilingual example sentences, swipe-to-study gestures, daily reminders and a 12-week study calendar.",
+      "fullDescription": "Lexa is a fully-offline English vocabulary trainer built on authoritative source materials, with a spaced-repetition engine that plans your reviews for you.\n\n【Authoritative Word Books · 7,091 Words】\n• VOA Core Vocabulary (1,533 words): from the official VOA Learning English Word Book, a US government work in the public domain\n• Academic Word List (570 word families): Averil Coxhead's AWL, the standard for academic English reading\n• CET-4 (1,809) and CET-6 (1,672) core words, plus a 307-word postgraduate exam set\n• TOEFL/IELTS advanced vocabulary (1,200 words) selected by corpus frequency\n• Exam Collection: one tap aggregates the exam books into a single deck\n\n【Scientific Memory】\nA Leitner box scheduler moves words to longer intervals when you know them and re-queues mistakes within the same session. Review gaps stretch from 10 minutes to 32 days; you just show up daily.\n\n【Core Features】\n• Flashcard study: flip a card for phonetics, definitions, word forms and bilingual example sentences (tap to hear them spoken)\n• Answer with Know / Don't Know buttons or swipe gestures; wrong words come back before you finish\n• Favorites: star difficult words and drill them in a dedicated session\n• Pronunciation through the system voice, with optional auto-speak on every new card\n• Word bank browsing and search across all books\n• Daily goal, streak tracking and a 12-week study calendar\n\n— WHAT MAKES LEXA DIFFERENT —\n• Authoritative by construction: the VOA Word Book (public domain), the Academic Word List and ECDICT dictionary data (MIT), with sources and licenses disclosed in-app\n• Context with every word: curated example sentences with Chinese translations and inflected-form highlighting, not just definitions\n• Private by default: no account, no ads, no tracking, no network. Your progress never leaves your device.\n\n— PRICING —\nLexa is completely free. All six word books, the exam collection and every feature are included: no in-app purchases, no subscription, no ads.\n\n— FEEDBACK —\nBuilt by an independent developer. Questions, bug reports or feature requests are welcome at obeliskclubclub@gmail.com.\n\nTerms of Service (EULA): https://obelisk.club/lexa/terms",
+      "features": [
+        "Six authoritative word books, 7,091 words fully offline: VOA, AWL, CET-4/6, postgraduate and TOEFL/IELTS",
+        "Flashcards with phonetics, bilingual definitions, word forms and tap-to-speak example sentences",
+        "Leitner spaced repetition: known words move to longer intervals, mistakes re-queue on the spot",
+        "Know / Don't Know buttons or swipe gestures, with a favorites deck for hard words",
+        "Daily goals, streak tracking and a 12-week study calendar",
+        "Completely offline and private: no account, no ads, no tracking, no in-app purchases"
+      ],
+      "docs": {
+        "privacy": "Lexa Privacy Policy\nLast updated: 2026-10-21\n\nThis app collects no personal data. All study progress and preferences stay on your device: nothing is uploaded, shared or tracked.",
+        "terms": "Lexa Terms of Service\nLast updated: 2026-10-21\n\nBy downloading or using the app you agree to these terms. The app uses Apple's standard EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "support": "Lexa Support\n\nIf you run into a problem or have a feature request, please open an issue on the GitHub repository. We usually respond within one to two business days.\n\nProject home: https://github.com/peterzhang0216/lexa",
         "deletion": "拾词 Lexa 数据删除\n\n本应用不在任何外部服务器存储用户数据。删除应用即可移除设备上的全部本地学习数据；也可以在应用内「设置 → 重置全部学习进度」一键清除。"
       }
     }
