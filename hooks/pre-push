@@ -114,6 +114,16 @@
 #      lines and the push was blocked on pure re-indentation. The scan uses
 #      `git diff -w` (indentation-only changes produce no +/- lines at all),
 #      plus a stripped-content fallback for rewraps that split one line.
+#   9. workflow YAML parses — only what this push CARRIES (same scoping as #8:
+#      the ~88-file backlog from the 2026-10-02 migration is
+#      factory/ci_yaml_heredoc_migration.py's job; new breakage is this
+#      push's). GitHub rejects an unparsable workflow at parse time and every
+#      later push then produces a 0-second "workflow file issue"
+#      startup-failure run — the class that ran nine days across 236 repos
+#      unnoticed because nobody reads those runs (found 2026-10-10). Verdict
+#      via ruby/psych, which ships with macOS and is the same parser the
+#      migration tool and its tests use; no ruby on the host → one loud skip
+#      line, never a silent fail-open.
 #   7. scaffold docs (OPPORTUNITY/DEV_KICKOFF) present — soft warning only, so
 #      this hook works identically on factory-born and hand-built repos
 #
@@ -309,6 +319,40 @@ EOF
       echo "    存量不拦，只拦这次新加的；全仓库现状用 obelisk dev:silent-failure 看。" >&2
       fail "新增了静默失败"
     fi
+  fi
+fi
+
+# 9. workflow YAML parses — scoping rationale in the file header. Only files
+#    this push carries are validated; a broken workflow the push does not
+#    touch is backlog (the migration tool's job), not this push's fault.
+if git rev-parse --verify --quiet origin/main >/dev/null 2>&1; then
+  changed_workflows="$(git diff --name-only origin/main...HEAD -- '.github/workflows/' 2>/dev/null || true)"
+else
+  # First push ever: no origin/main to diff against — everything is new,
+  # so everything is validated.
+  changed_workflows="$(ls .github/workflows/*.yml .github/workflows/*.yaml 2>/dev/null || true)"
+fi
+if [ -n "$changed_workflows" ]; then
+  if ! command -v ruby >/dev/null 2>&1; then
+    echo "  ! ruby 不在 PATH 上 —— workflow YAML 检查这轮跳过（不静默：这道门没跑）" >&2
+  else
+    while IFS= read -r wf; do
+      [ -n "$wf" ] || continue
+      [ -f "$wf" ] || continue    # 删除/改名后没有可解析的东西
+      if ! ruby -ryaml -e 'YAML.load_file(ARGV[0])' "$wf" >/dev/null 2>&1; then
+        why="$(ruby -ryaml -e 'begin; YAML.load_file(ARGV[0]); rescue => e; puts e.message; end' "$wf" 2>/dev/null | head -1)"
+        echo "  ✗ $wf 不通过 YAML 解析：$why" >&2
+        echo "" >&2
+        echo "    GitHub 会在解析期整体拒收这个 workflow，此后每次 push 都产生一个 0 秒" >&2
+        echo "    的「workflow file issue」startup-failure —— 2026-10-02 车队事故就是这一类，" >&2
+        echo "    236 个仓库静默跑了九天没人发现，因为没人读那种运行记录。" >&2
+        echo "    最常见原因：缩进块（run: |）里出现顶格代码行——字面量块在第一个" >&2
+        echo "    反缩进行就结束，余下内容被外层 YAML 当成顶层键。" >&2
+        fail "workflow YAML 解析失败"
+      fi
+    done <<EOF
+$changed_workflows
+EOF
   fi
 fi
 
