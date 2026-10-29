@@ -65,6 +65,12 @@ xcodebuild -project Lexa.xcodeproj -scheme Lexa \
 
 自动化验证参数：`--screen study|browse|settings` 直达对应界面，`--revealed` 翻开首张卡片，`--demo-answer` 自动答 3 题（用于验证调度与持久化链路）。
 
+## 许可证 License
+
+**代码：MIT**，见 [LICENSE](LICENSE)。**随 App 打包的词库保留各自来源的授权**，见上面“词库来源”表：VOA 词表是美国政府作品（公有领域），AWL 学术词汇需署名（© Averil Coxhead），释义和音标来自 [ECDICT](https://github.com/skywind3000/ECDICT)（MIT）。再分发词库时请一并保留这些署名和授权说明。
+
+The code is released under the **MIT License** (see [LICENSE](LICENSE)). The word lists bundled with the app keep the licenses of their sources, listed in the table above (VOA word book: US government work, public domain; Academic Word List: attribution to Averil Coxhead required; definitions and phonetics: ECDICT, MIT). Keep those notices if you redistribute the word lists.
+
 ## 隐私政策 Privacy Policy
 
 拾词 Lexa 不收集任何用户数据。
