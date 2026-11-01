@@ -4,6 +4,8 @@
 
 > SwiftUI 构建，零第三方依赖，支持 iOS 17+。共 **3,303 词**：VOA 核心词汇 1,533 + AWL 学术词汇 570 + 托福雅思进阶 1,200。
 
+作者的其他原生 Swift 作品和开发工具：[obelisk.club/swift](https://obelisk.club/swift)
+
 | 首页 | 学习卡片 | 翻面释义 |
 |---|---|---|
 | ![首页](screenshots/01_home.png) | ![学习](screenshots/02_study_front.png) | ![释义](screenshots/03_study_revealed.png) |
@@ -16,7 +18,7 @@
 
 - **卡片式学习**：点击卡片翻面查看释义，"认识 / 不认识"一键反馈
 - **间隔重复调度**：Leitner 盒子算法（答对进阶、答错回退），复习间隔 10 分钟 → 1/2/4/8/16/32 天递增
-- **发音**：系统 TTS 美音朗读，出卡自动发音可开关
+- **发音**：系统 TTS 美音朗读，翻出新卡时朗读单词，可在设置里关闭
 - **三本权威词书**：见下方"词库来源"
 - **词库浏览**：按词书切换、英文搜索、学习状态标记（新词 / 学习中 / 已掌握）
 - **学习统计**：每日新词数可调（5–100）、连续打卡、已学 / 已掌握 / 待复习统计
@@ -39,7 +41,7 @@ lexa/
 ├── Lexa.xcodeproj
 ├── data-pipeline/         # 词库抓取/加工脚本与来源说明（不参与 App 构建）
 └── Lexa/
-    ├── LexaApp.swift      # App 入口（支持 --screen 参数直达界面，便于自动化验证）
+    ├── LexaApp.swift      # App 入口（支持 --screen 参数直达界面，便于直接打开指定界面检查）
     ├── Models.swift       # 数据模型
     ├── Store.swift        # 词库加载、SRS 调度、持久化、TTS
     ├── ContentView.swift  # 根 TabView
@@ -63,7 +65,7 @@ xcodebuild -project Lexa.xcodeproj -scheme Lexa \
   -destination 'platform=iOS Simulator,name=iPhone 18 Pro' build
 ```
 
-自动化验证参数：`--screen study|browse|settings` 直达对应界面，`--revealed` 翻开首张卡片，`--demo-answer` 自动答 3 题（用于验证调度与持久化链路）。
+调试用启动参数：`--screen study|browse|settings` 直达对应界面，`--revealed` 翻开首张卡片，`--demo-answer` 依次作答 3 题（用于检查复习调度和本地保存是否正常）。
 
 ## 许可证 License
 
